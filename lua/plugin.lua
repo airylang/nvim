@@ -110,8 +110,6 @@ return require('packer').startup(function()
   }
 
   use 'neovim/nvim-lspconfig' -- Configurations for Nvim LSP
-  -- use "williamboman/nvim-lsp-installer" -- simple to use language server installer
-
   use { "williamboman/mason.nvim" }
   use { "williamboman/mason-lspconfig.nvim" }
 
@@ -119,12 +117,20 @@ return require('packer').startup(function()
   use "hrsh7th/cmp-buffer" -- buffer completions
   use "hrsh7th/cmp-path" -- path completions
   use "hrsh7th/cmp-cmdline" -- cmdline completions
-  use "saadparwaiz1/cmp_luasnip" -- snippet completions
   use "hrsh7th/cmp-nvim-lsp"
   use "hrsh7th/cmp-nvim-lua"
+  -- use "saadparwaiz1/cmp_luasnip" -- snippet completions
 
+  -- vsnip
+  use 'hrsh7th/cmp-vsnip'    -- { name = 'vsnip' }
+  use 'hrsh7th/vim-vsnip'
+  use 'rafamadriz/friendly-snippets'
+
+  -- lspkind
+  use 'onsails/lspkind-nvim'
+
+  -- lsp ui
   use({ "glepnir/lspsaga.nvim", branch = "main" })
-
 
   -- 剪切板历史
   use 'gbprod/yanky.nvim'

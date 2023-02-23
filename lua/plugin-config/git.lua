@@ -8,6 +8,8 @@ require('gitsigns').setup{
     untracked    = { text = '∷' },
   },
   current_line_blame = true,
+  linehl = false,
+  numhl = true,
 
   on_attach = function(bufnr)
     local gs = package.loaded.gitsigns

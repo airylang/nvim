@@ -95,6 +95,8 @@ keyset('n', '<leader>i', 'f i<CR><Esc>')
 keyset('n', '<leader>so', ':w <CR>:source %<CR>') -- 等价与下面一行, 但最终命令行会显示 source %
 -- keyset('n', '<leader>so', ':w | source %<CR>') -- 最终命令行会显示 :w 结果
 
+-- 在 v 模式下复制当前选中内容至下面
+keyset('v', '<C-y>', 'ygv<Esc>o<Esc>p')
 
 ---------------------- 以下为插件相关 map
 -- 切换 nvim tree
