@@ -19,9 +19,9 @@ function test() {
 
   let value;
   
-  let sum = 5 + 3 * 100
+  let ccc = 5 + 3 * 100
 
-  if (sum > 10) {
+  if (ccc > 10) {
     value = 100
   } else {
     value = 200
@@ -40,6 +40,7 @@ function test() {
 
   function (a, b, c) {
     return String(a)
+    // Math.random.bind
   }
 }
 

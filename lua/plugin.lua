@@ -139,6 +139,18 @@ return require('packer').startup(function()
   -- TODO
   -- use 'norcalli/nvim-colorizer.lua'
 
+  -- 翻译单词
+  use 'voldikss/vim-translator'
+
+  -- git
+  use {
+    'lewis6991/gitsigns.nvim',
+    -- tag = 'release' -- To use the latest release (do not use this if you run Neovim nightly or dev builds!)
+  }
+
+  -- buffer 关闭
+  use 'Asheq/close-buffers.vim'
+
   -- 主题
   use 'folke/tokyonight.nvim'
 

@@ -27,23 +27,22 @@ require('telescope').setup{
       },
     }
   },
-  -- extensions = {
-  --   project = {
-  --     base_dirs = {
-  --       '/xlg'
-  --       -- {'~/dev/src3', max_depth = 4},
-  --       -- {path = '~/dev/src5', max_depth = 2},
-  --     },
-  --     hidden_files = true, -- default: false
-  --     theme = "dropdown",
-  --     order_by = "asc",
-  --     search_by = "title",
-  --     sync_with_nvim_tree = true, -- default false
-  --   }
-  -- }
+  extensions = {
+    project = {
+      base_dirs = {
+        '/xlg'
+        -- {'~/dev/src3', max_depth = 4},
+        -- {path = '~/dev/src5', max_depth = 2},
+      },
+      hidden_files = true, -- default: false
+      theme = "dropdown",
+      order_by = "asc",
+      search_by = "title",
+      sync_with_nvim_tree = true, -- default false
+    }
+  }
 }
 
--- require'telescope'.load_extension('project')
 
 -- $ sudo yum install ripgrep
 -- $ npm install -g fd-find
