@@ -13,11 +13,14 @@ return require('packer').startup(function()
   -- 配对符号
   use 'windwp/nvim-autopairs'
 
+  -- 平滑滚动
+  use 'karb94/neoscroll.nvim'
+
   -- 缩进线
   use 'Yggdroot/indentLine'
 
   -- 启动界面
-  use 'mhinz/vim-startify'
+  -- use 'mhinz/vim-startify'
 
   -- icons
   use "kyazdani42/nvim-web-devicons"
@@ -119,8 +122,27 @@ return require('packer').startup(function()
   use "hrsh7th/cmp-cmdline" -- cmdline completions
   use "hrsh7th/cmp-nvim-lsp"
   use "hrsh7th/cmp-nvim-lua"
-  -- use "saadparwaiz1/cmp_luasnip" -- snippet completions
 
+  -- 将未使用的函数、变量调为暗色
+  use {
+    "zbirenbaum/neodim",
+    event = "LspAttach",
+    config = function ()
+      require("neodim").setup({
+        alpha = 0.75,
+        blend_color = "#000000",
+        update_in_insert = {
+          enable = true,
+          delay = 100,
+        },
+        hide = {
+          virtual_text = true,
+          signs = true,
+          underline = true,
+        }
+      })
+    end
+  }
   -- vsnip
   use 'hrsh7th/cmp-vsnip'    -- { name = 'vsnip' }
   use 'hrsh7th/vim-vsnip'
@@ -142,9 +164,6 @@ return require('packer').startup(function()
   -- TODO
   -- wellle/targets.vim
 
-  -- TODO
-  -- use 'norcalli/nvim-colorizer.lua'
-
   -- 翻译单词
   use 'voldikss/vim-translator'
 
@@ -156,6 +175,12 @@ return require('packer').startup(function()
 
   -- buffer 关闭
   use 'Asheq/close-buffers.vim'
+
+  -- 保存 session
+  use 'Shatur/neovim-session-manager'
+
+  -- 多个主题
+  use 'lunarvim/colorschemes'
 
   -- 主题
   use 'folke/tokyonight.nvim'
@@ -189,5 +214,8 @@ return require('packer').startup(function()
 
   -- 主题
   use 'lunarvim/darkplus.nvim'
+
+  -- 主题
+  use 'sainnhe/edge'
 end)
 

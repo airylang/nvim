@@ -75,8 +75,8 @@ keyset('n', '<leader>qq', ':q<CR>')
 keyset('n', 'Q', ':bnext | bdelete #<CR>')
 
 -- 自定义查找下一处待输入
-keyset('i', '<C-n>','<Esc>/<+-+><CR>:nohlsearch<CR>c5l', {})
-keyset('n', '<C-n>','<Esc>/<+-+><CR>:nohlsearch<CR>c5l', {})
+-- keyset('i', '<C-n>','<Esc>/<+-+><CR>:nohlsearch<CR>c5l', {})
+-- keyset('n', '<C-n>','<Esc>/<+-+><CR>:nohlsearch<CR>c5l', {})
 -- map <LEADER><LEADER> <Esc>/<++><CR>:nohlsearch<CR>c4i
 
 -- 查看旧版 vimrc 配置
@@ -96,16 +96,19 @@ keyset('n', '<leader>so', ':w <CR>:source %<CR>') -- 等价与下面一行, 但�
 -- keyset('n', '<leader>so', ':w | source %<CR>') -- 最终命令行会显示 :w 结果
 
 -- 在 v 模式下复制当前选中内容至下面
-keyset('v', '<leader>yy', 'ygv<Esc>o<Esc>p')
+-- keyset('v', '<leader>yy', 'ygvo<Esc>p')
+-- keyset('v', '<leader>yY', 'ygv<Esc>o<Esc>p')
 
 -- n 模式下复制并粘贴该行
-keyset('n', '<leader>yy', 'Vygv<Esc>o<Esc>p')
+keyset('n', '<leader>yy', 'Vygv<Esc>p') -- 无空行
+keyset('n', '<leader>yY', 'Vygv<Esc>o<Esc>p') -- 间隔一个空行
 
 ---------------------- 以下为插件相关 map
 -- 切换 nvim tree
 keyset('n', '<leader>tt', ':NvimTreeToggle ./ <CR>')
 keyset('n', '<leader>to', ':NvimTreeClose | NvimTreeOpen ')
-keyset('n', '<leader>h', ':NvimTreeFindFile!<CR>')
+-- keyset('n', '<leader>h', ':NvimTreeFindFile!<CR>')
+keyset('n', '<C-p>', ':NvimTreeFindFile!<CR>')
 
 -- 文件/代码/项目搜索 telescope
 local builtin = require('telescope.builtin')
@@ -142,3 +145,10 @@ keyset('v', '<leader>tw', '<Plug>TranslateWV', {})
 -- 在多个 vim 实例同步剪切板历史, yankl 插件
 keyset('n', '<leader>yw', ':wshada<CR>') -- 保存
 keyset('n', '<leader>ys', ':rshada<CR>') -- 同步
+
+
+-- session 操作
+keyset('n', '<leader>ss', ':SessionManager load_session<CR>')
+keyset('n', '<leader>sw', ':SessionManager save_current_session<CR>')
+keyset('n', '<leader>sd', ':SessionManager delete_session<CR>')
+keyset('n', '<leader>sc', ':SessionManager load_current_dir_session<CR>')
