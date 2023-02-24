@@ -96,7 +96,10 @@ keyset('n', '<leader>so', ':w <CR>:source %<CR>') -- 等价与下面一行, 但�
 -- keyset('n', '<leader>so', ':w | source %<CR>') -- 最终命令行会显示 :w 结果
 
 -- 在 v 模式下复制当前选中内容至下面
-keyset('v', '<C-y>', 'ygv<Esc>o<Esc>p')
+keyset('v', '<leader>yy', 'ygv<Esc>o<Esc>p')
+
+-- n 模式下复制并粘贴该行
+keyset('n', '<leader>yy', 'Vygv<Esc>o<Esc>p')
 
 ---------------------- 以下为插件相关 map
 -- 切换 nvim tree
@@ -118,6 +121,10 @@ keyset('n', '<leader>fm', builtin.marks, {}) -- fm: find marks
 -- telescope 打开 项目列表
 vim.api.nvim_set_keymap('n', '<leader>fp', ":lua require'telescope'.extensions.project.project{}<CR>", {})
 
+-- telescope 打开剪切板历史
+-- vim.api.nvim_set_keymap('n', '<leader>fy', ":Telescope yank_history<CR>", {})
+vim.api.nvim_set_keymap('n', '<leader>fy', " :lua require('telescope').extensions.yank_history.yank_history()<CR>", {})
+
 -- hop 跳转字符、单词、行
 keyset("n", "<leader><leader>",':HopWord<CR>' , {})
 keyset("n", "<leader>c",':HopChar1<CR>' , {})
@@ -132,3 +139,6 @@ keyset("n", "<M-]>",':NextColorScheme<CR>' , {})
 keyset('n', '<leader>tw', '<Plug>TranslateW', {})
 keyset('v', '<leader>tw', '<Plug>TranslateWV', {})
 
+-- 在多个 vim 实例同步剪切板历史, yankl 插件
+keyset('n', '<leader>yw', ':wshada<CR>') -- 保存
+keyset('n', '<leader>ys', ':rshada<CR>') -- 同步
