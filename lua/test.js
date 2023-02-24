@@ -1,11 +1,7 @@
 
 import { fun } from './util.js' 
 
-
 // Function
-
-
-
 function test() {
 
   const abc = 5
@@ -16,23 +12,23 @@ function test() {
     })
   }
 
-  let value;
+  let count;
 
   let ccc = 5 + 3 * 100
 
   if (ccc > 10) {
-    value = 100
+    count = 100
   } else {
-    value = 200
+    count = 200
   }
 
-  console.log(value)
+  console.log(count)
 
   fun()
 
   const nnnn = 555
   if (Math.random() > 0.5) {
-    consol.log(1024)
+    console.log(1024)
   } else {
     console.log(555)
   }

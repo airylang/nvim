@@ -42,7 +42,7 @@ keyset('n', '<leader>qj', '<C-w>j:q<CR>')
 keyset('n', '<leader>qk', '<C-w>k:q<CR>')
 keyset('n', '<leader>ql', '<C-w>l:q<CR>')
 keyset('n', '<leader>qo', ':only<CR>')
-keyset('n', '<leader>q', ':q<CR>')
+keyset('n', 'qq', ':q<CR>')
 
 -- 关闭除当前缓冲区以外的 buffer
 keyset('n', '<leader>qa', ':Bdelete other<CR>')
@@ -56,11 +56,11 @@ keyset('n', '<left>', '<C-w>H')
 keyset('n', '<right>', '<C-w>L')
 
 
--- 输入模式下，按下 alt + hjkl 为光标移动
-keyset('i', '<M-h>', '<left>')
-keyset('i', '<M-j>', '<down>')
-keyset('i', '<M-k>', '<up>')
-keyset('i', '<M-l>', '<right>')
+-- 输入, 命令模式下，按下 alt + hjkl 为光标移动
+keyset({'i','c'}, '<M-h>', '<left>')
+keyset({'i','c'}, '<M-j>', '<down>')
+keyset({'i','c'}, '<M-k>', '<up>')
+keyset({'i','c'}, '<M-l>', '<right>')
 
 -- 窗口大小扩展
 keyset('n', '+', ':res +5<CR>')
@@ -85,9 +85,6 @@ keyset('n', 'Q', ':bnext | bdelete #<CR>')
 -- 在下方插入一个空行
 -- keyset('n', 'co', 'o<Esc>')
 
--- gp 带缩进粘贴
--- keyset('n', 'gp', ']p')
-
 -- html 属性独立为一行
 keyset('n', '<leader>i', 'f i<CR><Esc>')
 
@@ -108,7 +105,9 @@ keyset('n', '<leader>yY', 'Vygv<Esc>o<Esc>p') -- 间隔一个空行
 keyset('n', '<leader>tt', ':NvimTreeToggle ./ <CR>')
 keyset('n', '<leader>to', ':NvimTreeClose | NvimTreeOpen ')
 -- keyset('n', '<leader>h', ':NvimTreeFindFile!<CR>')
-keyset('n', '<C-p>', ':NvimTreeFindFile!<CR>')
+
+-- 等价于 按两次ctrl, 以及 ctrl + c
+keyset('n', '<C-c>', ':NvimTreeFindFile!<CR>')
 
 -- 文件/代码/项目搜索 telescope
 local builtin = require('telescope.builtin')
@@ -125,8 +124,8 @@ keyset('n', '<leader>fm', builtin.marks, {}) -- fm: find marks
 vim.api.nvim_set_keymap('n', '<leader>fp', ":lua require'telescope'.extensions.project.project{}<CR>", {})
 
 -- telescope 打开剪切板历史
--- vim.api.nvim_set_keymap('n', '<leader>fy', ":Telescope yank_history<CR>", {})
-vim.api.nvim_set_keymap('n', '<leader>fy', " :lua require('telescope').extensions.yank_history.yank_history()<CR>", {})
+vim.api.nvim_set_keymap('n', '<leader>fy', ":Telescope yank_history<CR>", {})
+-- vim.api.nvim_set_keymap('n', '<leader>fy', " :lua require('telescope').extensions.yank_history.yank_history()<CR>", {})
 
 -- hop 跳转字符、单词、行
 keyset("n", "<leader><leader>",':HopWord<CR>' , {})
@@ -137,7 +136,6 @@ keyset("n", "<leader>n",':HopLine<CR>' , {})
 keyset("n", "<M-[>",':PreviousColorScheme<CR>' , {})
 keyset("n", "<M-]>",':NextColorScheme<CR>' , {})
 
-
 -- 翻译
 keyset('n', '<leader>tw', '<Plug>TranslateW', {})
 keyset('v', '<leader>tw', '<Plug>TranslateWV', {})
@@ -145,7 +143,6 @@ keyset('v', '<leader>tw', '<Plug>TranslateWV', {})
 -- 在多个 vim 实例同步剪切板历史, yankl 插件
 keyset('n', '<leader>yw', ':wshada<CR>') -- 保存
 keyset('n', '<leader>ys', ':rshada<CR>') -- 同步
-
 
 -- session 操作
 keyset('n', '<leader>ss', ':SessionManager load_session<CR>')

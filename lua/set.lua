@@ -39,3 +39,5 @@ vim.cmd('autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatopt
 vim.cmd('autocmd InsertEnter * set cul')
 vim.cmd('autocmd InsertLeave * set nocul')
 
+
+vim.o.signcolumn = 'yes'

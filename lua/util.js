@@ -5,5 +5,5 @@
  * @returns String - 拼接后的内容
  */
 export function fun(a,b) {
-  return a + '' + b
+  return a + '' + b + 5
 }

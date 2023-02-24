@@ -160,7 +160,6 @@ return require('packer').startup(function()
   -- 打开终端
   use { "akinsho/toggleterm.nvim", tag = '*' }
 
-
   -- TODO
   -- wellle/targets.vim
 
@@ -178,6 +177,9 @@ return require('packer').startup(function()
 
   -- 保存 session
   use 'Shatur/neovim-session-manager'
+
+  -- 多光标插件
+  use 'mg979/vim-visual-multi'
 
   -- 多个主题
   use 'lunarvim/colorschemes'
