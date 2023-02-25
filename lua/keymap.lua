@@ -13,11 +13,8 @@ keyset('', '<Esc>', '<Esc>:nohls<CR>')
 keyset('', '<C-l>', '$')
 keyset('', '<C-h>', '0^')
 
--- 自动缩进, 不用了
--- keyset('n', '<C-=>', '==')
-
 -- c-l 占用，重新一个快捷键来清屏
--- keyset('', '<C-\\>', '<c-l>')
+-- keyset('n', '<C-m>', '<c-l>')
 
 -- n 模式下 tab, shift+tab 轮换buffer
 keyset('n', '<tab>', ':bnext<CR>')
@@ -27,7 +24,7 @@ keyset('n', '<S-tab>', ':bprevious<CR>')
 -- keyset('v', '<TAB>', '>')
 -- keyset('v', '<S-TAB>', '<')
 
--- 通模式 移动分隔窗口
+-- 通模式 跳转分隔窗口
 keyset('n', '<M-h>', '<C-w>h')
 keyset('n', '<M-j>', '<C-w>j')
 keyset('n', '<M-k>', '<C-w>k')
@@ -37,24 +34,27 @@ keyset('n', '<M-l>', '<C-w>l')
 keyset('n', '<leader>s', ':vsp<CR>')
 
 -- 关闭分割窗口
-keyset('n', '<leader>qh', '<C-w>h:q<CR>')
-keyset('n', '<leader>qj', '<C-w>j:q<CR>')
-keyset('n', '<leader>qk', '<C-w>k:q<CR>')
-keyset('n', '<leader>ql', '<C-w>l:q<CR>')
-keyset('n', '<leader>qo', ':only<CR>')
+keyset('n', 'qh', '<C-w>h:q<CR>')
+keyset('n', 'qj', '<C-w>j:q<CR>')
+keyset('n', 'qk', '<C-w>k:q<CR>')
+keyset('n', 'ql', '<C-w>l:q<CR>')
+keyset('n', 'qo', ':only<CR>')
 keyset('n', 'qq', ':q<CR>')
 
 -- 关闭除当前缓冲区以外的 buffer
-keyset('n', '<leader>qa', ':Bdelete other<CR>')
+keyset('n', '<leader>qo', ':Bdelete other<CR>')
 -- 关闭所有未显示在窗口的 buffer
 keyset('n', '<leader>qh', ':Bdelete hidden<CR>')
+-- 关闭所有 buffer
+keyset('n', '<leader>qa', ':Bdelete all<CR>')
+-- 关闭当前 buffer， 并跳转下一个buffer
+keyset('n', '<leader>qq', ':bnext | bdelete #<CR>')
 
 -- 移动分割窗口
-keyset('n', '<up>', '<C-w>K')
-keyset('n', '<down>', '<C-w>J')
-keyset('n', '<left>', '<C-w>H')
-keyset('n', '<right>', '<C-w>L')
-
+-- keyset('n', '<up>', '<C-w>K')
+-- keyset('n', '<down>', '<C-w>J')
+-- keyset('n', '<left>', '<C-w>H')
+-- keyset('n', '<right>', '<C-w>L')
 
 -- 输入, 命令模式下，按下 alt + hjkl 为光标移动
 keyset({'i','c'}, '<M-h>', '<left>')
@@ -71,7 +71,7 @@ keyset('n', '=', ':vertical res +5<CR>')
 -- 保存, 退出
 keyset('n', '<C-s>', ':w<CR>')
 -- keyset('n', '<leader>s', ':w<CR>')
-keyset('n', '<leader>qq', ':q<CR>')
+-- keyset('n', '<leader>qq', ':q<CR>')
 keyset('n', 'Q', ':bnext | bdelete #<CR>')
 
 -- 自定义查找下一处待输入

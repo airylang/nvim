@@ -1,33 +1,5 @@
-local lspkind = require('lspkind')
-
-local kind_icons = {
-  Text = "",
-  Method = "m",
-  Function = "",
-  Constructor = "",
-  Field = "",
-  Variable = "",
-  Class = "",
-  Interface = "",
-  Module = "",
-  Property = "",
-  Unit = "",
-  Value = "",
-  Enum = "",
-  Keyword = "",
-  Snippet = "",
-  Color = "",
-  File = "",
-  Reference = "",
-  Folder = "",
-  EnumMember = "",
-  Constant = "",
-  Struct = "",
-  Event = "",
-  Operator = "",
-  TypeParameter = "",
-}
--- find more here: https://www.nerdfonts.com/cheat-sheet
+-- local lspkind = require('lspkind')
+local kindIcons = require('lsp.icon')
 
 local t = function(str)
   return vim.api.nvim_replace_termcodes(str, true, true, true)
@@ -45,6 +17,7 @@ cmp.setup{
     documentation = cmp.config.window.bordered(),
   },
   mapping = {
+
     ["<Tab>"] = cmp.mapping({
       c = function()       if cmp.visible() then
           cmp.select_next_item({ behavior = cmp.SelectBehavior.Insert })
@@ -140,10 +113,10 @@ cmp.setup{
     fields = { "kind", "abbr", "menu" },
     format = function(entry, vim_item)
       -- Kind icons
-      vim_item.kind = string.format("%s", kind_icons[vim_item.kind])
+      vim_item.kind = string.format("%s", kindIcons[vim_item.kind])
       vim_item.menu = ({
         nvim_lsp = "[LSP]",
-        ultisnips = "[Snippet]",
+        vsnip = "[Snippet]",
         buffer = "[Buffer]",
         path = "[Path]",
       })[entry.source.name]
@@ -155,8 +128,19 @@ cmp.setup{
     { name = 'nvim_lsp' },
     { name = 'vsnip' },
   }, {
-    { name = 'buffer' },
-    { name = 'path' },
+      {
+        name = 'buffer',
+        keyword_length = 2,
+        option = {
+          -- 改为从所有已打开buffer匹配补全(默认只从当前buffer匹配)
+          get_bufnrs = function()
+            return vim.api.nvim_list_bufs()
+          end
+        }
+      },
+      {
+        name = 'path'
+      },
   })
 }
 
@@ -186,4 +170,6 @@ cmp.setup.cmdline(':', {
     { name = 'cmdline' }
   })
 })
+
+
 

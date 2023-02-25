@@ -1,11 +1,52 @@
 vim.diagnostic.config({ virtual_text = true })
 
-require("lspsaga").setup()
+require("lspsaga").setup({
+  scroll_preview = {
+    scroll_down = "<C-d>",
+    scroll_up = "<C-u>",
+  },
+
+  -- 在文件顶部显示标识符层级
+  symbol_in_winbar = {
+    enable = false,
+    separator = " ",
+    ignore_patterns={},
+    hide_keyword = true,
+    show_file = true,
+    folder_level = 2,
+    respect_root = false,
+    color_mode = true,
+  },
+
+  ui = {
+    -- This option only works in Neovim 0.9
+    title = true,
+
+    -- Border type can be single, double, rounded, solid, shadow.
+    border = "rounded", -- 推荐
+    winblend = 0,
+    expand = "",
+    collapse = "",
+    code_action = "",
+    -- code_action = "💡",
+    incoming = " ",
+    outgoing = " ",
+    hover = ' ',
+    kind = {},
+  },
+})
+
+
+-- 定义代码诊断图标
+vim.fn.sign_define("DiagnosticSignError", { text = '', texthl = 'DiagnosticSignError' })
+vim.fn.sign_define("DiagnosticSignWarn", { text = '', texthl = 'DiagnosticSignWarn' })
+vim.fn.sign_define("DiagnosticSignInfo", { text = '', texthl = 'DiagnosticSignInfo' })
+vim.fn.sign_define("DiagnosticSignHint", { text = '', texthl = 'DiagnosticSignHint' })
 
 local keymap = vim.keymap.set
 -- you can use <C-t> to jump back
 keymap("n", "gl", "<cmd>Lspsaga lsp_finder<CR>")
-keymap({"n","v"}, "<leader>aa", "<cmd>Lspsaga code_action<CR>")
+keymap({"n","v"}, "ga", "<cmd>Lspsaga code_action<CR>")
 keymap("n", "<leader>rn", "<cmd>Lspsaga rename<CR>")
 keymap("n", "<leader>RN", "<cmd>Lspsaga rename ++project<CR>")
 

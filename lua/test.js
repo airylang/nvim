@@ -12,19 +12,26 @@ function test() {
     })
   }
 
-  let count;
+  let sum;
 
   let ccc = 5 + 3 * 100
 
+
   if (ccc > 10) {
-    count = 100
+    sum = 100
   } else {
-    count = 200
+    sum = 200
   }
 
-  console.log(count)
+  abcbb = 55
 
-  fun()
+  let a = abcbb() + 5
+
+  console.log(sum)
+  // Math.random.
+  console.log(555)
+
+  // JSON.parse()
 
   const nnnn = 555
   if (Math.random() > 0.5) {
@@ -32,6 +39,8 @@ function test() {
   } else {
     console.log(555)
   }
+
+  const let = 5
 
   function (a, b, c) {
     return String(a)
