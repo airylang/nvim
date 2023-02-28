@@ -1,6 +1,9 @@
 vim.diagnostic.config({ virtual_text = true })
 
 require("lspsaga").setup({
+  diagnostic = {
+    on_insert_follow = false,
+  },
   scroll_preview = {
     scroll_down = "<C-d>",
     scroll_up = "<C-u>",
@@ -38,8 +41,8 @@ require("lspsaga").setup({
 
 
 -- 定义代码诊断图标
-vim.fn.sign_define("DiagnosticSignError", { text = '', texthl = 'DiagnosticSignError' })
-vim.fn.sign_define("DiagnosticSignWarn", { text = '', texthl = 'DiagnosticSignWarn' })
+vim.fn.sign_define("DiagnosticSignError", { text = '󰶻', texthl = 'DiagnosticSignError' })
+vim.fn.sign_define("DiagnosticSignWarn", { text = '󱐋', texthl = 'DiagnosticSignWarn' })
 vim.fn.sign_define("DiagnosticSignInfo", { text = '', texthl = 'DiagnosticSignInfo' })
 vim.fn.sign_define("DiagnosticSignHint", { text = '', texthl = 'DiagnosticSignHint' })
 
@@ -115,8 +118,8 @@ keymap("n", "K", "<cmd>Lspsaga hover_doc<CR>")
 keymap("n", "<leader>k", "<cmd>Lspsaga hover_doc ++keep<CR>")
 
 -- Call hierarchy
-keymap("n", "<Leader>gi", "<cmd>Lspsaga incoming_calls<CR>")
-keymap("n", "<Leader>gb", "<cmd>Lspsaga outgoing_calls<CR>")
+keymap("n", "<leader>gi", "<cmd>Lspsaga incoming_calls<CR>")
+keymap("n", "<leader>gb", "<cmd>Lspsaga outgoing_calls<CR>")
 
 -- Floating terminal
 keymap({"n", "t"}, "<M-t>", "<cmd>Lspsaga term_toggle<CR>")

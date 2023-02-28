@@ -40,13 +40,15 @@ keyset('n', 'qk', '<C-w>k:q<CR>')
 keyset('n', 'ql', '<C-w>l:q<CR>')
 keyset('n', 'qo', ':only<CR>')
 keyset('n', 'qq', ':q<CR>')
+-- 关闭当前 buffer， 并跳转下一个buffer
+keyset('n', 'qd', ':bnext | bdelete # | q<CR>')
 
 -- 关闭除当前缓冲区以外的 buffer
 keyset('n', '<leader>qo', ':Bdelete other<CR>')
 -- 关闭所有未显示在窗口的 buffer
 keyset('n', '<leader>qh', ':Bdelete hidden<CR>')
--- 关闭所有 buffer
-keyset('n', '<leader>qa', ':Bdelete all<CR>')
+-- 关闭其他 buffer, 以及其他分割窗口
+keyset('n', '<leader>qa', ':only | Bdelete other<CR>')
 -- 关闭当前 buffer， 并跳转下一个buffer
 keyset('n', '<leader>qq', ':bnext | bdelete #<CR>')
 
@@ -149,3 +151,4 @@ keyset('n', '<leader>ss', ':SessionManager load_session<CR>')
 keyset('n', '<leader>sw', ':SessionManager save_current_session<CR>')
 keyset('n', '<leader>sd', ':SessionManager delete_session<CR>')
 keyset('n', '<leader>sc', ':SessionManager load_current_dir_session<CR>')
+

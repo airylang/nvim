@@ -8,6 +8,7 @@ require("mason-lspconfig").setup {
     'html',
     'jsonls' ,
     'emmet_ls',
+    'lemminx',-- xml
   },
 }
 
@@ -35,6 +36,14 @@ lspconfig['tsserver'].setup {
 
 -- vue
 lspconfig['vuels'].setup {
+  on_attach = on_attach,
+  flags = lsp_flags,
+  capabilities = capabilities,
+  settings = {
+
+  },
+}
+lspconfig['volar'].setup {
   on_attach = on_attach,
   flags = lsp_flags,
   capabilities = capabilities,
@@ -75,7 +84,7 @@ lspconfig['cssls'].setup {
   on_attach = on_attach,
   flags = lsp_flags,
   capabilities = capabilities,
-  filetypes = { "css", "scss", "less", 'wxss' },
+  filetypes = { "css", "scss", "less", 'wxss', "vue" },
   settings = { },
 }
 
@@ -92,11 +101,15 @@ lspconfig['emmet_ls'].setup {
   on_attach = on_attach,
   flags = lsp_flags,
   capabilities = capabilities,
-  filetypes = { "html", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less", "eruby", "wxml" },
+  filetypes = { "html", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less", "eruby", "wxml", "vue" },
   settings = {
 
   },
 }
+
+-- xml
+lspconfig['lemminx'].setup{}
+
 
 require("lsp.cmp")
 -- require('lsp.lspKeyMap')

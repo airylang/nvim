@@ -23,3 +23,7 @@ require('plugin-config/neoscroll')
 -- require('plugin-config/onedark')
 -- require('plugin-config/whichkey')
 -- require('plugin-config/tressitter-textobject')
+
+require('dap/dap-ui')
+require('dap/dap-key')
+require('dap/launch')

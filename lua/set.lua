@@ -41,3 +41,4 @@ vim.cmd('autocmd InsertLeave * set nocul')
 
 
 vim.o.signcolumn = 'yes'
+vim.o.signcolumn = 'number'

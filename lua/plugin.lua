@@ -181,6 +181,14 @@ return require('packer').startup(function()
   -- 多光标插件
   use 'mg979/vim-visual-multi'
 
+  -- java 插件
+  use 'mfussenegger/nvim-jdtls'
+
+  -- 调试
+  use 'mfussenegger/nvim-dap'
+  use  'rcarriga/nvim-dap-ui'
+  use 'theHamsta/nvim-dap-virtual-text'
+
   -- 多个主题
   use 'lunarvim/colorschemes'
 
