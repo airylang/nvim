@@ -37,6 +37,9 @@ return require('packer').startup(function()
     branch = 'v2',
   }
 
+  -- like hop
+  use 'ggandor/leap.nvim'
+
   -- wxml
   use 'chemzqm/wxapp.vim'
 

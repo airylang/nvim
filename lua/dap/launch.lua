@@ -9,12 +9,12 @@ dap.configurations.java = {
     -- projectName = "yy-test",
 
     javaExec = "/soft/java/jdk-17/bin/java",
-    -- mainClass = "your.package.name.MainClassName",
+    mainClass = "com.yy.App",
 
     -- If using the JDK9+ module system, this needs to be extended
     -- `nvim-jdtls` would automatically populate this property
     -- modulePaths = {},
-    name = "Launch YourClassName",
+    name = "运行yy-test",
     request = "launch",
     type = "java",
     vmArgs = "--add-opens java.base/java.lang=ALL-UNNAMED",

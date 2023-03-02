@@ -32,6 +32,7 @@ keyset('n', '<M-l>', '<C-w>l')
 
 -- 打开 分割窗口
 keyset('n', '<leader>s', ':vsp<CR>')
+keyset('n', '<leader>sp', ':vsp<CR>')
 
 -- 关闭分割窗口
 keyset('n', 'qh', '<C-w>h:q<CR>')
