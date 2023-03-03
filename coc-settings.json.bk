@@ -1,7 +1,0 @@
-{
-  "snippets.ultisnips.directories": [
-    "UltiSnips",
-    "/soft/mySnippets",
-    "/soft/nvimPlugin/vim-snippets/UltiSnips"
- ]
-}

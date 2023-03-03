@@ -60,10 +60,16 @@ keyset('n', '<leader>qq', ':bnext | bdelete #<CR>')
 -- keyset('n', '<right>', '<C-w>L')
 
 -- 输入, 命令模式下，按下 alt + hjkl 为光标移动
-keyset({'i','c'}, '<M-h>', '<left>')
-keyset({'i','c'}, '<M-j>', '<down>')
-keyset({'i','c'}, '<M-k>', '<up>')
-keyset({'i','c'}, '<M-l>', '<right>')
+-- keyset({'i','c'}, '<M-h>', '<left>')
+-- keyset({'i','c'}, '<M-j>', '<down>')
+-- keyset({'i','c'}, '<M-k>', '<up>')
+-- keyset({'i','c'}, '<M-l>', '<right>')
+
+-- 输入, 命令模式下，按下 ctrl + hjkl 为光标移动
+keyset({'i','c'}, '<C-h>', '<left>')
+keyset({'i','c'}, '<C-j>', '<down>')
+keyset({'i','c'}, '<C-k>', '<up>')
+keyset({'i','c'}, '<C-l>', '<right>')
 
 -- 窗口大小扩展
 keyset('n', '+', ':res +5<CR>')
@@ -152,4 +158,8 @@ keyset('n', '<leader>ss', ':SessionManager load_session<CR>')
 keyset('n', '<leader>sw', ':SessionManager save_current_session<CR>')
 keyset('n', '<leader>sd', ':SessionManager delete_session<CR>')
 keyset('n', '<leader>sc', ':SessionManager load_current_dir_session<CR>')
+
+
+-- makrdown 
+keyset('n', '<leader>md', '<Plug>MarkdownPreview')
 

@@ -40,17 +40,56 @@ lspconfig['vuels'].setup {
   flags = lsp_flags,
   capabilities = capabilities,
   settings = {
+    init_options = {
+      config = {
+        css = {},
+        emmet = {},
+        html = {
+          suggest = {}
+        },
+        javascript = {
+          format = {}
+        },
+        stylusSupremacy = {},
+        typescript = {
+          format = {}
+        },
+        vetur = {
+          completion = {
+            autoImport = false,
+            tagCasing = "kebab",
+            useScaffoldSnippets = false
+          },
+          format = {
+            defaultFormatter = {
+              js = "none",
+              ts = "none"
+            },
+            defaultFormatterOptions = {},
+            scriptInitialIndent = false,
+            styleInitialIndent = false
+          },
+          useWorkspaceDependencies = false,
+          validation = {
+            script = true,
+            style = true,
+            template = true
+          }
+        }
+      }
+    }
 
   },
 }
-lspconfig['volar'].setup {
-  on_attach = on_attach,
-  flags = lsp_flags,
-  capabilities = capabilities,
-  settings = {
 
-  },
-}
+-- lspconfig['volar'].setup {
+--   on_attach = on_attach,
+--   flags = lsp_flags,
+--   capabilities = capabilities,
+--   settings = {
+--
+--   },
+-- }
 
 -- lua
 lspconfig['lua_ls'].setup {
@@ -101,7 +140,7 @@ lspconfig['emmet_ls'].setup {
   on_attach = on_attach,
   flags = lsp_flags,
   capabilities = capabilities,
-  filetypes = { "html", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less", "eruby", "wxml", "vue" },
+  filetypes = { "html", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less", "eruby", "wxml" },
   settings = {
 
   },

@@ -13,11 +13,17 @@ return require('packer').startup(function()
   -- 配对符号
   use 'windwp/nvim-autopairs'
 
+  -- . 操作
+  use "tpope/vim-repeat"
+
+  -- TODO
+  use 'tpope/vim-unimpaired'
+
   -- 平滑滚动
-  use 'karb94/neoscroll.nvim'
+  use "karb94/neoscroll.nvim"
 
   -- 缩进线
-  use 'Yggdroot/indentLine'
+  use "Yggdroot/indentLine"
 
   -- 启动界面
   -- use 'mhinz/vim-startify'
@@ -187,10 +193,30 @@ return require('packer').startup(function()
   -- java 插件
   use 'mfussenegger/nvim-jdtls'
 
+  -- markdown 预览
+  use({ "iamcco/markdown-preview.nvim", run = "cd app && npm install", setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" }, })
+  -- use({ "iamcco/markdown-preview.nvim", run = "cd app && yarn install", setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" }, })
+
   -- 调试
   use 'mfussenegger/nvim-dap'
   use  'rcarriga/nvim-dap-ui'
   use 'theHamsta/nvim-dap-virtual-text'
+
+  --chat gpt
+  -- Packer
+  use({
+    "jackMort/ChatGPT.nvim",
+    config = function()
+      require("chatgpt").setup({
+        -- optional configuration
+      })
+    end,
+    requires = {
+      "MunifTanjim/nui.nvim",
+      "nvim-lua/plenary.nvim",
+      "nvim-telescope/telescope.nvim"
+    }
+  })
 
   -- 多个主题
   use 'lunarvim/colorschemes'
@@ -211,10 +237,7 @@ return require('packer').startup(function()
   use 'sickill/vim-monokai'
 
   -- 主题
-  use {
-    'sonph/onehalf',
-    rtp = 'vim'
-  }
+  use { 'sonph/onehalf', rtp = 'vim' }
 
   -- 主题
   use 'rakr/vim-one'
@@ -223,12 +246,12 @@ return require('packer').startup(function()
   use 'mhartington/oceanic-next'
 
   -- 主题
-  use 'navarasu/onedark.nvim'
+  use "navarasu/onedark.nvim"
 
   -- 主题
-  use 'lunarvim/darkplus.nvim'
+  use "lunarvim/darkplus.nvim"
 
   -- 主题
-  use 'sainnhe/edge'
+  use "sainnhe/edge"
 end)
 
