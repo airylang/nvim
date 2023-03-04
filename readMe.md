@@ -8,10 +8,4 @@ const list = [
   '姑苏城外寒山寺',
   '夜半钟声到客船',
 ]
-
-function getName(num) {
-
-}
-
-
 ```
