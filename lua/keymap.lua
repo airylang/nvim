@@ -5,6 +5,8 @@ local keyset = vim.keymap.set
 keyset('', '<C-j>', '5j')
 keyset('', '<C-k>', '5k')
 
+keyset('n', '<BS>', 's')
+
 -- 取消搜索
 -- keyset('n', '<leader><CR>', ':nohls<CR>')
 keyset('', '<Esc>', '<Esc>:nohls<CR>')
@@ -13,8 +15,9 @@ keyset('', '<Esc>', '<Esc>:nohls<CR>')
 keyset('', '<C-l>', '$')
 keyset('', '<C-h>', '0^')
 
--- c-l 占用，重新一个快捷键来清屏
--- keyset('n', '<C-m>', '<c-l>')
+-- 插入空行, 光标位置不变
+keyset('n', '[<Space>', 'mmO<Esc>d0<Esc>`m')
+keyset('n', ']<Space>', 'mmo<Esc>d0<Esc>`m')
 
 -- n 模式下 tab, shift+tab 轮换buffer
 keyset('n', '<tab>', ':bnext<CR>')
@@ -158,7 +161,6 @@ keyset('n', '<leader>ss', ':SessionManager load_session<CR>')
 keyset('n', '<leader>sw', ':SessionManager save_current_session<CR>')
 keyset('n', '<leader>sd', ':SessionManager delete_session<CR>')
 keyset('n', '<leader>sc', ':SessionManager load_current_dir_session<CR>')
-
 
 -- makrdown 
 keyset('n', '<leader>md', '<Plug>MarkdownPreview')

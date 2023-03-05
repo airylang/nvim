@@ -69,6 +69,10 @@ require'nvim-treesitter.configs'.setup {
       include_surrounding_whitespace = true,
     },
   },
+  matchup = {
+    enable = true,              -- mandatory, false will disable the whole extension
+    -- disable = { "c", "ruby" },  -- optional, list of language that will be disabled
+  },
 }
 
 -- 开启 Folding

@@ -7,8 +7,11 @@ return require('packer').startup(function()
   -- 改变包裹符号
   use 'tpope/vim-surround'
 
-  -- 跳转 hmtl end 标签
-  use 'adelarsq/vim-matchit'
+  -- 跳转 hmtl end 标签 , 过时了
+  -- use 'adelarsq/vim-matchit'
+
+  -- 在符号之间跳转
+  use 'andymass/vim-matchup'
 
   -- 配对符号
   use 'windwp/nvim-autopairs'
@@ -16,14 +19,17 @@ return require('packer').startup(function()
   -- . 操作
   use "tpope/vim-repeat"
 
-  -- TODO
-  use 'tpope/vim-unimpaired'
+  -- 定义操作、切换的快捷键
+  -- use 'tpope/vim-unimpaired'
 
   -- 平滑滚动
-  use "karb94/neoscroll.nvim"
+  -- use "karb94/neoscroll.nvim"
 
   -- 缩进线
-  use "Yggdroot/indentLine"
+  -- use "Yggdroot/indentLine"
+
+  -- 缩进线
+  use "lukas-reineke/indent-blankline.nvim"
 
   -- 启动界面
   -- use 'mhinz/vim-startify'
@@ -133,25 +139,8 @@ return require('packer').startup(function()
   use "hrsh7th/cmp-nvim-lua"
 
   -- 将未使用的函数、变量调为暗色
-  use {
-    "zbirenbaum/neodim",
-    event = "LspAttach",
-    config = function ()
-      require("neodim").setup({
-        alpha = 0.75,
-        blend_color = "#000000",
-        update_in_insert = {
-          enable = true,
-          delay = 100,
-        },
-        hide = {
-          virtual_text = true,
-          signs = true,
-          underline = true,
-        }
-      })
-    end
-  }
+  use { "zbirenbaum/neodim", event = "LspAttach" }
+
   -- vsnip
   use 'hrsh7th/cmp-vsnip'    -- { name = 'vsnip' }
   use 'hrsh7th/vim-vsnip'
@@ -194,7 +183,7 @@ return require('packer').startup(function()
   use 'mfussenegger/nvim-jdtls'
 
   -- markdown 预览
-  use({ "iamcco/markdown-preview.nvim", run = "cd app && npm install", setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" }, })
+  use({ "iamcco/markdown-preview.nvim", run = "cd app && npm install", setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" } })
   -- use({ "iamcco/markdown-preview.nvim", run = "cd app && yarn install", setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" }, })
 
   -- 调试
@@ -253,5 +242,8 @@ return require('packer').startup(function()
 
   -- 主题
   use "sainnhe/edge"
+
+  -- 主题
+  use 'AlphaTechnolog/onedarker.nvim'
 end)
 

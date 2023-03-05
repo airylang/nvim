@@ -1,9 +1,10 @@
 -- local lspkind = require('lspkind')
 local kindIcons = require('lsp.icon')
 
-local t = function(str)
-  return vim.api.nvim_replace_termcodes(str, true, true, true)
-end
+-- local t = function(str)
+--   return vim.api.nvim_replace_termcodes(str, true, true, true)
+-- end
+
 local cmp = require('cmp')
 
 cmp.setup{

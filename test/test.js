@@ -1,5 +1,6 @@
 
 import { fun } from './util.js' 
+const a = 5
 
 // Function
 function test() {
@@ -13,6 +14,7 @@ function test() {
   }
 
   let sum;
+  let aslkj;
 
   let ccc = 5 + 3 * 100
 

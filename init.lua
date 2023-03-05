@@ -4,6 +4,8 @@ require('themes')
 require('keymap')
 require("lsp")
 -- require('plugin-config/coc');
+require('plugin-config/matchup')
+require('plugin-config/indent-blankline')
 require('plugin-config/session')
 require('plugin-config/autopairs')
 require('plugin-config/nvim-tree')
