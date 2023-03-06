@@ -98,6 +98,11 @@ return require('packer').startup(function()
   -- 项目管理插件
   use 'nvim-telescope/telescope-project.nvim'
 
+  -- 搜索/替换
+  use 'nvim-pack/nvim-spectre'
+  -- 搜索插件的依赖
+  use 'nvim-lua/plenary.nvim'
+
   -- 文件树
   use {
     'nvim-tree/nvim-tree.lua',

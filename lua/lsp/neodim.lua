@@ -1,5 +1,5 @@
 require("neodim").setup({
-  alpha = 0.75,
+  alpha = 0.55,
   blend_color = "#000000",
   update_in_insert = {
     enable = true,

@@ -152,8 +152,7 @@ lspconfig['lemminx'].setup{}
 
 require("lsp.cmp")
 -- require('lsp.lspKeyMap')
--- require('lsp.lspsaga-cp')
 require('lsp.lspsaga')
 
--- require('lsp.neodim')
+require('lsp.neodim')
 
