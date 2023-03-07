@@ -23,6 +23,7 @@ require('plugin-config/git')
 require('plugin-config/translator')
 require('plugin-config/yank')
 require('plugin-config/markdown')
+require('plugin-config/vsnippet')
 -- require('plugin-config/neoscroll') -- 有点卡顿
 -- require('plugin-config/onedark')
 -- require('plugin-config/whichkey')

@@ -35,39 +35,64 @@ require'nvim-treesitter.configs'.setup {
       lookahead = true,
 
       keymaps = {
-        -- You can use the capture groups defined in textobjects.scm
         ["af"] = "@function.outer",
         ["if"] = "@function.inner",
         ["ac"] = "@class.outer",
-        -- You can optionally set descriptions to the mappings (used in the desc parameter of
-        -- nvim_buf_set_keymap) which plugins like which-key display
         ["ic"] = { query = "@class.inner", desc = "Select inner part of a class region" },
         -- You can also use captures from other query groups like `locals.scm`
         ["as"] = { query = "@scope", query_group = "locals", desc = "Select language scope" },
       },
-      -- You can choose the select mode (default is charwise 'v')
-      --
-      -- Can also be a function which gets passed a table with the keys
-      -- * query_string: eg '@function.inner'
-      -- * method: eg 'v' or 'o'
-      -- and should return the mode ('v', 'V', or '<c-v>') or a table
-      -- mapping query_strings to modes.
       selection_modes = {
         ['@parameter.outer'] = 'v', -- charwise
         ['@function.outer'] = 'V', -- linewise
         ['@class.outer'] = '<c-v>', -- blockwise
       },
-      -- If you set this to `true` (default is `false`) then any textobject is
-      -- extended to include preceding or succeeding whitespace. Succeeding
-      -- whitespace has priority in order to act similarly to eg the built-in
-      -- `ap`.
-      --
-      -- Can also be a function which gets passed a table with the keys
-      -- * query_string: eg '@function.inner'
-      -- * selection_mode: eg 'v'
-      -- and should return true of false
-      include_surrounding_whitespace = true,
+      include_surrounding_whitespace = false,
     },
+    swap = {
+      enable = true,
+      swap_next = {
+        ['<leader>a'] = '@parameter.inner',
+      },
+      swap_previous = {
+        ['<leader>A'] = '@parameter.inner',
+      }
+    },
+    move = {
+      enable = true,
+      set_jumps = true,
+      goto_next_start = {
+        -- 跳转下一个函数
+        [']f'] = '@function.outer',
+        ["]o"] = "@loop.*",
+
+        -- 跳转下一个范围 如 function 以及 { } 的开始
+        ["]s"] = { query = "@scope", query_group = "locals", desc = "Next scope" },
+
+        -- 跳转至下一个可折叠的地方
+        ["]z"] = { query = "@fold", query_group = "folds", desc = "Next fold" },
+      },
+      goto_next_end = {
+        [']F'] = '@function.outer',
+      },
+      goto_previous_start = {
+        ['[f'] = '@function.outer',
+      },
+      goto_previous_end = {
+        ['[F'] = '@function.outer'
+      },
+
+      -- 跳转下一个 if
+      goto_next = {
+        [']i'] = '@conditional.outer',
+      },
+      goto_previous = {
+        ['[i'] = '@conditional.outer',
+      }
+    }
+  },
+  tree_docs = {
+    enable = true,
   },
   matchup = {
     enable = true,              -- mandatory, false will disable the whole extension
@@ -81,4 +106,21 @@ vim.o.foldexpr = 'nvim_treesitter#foldexpr()'
 
 -- 解析 wxml 好像没效果
 local ft_to_parser = require"nvim-treesitter.parsers".filetype_to_parsername
-ft_to_parser.wxml = "vue"
+-- ft_to_parser.wxml = "vue"
+
+local ts_repeat_move = require "nvim-treesitter.textobjects.repeatable_move"
+-- Repeat movement with ; and ,
+vim.keymap.set({ "n", "x", "o" }, ";", ts_repeat_move.repeat_last_move_next)
+vim.keymap.set({ "n", "x", "o" }, ",", ts_repeat_move.repeat_last_move_previous)
+
+-- Optionally, make builtin f, F, t, T also repeatable with ; and ,
+vim.keymap.set({ "n", "x", "o" }, "f", ts_repeat_move.builtin_f)
+vim.keymap.set({ "n", "x", "o" }, "F", ts_repeat_move.builtin_F)
+vim.keymap.set({ "n", "x", "o" }, "t", ts_repeat_move.builtin_t)
+vim.keymap.set({ "n", "x", "o" }, "T", ts_repeat_move.builtin_T)
+
+-- 使跳转 git 修改处时也可以使用 ; ,
+local gs = require("gitsigns")
+local next_hunk_repeat, prev_hunk_repeat = ts_repeat_move.make_repeatable_move_pair(gs.next_hunk, gs.prev_hunk)
+vim.keymap.set({ "n", "x", "o" }, "]c", next_hunk_repeat)
+vim.keymap.set({ "n", "x", "o" }, "[c", prev_hunk_repeat)

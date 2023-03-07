@@ -68,8 +68,10 @@ return require('packer').startup(function()
   use {
     "nvim-treesitter/nvim-treesitter-textobjects",
     after = "nvim-treesitter",
-    requires = "nvim-treesitter/nvim-treesitter",
   }
+
+  -- code docs
+  use 'nvim-treesitter/nvim-tree-docs'
 
   -- tab 栏
   use {

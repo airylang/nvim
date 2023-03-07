@@ -10,5 +10,12 @@ require("bufferline").setup{
         separator = true
       }
     },
+  },
+
+  highlights = {
+    -- buffer 选中时 文字修改为非斜体（默认为斜体）
+    buffer_selected = {
+      italic = false,
+    },
   }
 }

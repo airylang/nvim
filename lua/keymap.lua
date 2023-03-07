@@ -12,8 +12,10 @@ keyset('n', '<BS>', 's')
 keyset('', '<Esc>', '<Esc>:nohls<CR>')
 
 -- ctrl + h l 跳转行首行尾
-keyset('', '<C-l>', '$')
-keyset('', '<C-h>', '0^')
+-- keyset('', '<C-l>', '$')
+-- keyset('', '<C-h>', '0^')
+keyset('', 'L', '$')
+keyset('', 'H', '0^')
 
 -- 插入空行, 光标位置不变
 keyset('n', '[<Space>', 'mmO<Esc>d0<Esc>`m')
@@ -118,7 +120,7 @@ keyset('n', '<leader>tt', ':NvimTreeToggle ./ <CR>')
 keyset('n', '<leader>to', ':NvimTreeClose | NvimTreeOpen ')
 -- keyset('n', '<leader>h', ':NvimTreeFindFile!<CR>')
 
--- 等价于 按两次ctrl, 以及 ctrl + c
+--  ctrl + c, (开了有道词典以及设置取词为两次ctrl 后 等价于 按两次ctrl)
 keyset('n', '<C-c>', ':NvimTreeFindFile!<CR>')
 
 -- 文件/代码/项目搜索 telescope

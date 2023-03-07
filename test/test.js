@@ -2,7 +2,6 @@
 import { fun } from './util.js' 
 const a = 5
 
-// Function
 function test() {
 
   const abc = 5
@@ -44,12 +43,28 @@ function test() {
 
   const let = 5
 
-  function (a, b, c) {
+  function t1(a, b, c) {
     return String(a)
     // Math.random.bind
   }
+
+  function t2(c, b, a) {
+    return 555
+  }
+
 }
 
 class f {
+  // public name = 5;
+
+  save() {
+    return 45
+  }
+
+  remove() {
+    return 222
+  }
 
 }
+
+function kj(params) { for (let jj = 0; jj < array.length; jj++) { const element = array[jj]; if (jj) { for (let j = 0; j < array.length; j++) { const element = array[j]; while (j) { try { } catch (err) { } } } } } }
