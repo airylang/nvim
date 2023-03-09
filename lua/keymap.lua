@@ -21,6 +21,10 @@ keyset('', 'H', '0^')
 keyset('n', '[<Space>', 'mmO<Esc>d0<Esc>`m')
 keyset('n', ']<Space>', 'mmo<Esc>d0<Esc>`m')
 
+-- 上下移动当前行
+keyset('n', '[e', ":<c-u>execute 'move -1-'. v:count1<cr>")
+keyset('n', ']e', ":<c-u>execute 'move +'. v:count1<cr>")
+
 -- n 模式下 tab, shift+tab 轮换buffer
 keyset('n', '<tab>', ':bnext<CR>')
 keyset('n', '<S-tab>', ':bprevious<CR>')
@@ -65,10 +69,10 @@ keyset('n', '<leader>qq', ':bnext | bdelete #<CR>')
 -- keyset('n', '<right>', '<C-w>L')
 
 -- 输入, 命令模式下，按下 alt + hjkl 为光标移动
--- keyset({'i','c'}, '<M-h>', '<left>')
--- keyset({'i','c'}, '<M-j>', '<down>')
--- keyset({'i','c'}, '<M-k>', '<up>')
--- keyset({'i','c'}, '<M-l>', '<right>')
+keyset({'i','c'}, '<M-h>', '<left>')
+keyset({'i','c'}, '<M-j>', '<down>')
+keyset({'i','c'}, '<M-k>', '<up>')
+keyset({'i','c'}, '<M-l>', '<right>')
 
 -- 输入, 命令模式下，按下 ctrl + hjkl 为光标移动
 keyset({'i','c'}, '<C-h>', '<left>')
@@ -167,3 +171,28 @@ keyset('n', '<leader>sc', ':SessionManager load_current_dir_session<CR>')
 -- makrdown 
 keyset('n', '<leader>md', '<Plug>MarkdownPreview')
 
+keyset('n', '<C-p>', function() 
+  -- local s = vim.fn.getchar()
+  -- local line = vim.fn.getline('.')
+  -- local newLine = vim.fn.substitute(line, 'L', "*", "g")
+  -- print(newLine)
+  -- vim.fn.setline(".", newLine)
+  local user_name = 'zhou'
+
+  -- 在当前位置 插入 "new text"
+  -- vim.fn.execute('normal inew text')
+  -- execute "normal inew text\<Esc>b"
+
+  vim.fn.execute('normal B')
+
+  -- userNameAge  user_name_age  UserNameAge  Usr_Name_Age user-name-age User-Name-Age User/Name/Age
+  -- theTestName
+  local line = vim.fn.getline('.')
+  local col = vim.fn.col('.')
+  -- print(col)
+
+  local list = { 'aaa', 'bbb', 'ccc' }
+
+  -- vim.fn.execute('insert')
+  vim.fn.complete('.', list)
+ end )

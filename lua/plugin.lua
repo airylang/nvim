@@ -19,6 +19,9 @@ return require('packer').startup(function()
   -- . 操作
   use "tpope/vim-repeat"
 
+  -- 单词变换
+  use 'tpope/vim-abolish'
+
   -- 定义操作、切换的快捷键
   -- use 'tpope/vim-unimpaired'
 

@@ -56,14 +56,15 @@ function test() {
 
 class f {
   // public name = 5;
-
+  abc
   save() {
     return 45
   }
 
   remove() {
-    return 222
-  }
+     let  a =5
+        return 222
+    }
 
 }
 

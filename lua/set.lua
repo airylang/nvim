@@ -22,6 +22,7 @@ vim.o.matchtime = 1
 vim.o.directory = '/soft/swap'
 vim.o.wrap = false
 vim.o.mouse = 0
+vim.o.synmaxcol = 200
 -- vim.o.matchpairs = '(:),{:},[:],\':\',":",<:>'
 
 if (vim.fn.has('termguicolors') == 1) then
