@@ -1,0 +1,75 @@
+" 软连接
+" mklink /d C:\Users\yulang\.ideavimrc D:\airylang\nvim\ideavim\.ideavimrc
+
+
+"" -- Map IDE actions to IdeaVim -- https://jb.gg/abva4t
+"" Map \r to the Reformat Code action
+"map \r <Action>(ReformatCode)
+
+" Find more examples here: https://jb.gg/share-ideavimrc
+"      COMMANDS                    MODES ~
+" map   :noremap  :unmap     Normal, Visual, Select, Operator-pending
+" nmap  :nnoremap :nunmap    Normal
+" vmap  :vnoremap :vunmap    Visual and Select
+" smap  :snoremap :sunmap    Select
+" xmap  :xnoremap :xunmap    Visual
+" omap  :onoremap :ounmap    Operator-pending
+" map!  :noremap! :unmap!    Insert and Command-line
+" imap  :inoremap :iunmap    Insert
+" lmap  :lnoremap :lunmap    Insert, Command-line, Lang-Arg
+" cmap  :cnoremap :cunmap    Command-line
+
+" 启用插
+set surround
+
+" 配置
+set hlsearch " 设置代码高亮
+set incsearch " 查找输入时也可以高亮
+
+
+" 快捷键
+let mapleader=" "
+
+map <Esc> <Esc>:nohls<CR>
+
+nnoremap <C-j> 5j
+nnoremap <C-j> 12j
+nnoremap <C-K> 5k
+
+nnoremap L $
+nnoremap H ^
+
+" 移动
+imap <A-h> <left>
+imap <A-l> <right>
+imap <A-j> <down>
+imap <A-k> <up>
+
+map <leader>so :so ~/.ideavimrc
+nmap <BS> s
+
+" 分割窗口
+nmap <leader>sp :vsp<CR>
+nmap <leader>hp :sp<CR>
+nmap qh <C-w>h:q<CR>
+nmap qj <C-w>j:q<CR>
+nmap qk <C-w>j:q<CR>
+nmap ql <C-w>l:q<CR>
+nmap qo :only<CR>
+nmap qq :q<CR>
+nmap <A-h> <C-w>h
+nmap <A-j> <C-w>j
+nmap <A-k> <C-w>k
+nmap <A-l> <C-w>l
+
+" 跳转tab
+nnoremap <Tab> :bnext<CR>
+nnoremap <S-Tab> :bprevious<CR>
+
+" 保存
+map <C-s> :w<CR>
+
+" 查找
+map <leader>fg  <Action>(Find)
+
+
