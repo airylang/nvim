@@ -1,3 +1,5 @@
-Plug 'tpope/vim-surround'
-Plug 'vim-matchit'
-Plug 'chrisbra/matchit'
+set surround
+set matchit
+set highlightedyank
+" set easymotion
+

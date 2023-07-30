@@ -14,7 +14,10 @@ SwitchIME(dwLayout){
 }
 
 ; shift + Capslock 映射为 Capslock
-+Capslock::Capslock
+; +Capslock::Capslock
+
+; alt + Capslock 映射为 Capslock
+!Capslock::Capslock
 
 ; 按下shift键强制切换输入法为中文
 $Shift::
