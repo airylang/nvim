@@ -18,7 +18,6 @@ source D:\airylang\nvim\ideavim\set.vim
 "" Map \r to the Reformat Code action
 "map \r <Action>(ReformatCode)
 
-" Find more examples here: https://jb.gg/share-ideavimrc
 "      COMMANDS                    MODES ~
 " map   :noremap  :unmap     Normal, Visual, Select, Operator-pending
 " nmap  :nnoremap :nunmap    Normal
