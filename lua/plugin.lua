@@ -73,7 +73,7 @@ return require('packer').startup(function()
     after = "nvim-treesitter",
   }
 
-  -- code docs
+  -- code docs 报错
   use 'nvim-treesitter/nvim-tree-docs'
 
   -- tab 栏
@@ -166,7 +166,7 @@ return require('packer').startup(function()
   use 'gbprod/yanky.nvim'
 
   -- 打开终端
-  use { "akinsho/toggleterm.nvim", tag = '*' }
+  -- use { "akinsho/toggleterm.nvim", tag = '*' }
 
   -- TODO
   -- wellle/targets.vim

@@ -7,7 +7,8 @@ require'nvim-treesitter.configs'.setup {
 
 require('nvim_comment').setup({
   -- normal
-  line_mapping = "\\\\",
+  -- line_mapping = "\\\\",
+  line_mapping = "<M-\\>",
 
   -- Visual/Operator mapping left hand side
   operator_mapping = "<C-\\>",

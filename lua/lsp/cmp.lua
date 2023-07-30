@@ -133,30 +133,30 @@ cmp.setup{
   },
 
   sources = cmp.config.sources({
-      {
-        name = 'path',
-        option = {
-          -- 补全路径末尾不加 /
-          label_trailing_slash = false,
-          trailing_slash  = false
-        }
-        -- keyword_length = 0,
-        -- keyword_pattern = ".*?",
-        -- trigger_characters = {}
-      },
     { name = 'nvim_lsp' },
-    { name = 'vsnip' },
-  }, {
-      {
-        name = 'buffer',
+    {
+      name = 'buffer',
+      option = {
+        -- 改为从所有已打开buffer匹配补全(默认只从当前buffer匹配)
+        get_bufnrs = function()
+          return vim.api.nvim_list_bufs()
+        end,
+        keyword_pattern = [[\k\+]],
         keyword_length = 2,
-        option = {
-          -- 改为从所有已打开buffer匹配补全(默认只从当前buffer匹配)
-          get_bufnrs = function()
-            return vim.api.nvim_list_bufs()
-          end
-        }
-      },
+      }
+    },
+    {
+      name = 'path',
+      option = {
+        -- 补全路径末尾不加 /
+        label_trailing_slash = false,
+        trailing_slash  = false
+      }
+      -- keyword_length = 0,
+      -- keyword_pattern = ".*?",
+      -- trigger_characters = {}
+    },
+    { name = 'vsnip' },
   })
 }
 

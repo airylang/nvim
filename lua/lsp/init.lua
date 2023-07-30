@@ -140,7 +140,7 @@ lspconfig['emmet_ls'].setup {
   on_attach = on_attach,
   flags = lsp_flags,
   capabilities = capabilities,
-  filetypes = { "html", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less", "eruby", "wxml" },
+  filetypes = { "html", "typescriptreact", "javascriptreact", "css", "sass", "scss", "less", "eruby", "wxml", "vue" },
   settings = {
 
   },

@@ -93,7 +93,8 @@ keyset('n', '<C-s>', ':w<CR>')
 keyset('n', 'Q', ':bnext | bdelete #<CR>')
 
 -- 自定义查找下一处待输入
--- keyset('i', '<C-n>','<Esc>/<+-+><CR>:nohlsearch<CR>c5l', {})
+keyset({ 'i', 'n' }, '<M-i>', '<Esc>a<+-+>', {})
+keyset({ 'i', 'n' }, '<M-n>', '<Esc>/<+-+><CR>:nohlsearch<CR>c5l', {})
 -- keyset('n', '<C-n>','<Esc>/<+-+><CR>:nohlsearch<CR>c5l', {})
 -- map <LEADER><LEADER> <Esc>/<++><CR>:nohlsearch<CR>c4i
 
@@ -117,6 +118,10 @@ keyset('n', '<leader>so', ':w <CR>:source %<CR>') -- 等价与下面一行, 但�
 -- n 模式下复制并粘贴该行
 keyset('n', '<leader>yy', 'Vygv<Esc>p') -- 无空行
 keyset('n', '<leader>yY', 'Vygv<Esc>o<Esc>p') -- 间隔一个空行
+
+-- 复制一行内容为行内
+keyset('n', '<leader>dd', '^d$')
+keyset('n', '<M-o>', 'jcc')
 
 ---------------------- 以下为插件相关 map
 -- 切换 nvim tree
@@ -144,6 +149,11 @@ vim.api.nvim_set_keymap('n', '<leader>fp', ":lua require'telescope'.extensions.p
 -- telescope 打开剪切板历史
 vim.api.nvim_set_keymap('n', '<leader>fy', ":Telescope yank_history<CR>", {})
 -- vim.api.nvim_set_keymap('n', '<leader>fy', " :lua require('telescope').extensions.yank_history.yank_history()<CR>", {})
+
+keyset('n', '<leader>si', '<cmd>lua require("spectre").open()<CR>', { desc = "Open Spectre" })
+keyset('n', '<leader>sv', '<cmd>lua require("spectre").open_visual({select_word=true})<CR>', { desc = "Search current word" })
+keyset('v', '<leader>sv', '<esc><cmd>lua require("spectre").open_visual()<CR>', { desc = "Search current word" })
+keyset('n', '<leader>sf', '<cmd>lua require("spectre").open_file_search({select_word=true})<CR>', { desc = "Search on current file" })
 
 -- hop 跳转字符、单词、行
 keyset("n", "<leader><leader>",':HopWord<CR>' , {})
