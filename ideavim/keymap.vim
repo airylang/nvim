@@ -1,15 +1,13 @@
-map <leader>rr :w<CR> :source C:/Users/yulang/.ideavimrc<CR>
+map <leader>rr :w<CR> :source ~/.ideavimrc<CR>
 
 " 快速移动
 map <Esc> <Esc>:nohls<CR>
-map <C-j> 6j
+map <C-j> 5j
 map <C-k> 5k
 map L $
 map H ^
 
 " tab 切换
-" map <Tab> :bnext<CR>
-" map <S-Tab> :bprevious<CR>
 map <Tab> <action>(NextTab)
 map <S-Tab> <action>(PreviousTab)
 map <leader>1 <action>(GoToTab1)
@@ -31,6 +29,8 @@ imap <C-BS> <DEL>
 imap <C-h> <left>
 imap <C-l> <right>
 imap <C-a> <Esc>A
+imap <C-j> <action>(EditorDown)
+imap <C-k> <action>(EditorUp)
 
 " 分割窗口
 map <leader>wl :vsp<CR>
