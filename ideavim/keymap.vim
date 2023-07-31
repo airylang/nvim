@@ -9,6 +9,10 @@ map <C-k> 5k
 map L $
 map H ^
 
+" 按单词跳转
+map w ]w
+map b ]b
+
 " tab 切换
 map <Tab> <action>(NextTab)
 map <S-Tab> <action>(PreviousTab)
@@ -153,4 +157,4 @@ map [d <Action>(VcsShowPrevChangeMarker)
 " 选中上一次粘贴的文本
 nnoremap <leader>gv `[v`]
 
-
+map <M-r> <Action>(RecentFiles)
