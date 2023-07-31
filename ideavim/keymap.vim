@@ -1,4 +1,5 @@
-map <leader>rr :w<CR> :source ~/.ideavimrc<CR><Esc>h
+map <leader>rr :w<CR> :source ~/.ideavimrc<CR><Esc>hk
+" IdeaVim.ReloadVimRc.reload
 " noremap <SPACE> <Nop>
 " 使用 nore 方式不能映射 <action>(xxx), 替换为  :action xxx<CR>
 
@@ -27,22 +28,26 @@ map <leader>6 <action>(GoToTab6)
 map <C-s> :w<CR>
 
 " 删除字符
+nnoremap <c-h> s
+nnoremap <c-l> i<Del>
+inoremap <c-h> <BS>
+inoremap <c-l> <DEL>
 map <BS> s
-map <C-BS> DEL>i
-imap <C-BS> <DEL>
+" map <C-BS> DEL>i
+" imap <C-BS> <DEL>
 
 " 输入模式下移动光标
-imap <C-h> <left>
-imap <C-l> <right>
-imap <C-a> <Esc>A
+imap <M-h> <left>
+imap <M-l> <right>
 imap <C-j> <action>(EditorDown)
 imap <C-k> <action>(EditorUp)
+imap <C-a> <Esc>A
 
 " 分割窗口
 map <C-\> :vsp<CR>
 map <C--> :sp<CR>
 
-" 关闭 tab 分隔窗口
+" 关闭 tab、分隔窗口
 nmap qh <C-w>h:q<CR>
 nmap qj <C-w>j:q<CR>
 nmap qk <C-w>j:q<CR>
@@ -63,6 +68,7 @@ nmap <C-v> pa
 imap <C-v> <Esc>pa
 imap <C-p> <Esc>pa
 nmap <C-p> o<Esc>pa
+cmap <C-v> <S-Insert>
 
 " 新行
 imap <S-CR> <Esc>o
@@ -95,22 +101,24 @@ map <leader>ff <Action>(GotoFile) " find file
 map <leader>fc <Action>(GotoClass) " find class
 map <leader>fb <Action>(Switcher) " tab 文件查找
 map <leader>fl <Action>(RecentFiles) " 查找最近打开的文件
+map <leader>fg viw<leader>fg<Esc> " 在项目范围内查找当前单词
+vmap <leader>fg <action>(FindSelectionInPath) " 同上
 
 " 替换
 nnoremap <leader>re :action Replace<CR>
 nnoremap <leader>rg :action ReplaceInPath<CR>
 
-" java 跳转
+java 跳转
 nmap gi <action>(GotoImplementation) " 跳转实现
 nmap gd <action>(GotoDeclaration) " 跳转变量定义
 nmap gD <action>(GotoTypeDeclaration) " 跳转变量类型定义
-nnoremap gb :action Back<CR> " 跳转-回退
+nnoremap b :action Back<CR> " 跳转-回退
 nnoremap gf :action Forward<CR> " 跳转-前进
 nnoremap gt :action GotoTest<CR> " 跳转测试
 map ge <Action>(GotoNextError) " 跳转至下一错误
 map gE <Action>(GotoPreviousError) " 跳转前一个错误
 map gs <Action>(GotoSuperMethod)
-map <C-o> :action JumpToLastChange<CR> " 跳转上一个修改处(非 git)
+map <C-o> :action JumpToLastChange<CR> " 跳转上一个修改处
 map <C-i> :action JumpToNextChange<CR> " 前进修改处
 
 " java-文件内跳转
@@ -129,16 +137,17 @@ map <leader>ro <action>(OverrideMethods)
 map <leader>ru <action>(RunClass)
 map <leader>o <action>(OptimizeImports) " 导包
 
-"" 重构
+" 重构
 map <leader>a <Action>(Refactorings.QuickListPopupAction)
+" OverrideMethods
+
 
 " 重启 ide
 map <leader>rs <action>(RestartIde)
 
 " nerd tree
 map <C-t> :NERDTreeToggle<CR>
-map <C-f> :NERDTreeFind<CR>
-let g:NERDTreeMapPreview="<Tab>"
+map <C-e> :NERDTreeFind<CR>
 
 " hop word
 nmap <leader><leader> <action>(KJumpAction.Word1)
@@ -153,8 +162,28 @@ map <leader>fn <action>(RenameFile)
 " git
 map ]d <Action>(VcsShowNextChangeMarker)
 map [d <Action>(VcsShowPrevChangeMarker)
+map <leader>d <Action>(GitShowDiffWithBranchAction)
+nmap <leader>b <Action>(Annotate) " git 每行的提交信息
+" Git.CompareWithBranch
+" Git.ContextMenu
+" Git.Fetch
+" Git.FileActions
 
 " 选中上一次粘贴的文本
 nnoremap <leader>gv `[v`]
 
+" v 模式避免粘贴内容丢失
+vmap p p<leader>gvy<Esc>
+
+ v 模式下按 * 搜索(使用p作为寄存器)
+vmap * \"py/<C-r>p<CR>
+
 map <M-r> <Action>(RecentFiles)
+
+" 选中单词
+nmap <Enter> <Acton>(EditorSelectWord)
+" nmap <BS> <Action>(EditorUnSelectWord)
+
+
+" 执行该行对应的action
+nnoremap <leader>r ^yE:action <C-r>0<CR>
