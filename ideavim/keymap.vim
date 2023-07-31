@@ -1,4 +1,6 @@
 map <leader>rr :w<CR> :source ~/.ideavimrc<CR><Esc>h
+" noremap <SPACE> <Nop>
+" 使用 nore 方式不能映射 <action>(xxx), 替换为  :action xxx<CR>
 
 " 快速移动
 map <Esc> <Esc>:nohls<CR>
@@ -17,12 +19,12 @@ map <leader>4 <action>(GoToTab4)
 map <leader>5 <action>(GoToTab5)
 map <leader>6 <action>(GoToTab6)
 
-" 保存
+" 保存 自动保存
 map <C-s> :w<CR>
 
 " 删除字符
 map <BS> s
-map <C-BS> <DEL>i
+map <C-BS> DEL>i
 imap <C-BS> <DEL>
 
 " 输入模式下移动光标
@@ -33,8 +35,10 @@ imap <C-j> <action>(EditorDown)
 imap <C-k> <action>(EditorUp)
 
 " 分割窗口
-map <leader>wl :vsp<CR>
-map <leader>wh :sp<CR>
+map <C-\> :vsp<CR>
+map <C--> :sp<CR>
+
+" 关闭 tab 分隔窗口
 nmap qh <C-w>h:q<CR>
 nmap qj <C-w>j:q<CR>
 nmap qk <C-w>j:q<CR>
@@ -43,6 +47,10 @@ nmap qo :only<CR>
 nmap qq :q<CR>
 nmap <leader>qo <action>(CloseAllEditorsButActive)
 nmap <leader>ql <action>(CloseAllToTheRight)
+
+" 窗口大小调整
+" map = :vertical res +5<CR>
+" map - :vertical res -5<CR>
 
 " 复制粘贴
 nmap Y ^y$
@@ -73,45 +81,76 @@ vmap <C-S-CR> <action>(CommentByBlockComment)<Esc>
 map \r <action>(ReformatCode)
 map Q gq<CR>
 
-" 重命名
-map <leader>rn <action>(RenameElement)
-map <leader>fn <action>(RenameFile)
-
 " 复制当前文件信息
 map <leader>cp <action>(CopyAbsolutePath)
 map <leader>cn <action>(CopyFileName)
 
 " 查找
-" map <leader>ff <action>(FileChooser.GotoHome)
-map <leader>ff <action>(FindInPath)
-map <leader>fs <Action>(GotoFile) " 查找文件
-map <leader>fb <Action>(Switcher)
+map <leader>fs <action>(FindInPath) " 查找字符串
+map <leader>ff <Action>(GotoFile) " find file
+map <leader>fc <Action>(GotoClass) " find class
+map <leader>fb <Action>(Switcher) " tab 文件查找
+map <leader>fl <Action>(RecentFiles) " 查找最近打开的文件
 
-" 跳转
-map <leader>gi <action>(GotoAction)
-" map <leader>gi <action>(GotoImplementation)
-" map <leader>gi <action>(GotoClass)
-" map <leader>gi <action>(GotoSuperMethod)
-" map <leader>gi <action>(GotoSymbol)
-" map <leader>gi <action>(GotoNextError)
-" map <leader>gi <action>(GotoNextError)
+" 替换
+nnoremap <leader>re :action Replace<CR>
+nnoremap <leader>rg :action ReplaceInPath<CR>
 
-" 文件
-" RecentFiles
+" java 跳转
+nmap gi <action>(GotoImplementation) " 跳转实现
+nmap gd <action>(GotoDeclaration) " 跳转变量定义
+nmap gD <action>(GotoTypeDeclaration) " 跳转变量类型定义
+nnoremap gb :action Back<CR> " 跳转-回退
+nnoremap gf :action Forward<CR> " 跳转-前进
+nnoremap gt :action GotoTest<CR> " 跳转测试
+map ge <Action>(GotoNextError) " 跳转至下一错误
+map gE <Action>(GotoPreviousError) " 跳转前一个错误
+map gs <Action>(GotoSuperMethod)
+map <C-o> :action JumpToLastChange<CR> " 跳转上一个修改处(非 git)
+map <C-i> :action JumpToNextChange<CR> " 前进修改处
 
-" java
-map \b <action>(ToggleLineBreakpoint)
-" OverrideMethods
-" RunClass
-" ShowErrorDescription
+" java-文件内跳转
+map [[ <Action>(MethodUp) " 跳转上一个方法
+map ]] <Action>(MethodDown) " 跳转下一个方法
+
+" information
+map gy <action>(ShowErrorDescription)
+noremap <leader>p :action ParameterInfo<CR> " 列出当前方法有哪些重载方法
+noremap <leader>ti :action ExpressionTypeInfo<CR> " 当前表达式的返回结果类型
+" K  java doc
+
+
+" java 重构
+map <leader>ro <action>(OverrideMethods)
+map <leader>ru <action>(RunClass)
+map <leader>o <action>(OptimizeImports) " 导包
+
+"" 重构
+map <leader>a <Action>(Refactorings.QuickListPopupAction)
 
 " 重启 ide
 map <leader>rs <action>(RestartIde)
 
 " nerd tree
 map <C-t> :NERDTreeToggle<CR>
-map <C-l> :NERDTreeFind<CR>
+map <C-f> :NERDTreeFind<CR>
 let g:NERDTreeMapPreview="<Tab>"
 
 " hop word
 nmap <leader><leader> <action>(KJumpAction.Word1)
+
+" 文件
+nmap <leader>nf <action>(NewFile)
+nmap <leader>nc <action>(NewClass)
+nmap <leader>cp <action>(CopyAbsolutePath)
+map <leader>rn <action>(RenameElement)
+map <leader>fn <action>(RenameFile)
+
+" git
+map ]d <Action>(VcsShowNextChangeMarker)
+map [d <Action>(VcsShowPrevChangeMarker)
+
+" 选中上一次粘贴的文本
+nnoremap <leader>gv `[v`]
+
+

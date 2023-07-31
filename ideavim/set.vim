@@ -8,4 +8,4 @@ set clipboard+=unnamedplus
 set ideajoin
 set ideastatusicon=gray
 set idearefactormode=keep
-
+" set ideavimsupport=+singleline,dialog
