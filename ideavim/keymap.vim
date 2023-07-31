@@ -1,4 +1,4 @@
-map <leader>rr :w<CR> :source ~/.ideavimrc<CR>
+map <leader>rr :w<CR> :source ~/.ideavimrc<CR><Esc>h
 
 " 快速移动
 map <Esc> <Esc>:nohls<CR>
@@ -45,7 +45,7 @@ nmap <leader>qo <action>(CloseAllEditorsButActive)
 nmap <leader>ql <action>(CloseAllToTheRight)
 
 " 复制粘贴
-nmap <leader>yy ^y$
+nmap Y ^y$
 vmap <C-c> y
 nmap <C-v> pa
 imap <C-v> <Esc>pa
@@ -107,3 +107,11 @@ map \b <action>(ToggleLineBreakpoint)
 
 " 重启 ide
 map <leader>rs <action>(RestartIde)
+
+" nerd tree
+map <C-t> :NERDTreeToggle<CR>
+map <C-l> :NERDTreeFind<CR>
+let g:NERDTreeMapPreview="<Tab>"
+
+" hop word
+nmap <leader><leader> <action>(KJumpAction.Word1)
