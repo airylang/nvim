@@ -1,7 +1,7 @@
-public class test implements Cloneable{
+public class test implements Cloneable {
     public static void main(String[] args) {
         System.out.println(55555);
-        float f= 1.5;
+        float f= 1.5F;
         add();
         if (args.length > 0) {
             System.out.println(5556);
@@ -14,6 +14,14 @@ public class test implements Cloneable{
 
     @Override
     public int hashCode() {
+        getString((20 + 30)* 50 + 10, "abb");
+        if (Math.random() > 0.5) {
+            System.out.printf("5555");
+        }
         return super.hashCode();
+    }
+
+    public static String getString(int asbc, String sgr) {
+        return "52425";
     }
 }

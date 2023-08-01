@@ -1,5 +1,6 @@
 map <leader>rr :w<CR> :source ~/.ideavimrc<CR><Esc>hk
-" IdeaVim.ReloadVimRc.reload
+" map <leader>rr <Action>(IdeaVim.ReloadVimRc.reload)
+
 " noremap <SPACE> <Nop>
 " 使用 nore 方式不能映射 <action>(xxx), 替换为  :action xxx<CR>
 
@@ -14,7 +15,7 @@ map H ^
 map w ]w
 map b ]b
 
-" tab 切换
+" tab 切换;
 map <Tab> <action>(NextTab)
 map <S-Tab> <action>(PreviousTab)
 map <leader>1 <action>(GoToTab1)
@@ -23,6 +24,7 @@ map <leader>3 <action>(GoToTab3)
 map <leader>4 <action>(GoToTab4)
 map <leader>5 <action>(GoToTab5)
 map <leader>6 <action>(GoToTab6)
+map <leader>0 <action>(GoToLastTab)
 
 " 保存 自动保存
 map <C-s> :w<CR>
@@ -62,7 +64,7 @@ nmap <leader>ql <action>(CloseAllToTheRight)
 " map - :vertical res -5<CR>
 
 " 复制粘贴
-nmap Y ^y$
+map Y ^y$
 vmap <C-c> y
 nmap <C-v> pa
 imap <C-v> <Esc>pa
@@ -112,7 +114,7 @@ java 跳转
 nmap gi <action>(GotoImplementation) " 跳转实现
 nmap gd <action>(GotoDeclaration) " 跳转变量定义
 nmap gD <action>(GotoTypeDeclaration) " 跳转变量类型定义
-nnoremap b :action Back<CR> " 跳转-回退
+nnoremap gb :action Back<CR> " 跳转-回退
 nnoremap gf :action Forward<CR> " 跳转-前进
 nnoremap gt :action GotoTest<CR> " 跳转测试
 map ge <Action>(GotoNextError) " 跳转至下一错误
@@ -178,12 +180,8 @@ vmap p p<leader>gvy<Esc>
  v 模式下按 * 搜索(使用p作为寄存器)
 vmap * \"py/<C-r>p<CR>
 
-map <M-r> <Action>(RecentFiles)
-
 " 选中单词
-nmap <Enter> <Acton>(EditorSelectWord)
-" nmap <BS> <Action>(EditorUnSelectWord)
-
+map <Enter> <Action>(EditorSelectWord)
 
 " 执行该行对应的action
 nnoremap <leader>r ^yE:action <C-r>0<CR>
