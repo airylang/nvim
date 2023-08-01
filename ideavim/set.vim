@@ -7,6 +7,5 @@ set scrolloff=3
 
 " idea only
 set ideajoin
-set ideastatusicon=gray
-set idearefactormode=keep
+set dearefactormode=keep
 " set ideavimsupport=+singleline,dialog

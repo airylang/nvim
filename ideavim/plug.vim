@@ -13,6 +13,10 @@ set ReplaceWithRegister
 
 let g:argtextobj_pairs="(:),{:},<:>"
 
+" NERDTree keymaps : open/close a node with l/h
+let g:NERDTreeMapActivateNode="l"
+let g:NERDTreeMapCloseDir="h"
+
 " caa, daa, via
 " 设置顶级为强制级别 g:argumentobject_force_toplevel = 1
 
