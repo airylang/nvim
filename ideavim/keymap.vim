@@ -1,4 +1,5 @@
-map <leader>rr :w<CR> :source ~/.ideavimrc<CR><Esc>hk
+map <F5> :w<CR> :source ~/.ideavimrc<CR><Esc>hk
+
 " map <leader>rr <Action>(IdeaVim.ReloadVimRc.reload)
 
 " noremap <SPACE> <Nop>
@@ -10,12 +11,13 @@ map <C-j> 5j
 map <C-k> 5k
 map L $
 map H ^
+map <c-u> %
 
 " 按单词跳转
 map w ]w
-map b ]b
+" map b ]b
 
-" tab 切换;
+" tab 切换
 map <Tab> <action>(NextTab)
 map <S-Tab> <action>(PreviousTab)
 map <leader>1 <action>(GoToTab1)
@@ -136,9 +138,9 @@ noremap <leader>ti :action ExpressionTypeInfo<CR> " 当前表达式的返回结�
 " K  java doc
 
 
-" java 重构
+" java 运行
+map <leader>rr <action>(RunClass)
 map <leader>ro <action>(OverrideMethods)
-map <leader>ru <action>(RunClass)
 map <leader>o <action>(OptimizeImports)
 map <leader>ca <action>(ShowIntentionAction)
 
