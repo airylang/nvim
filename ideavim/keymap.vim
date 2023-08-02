@@ -1,4 +1,4 @@
-map <F5> :w<CR> :source ~/.ideavimrc<CR><Esc>hk
+map <F5> :w<CR> :source ~/.ideavimrc<CR><Esc>
 
 " map <leader>rr <Action>(IdeaVim.ReloadVimRc.reload)
 
@@ -30,6 +30,13 @@ map <leader>0 <action>(GoToLastTab)
 
 " 保存 自动保存
 map <C-s> :w<CR>
+
+" 选中当前代码块
+nnoremap qv <S-v>$%
+" 删除当前代码块
+nnoremap qd <S-v>$%\"_d
+" 复制当前代码块
+nnoremap qy <S-v>$%y
 
 " 删除字符
 nnoremap <c-h> s
@@ -73,6 +80,8 @@ imap <C-v> <Esc>pa
 imap <C-p> <Esc>pa
 nmap <C-p> o<Esc>pa
 cmap <C-v> <S-Insert>
+map <leader>d v%d
+map <leader>y v%y
 
 " 新行
 imap <S-CR> <Esc>o
@@ -92,8 +101,9 @@ imap <C-CR> <Esc><action>(CommentByLineComment)k
 vmap <C-S-CR> <action>(CommentByBlockComment)<Esc>
 
 " 格式化
-map \r <action>(ReformatCode)
-map Q gq<CR>
+map <C-f> <action>(ReformatCode) " 文件代码格式化
+map Q <S-v><action>(ReformatCode)  " 格式化当前行
+map qb <S-v>$%:action ReformatCode<CR> " 格式化当前代码块
 
 " 复制当前文件信息
 map <leader>cp <action>(CopyAbsolutePath)
@@ -114,27 +124,27 @@ nnoremap <leader>re :action Replace<CR>
 nnoremap <leader>rg :action ReplaceInPath<CR>
 
 " java 跳转
-nmap gi <action>(GotoImplementation) " 跳转实现
-nmap gd <action>(GotoDeclaration) " 跳转变量定义
-nmap gD <action>(GotoTypeDeclaration) " 跳转变量类型定义
-nnoremap gb :action Back<CR> " 跳转-回退
-nnoremap gf :action Forward<CR> " 跳转-前进
-nnoremap gt :action GotoTest<CR> " 跳转测试
-map ge <Action>(GotoNextError) " 跳转至下一错误
-map gE <Action>(GotoPreviousError) " 跳转前一个错误
+nmap gi <action>(GotoImplementation)" 跳转实现
+nmap gd <action>(GotoDeclaration)" 跳转变量定义
+nmap gD <action>(GotoTypeDeclaration)" 跳转变量类型定义
+nnoremap gb :action Back<CR>" 跳转-回退
+nnoremap gf :action Forward<CR>" 跳转-前进
+nnoremap gt :action GotoTest<CR>" 跳转测试
+map ge <Action>(GotoNextError)" 跳转至下一错误
+map gE <Action>(GotoPreviousError)" 跳转前一个错误
 map gs <Action>(GotoSuperMethod)
-map <C-o> :action JumpToLastChange<CR> " 跳转上一个修改处
-map <C-i> :action JumpToNextChange<CR> " 前进修改处
-map <leader>hh <Action>(HierarchyGroup) " 查看调用栈
+map <C-o> :action JumpToLastChange<CR>" 跳转上一个修改处
+map <C-i> :action JumpToNextChange<CR>" 前进修改处
+map <leader>hh <Action>(HierarchyGroup)" 查看调用栈
 
 " java-文件内跳转
-map [[ <Action>(MethodUp) " 跳转上一个方法
-map ]] <Action>(MethodDown) " 跳转下一个方法
+map [[ <Action>(MethodUp)" 跳转上一个方法
+map ]] <Action>(MethodDown)" 跳转下一个方法
 
 " information
 map gy <action>(ShowErrorDescription)
-noremap <leader>p :action ParameterInfo<CR> " 列出当前方法有哪些重载方法
-noremap <leader>ti :action ExpressionTypeInfo<CR> " 当前表达式的返回结果类型
+noremap <leader>p :action ParameterInfo<CR>" 列出当前方法有哪些重载方法
+noremap <leader>ti :action ExpressionTypeInfo<CR>" 当前表达式的返回结果类型
 " K  java doc
 
 
@@ -174,7 +184,7 @@ map ]d <Action>(VcsShowNextChangeMarker)
 map [d <Action>(VcsShowPrevChangeMarker)
 map <leader>G <action>(Git.Menu)
 map <leader>d <Action>(GitShowDiffWithBranchAction)
-nmap <leader>b <Action>(Annotate) " git 每行的提交信息
+nmap <leader>b <Action>(Annotate)" git 每行的提交信息
 " Git.CompareWithBranch
 " Git.ContextMenu
 " Git.Fetch
@@ -202,7 +212,7 @@ map <leader>vv <Action>(ToggleFullScreen)
 map <leader>vf <Action>(ToggleDistractionFreeMode)
 map <leader>vp <Action>(TogglePresentationMode)
 
-" Book marks "
+" Book marks"
 " map <Leader>bc <Action>(Bookmarks)"- General purpose
 " map <Leader>bm <Action>(ActivateBookmarksToolWindow)"- Tool window
 " map <Leader>bk <Action>(Bookmarks.Toggle)"- Create a bookmark
@@ -213,3 +223,6 @@ map <Leader>tt <Action>(TranslationGroup)
 
 " maven
 map <leader>mm <action>(Maven.Reimport)
+
+" 删除 json 中一级
+nmap <leader>jd mp%dd`pdd<S-v>%=

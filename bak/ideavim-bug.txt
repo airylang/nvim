@@ -1,0 +1,12 @@
+map action bug
+
+```md
+" 格式化当前行 (Format Current Line)
+map Q <S-v><action>(ReformatCode)
+
+" 无效的映射 (no effect)
+map Q <S-v><action>(ReformatCode)<Esc>
+
+chinese: 第一个映射可以格式化，但是会保留选中模式，所有我在最后面加上<Esc>, 但是加上后格式化就失效了，我猜测是因为格式化动作是异步完成的，先执行了<Esc>
+en: The first mapping can be formatted, but it will retain the selected mode. I added<Esc>on the last side, but after adding it, the formatting becomes invalid. I guess it's because the formatting action is completed asynchronously and<Esc>was executed first
+```
