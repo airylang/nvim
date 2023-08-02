@@ -2,16 +2,30 @@
 $Copy                                              <C-C> <C-Ins>
 $Cut                                               <C-X> <S-Del>
 $Delete                                            <Del>
+$EditorTranslateAction                             <C-S-Y>
+$ExclusiveTranslateAction
 $HTTPClient.CopyResponseBody
 $HTTPClient.PreviewHtml
 $HTTPClient.PreviewHtml.NavigateBack               <Left>
 $HTTPClient.PreviewHtml.NavigateForward            <Right>
+$InclusiveTranslateAction
 $LRU
 $Paste                                             <C-V> <S-Ins>
 $Redo                                              <C-S-Z> <A-S-BS>
 $SearchWeb
 $SelectAll                                         <C-A>
+$ShowTranslationDialogAction                       <C-S-O>
+$ShowWordOfTheDayAction
+$SwitchTranslationEngineAction                     <C-S-S>
+$TerminalTranslationAction                         <C-S-Y>
+$ToggleQuickDocTranslationAction                   <C-S-Y>
+$TranslateAndReplaceAction                         <C-S-X>
+$TranslateDocumentationAction
+$TranslateQuickDocAction                           <C-S-Y>
+$TranslateRenderedDocSelectionAction               <C-S-Y>
+$TranslateTextComponent                            <C-S-Y>
 $Undo                                              <C-Z> <A-BS>
+$WhatsNewInTranslationAction
 <anonymous-group-0>
 <anonymous-group-1>
 <anonymous-group-2>
@@ -37,16 +51,19 @@ AceWordStartAction
 Actions.ActionsPlugin.GenerateToString
 ActivateAntToolWindow
 ActivateBookmarksToolWindow                        <A-2>
+ActivateBuildToolWindow
 ActivateCommitToolWindow                           <A-0>
 ActivateDatabaseChangesToolWindow
 ActivateDatabaseToolWindow
 ActivateDebugToolWindow                            <A-5>
+Activatedocumentation.v2ToolWindow
 ActivateEndpointsToolWindow
 ActivateFileTransferToolWindow
 ActivateFindToolWindow                             <A-3>
 ActivateGradleToolWindow
 ActivateHierarchyToolWindow
 ActivateLearnToolWindow
+ActivateMavenToolWindow
 ActivateMeetNewUIToolWindow
 ActivateMergeRequestsToolWindow
 ActivateNavBar
@@ -58,10 +75,12 @@ ActivatePullRequestsToolWindow
 ActivateRunToolWindow                              <A-4>
 ActivateServicesToolWindow                         <A-8>
 ActivateSpaceCodeReviewsToolWindow
+ActivateSpringToolWindow
 ActivateStructureToolWindow                        <A-7>
 ActivateTerminalToolWindow                         <A-F12>
 ActivateTODOToolWindow
 ActivateToolWindowActions
+ActivateTranslation.WordbookToolWindow
 ActivateTypeScriptToolWindow
 ActivateVersionControlToolWindow                   <A-9>
 ActiveToolwindowGroup
@@ -97,13 +116,6 @@ AddSubtagAction
 AddToISuite
 addToTempGroup
 AddToTestNGSuite
-Adtui.ZoomActions
-Adtui.ZoomInAction                                 <C-k> <C-=>
-Adtui.ZoomOutAction                                <C--> <C-m>
-Adtui.ZoomResetAction
-Adtui.ZoomToActualAction                           <C-.> <C-`>
-Adtui.ZoomToFitAction                              <C-/> <C-o>
-AgpUpgrade
 AnalyzeActions
 AnalyzeActionsPopup
 AnalyzeJavaMenu
@@ -111,108 +123,6 @@ AnalyzeMenu
 AnalyzePlatformMenu
 AnalyzePluginStartupPerformance
 AnalyzeStacktraceToolbar
-Android Profiler
-Android Profiler Group
-Android.AdbDevicePairing
-Android.AnalyzeApk
-Android.BuildApk
-Android.BuildApkOrBundle
-Android.BuildBundle
-Android.ChooseProfileConfiguration
-Android.ConvertToNinePatch
-Android.CreateResourceDirectory
-Android.CreateResourcesActionGroup
-Android.CreateSampleDataDirectory
-android.deploy.ApplyChanges
-android.deploy.CodeSwap                            <A-C-F10>
-android.deploy.DebugWithoutBuild
-android.deploy.RunWithoutBuild
-Android.DeployActions
-Android.Designer.AddAction                         <A>
-Android.Designer.AddDeepLink                       <D>
-Android.Designer.AssignStartDestination            <H>
-Android.Designer.AutoArrange                       <C-L>
-Android.Designer.CommonActions
-Android.Designer.CommonActions.ForceCompileAndRefreshActionForNotification <C-S-F5>
-Android.Designer.ComposeIssueNotificationAction    <E>
-Android.Designer.ForceRefreshPreview               <R>
-Android.Designer.IssueNotificationAction           <E>
-Android.Designer.IssuePanel.CopyIssueDescription   <C-C> <C-Ins>
-Android.Designer.IssuePanel.QuickFixes             <A-CR>
-Android.Designer.IssuePanel.SeverityFilter
-Android.Designer.IssuePanel.ToggleIssueDetailAction
-Android.Designer.IssuePanel.ToolbarActions
-Android.Designer.IssuePanel.TreePopup
-Android.Designer.IssuePanel.ViewOptions
-Android.Designer.LayoutEditorActions
-Android.Designer.NavEditorActions
-Android.Designer.NextDevice                        <D>
-Android.Designer.PreviousDevice                    <S-D>
-Android.Designer.SwitchDesignMode                  <B>
-Android.Designer.SwitchLayoutQualifier
-Android.Designer.ToggleDeviceNightMode             <N>
-Android.Designer.ToggleDeviceOrientation           <O>
-Android.Designer.ToolsActions
-android.device.back.button                         <C-S-B>
-android.device.home.button                         <C-S-H>
-android.device.overview.button                     <C-S-W>
-Android.Device.Picker.Help
-android.device.power.and.volume.up.button          <A-S-P>
-android.device.power.button                        <C-S-P>
-android.device.reservation.extend
-android.device.reservation.extend.half.hour
-android.device.reservation.extend.one.hour
-android.device.rotate.left                         <C-L>
-android.device.rotate.right                        <C-R>
-android.device.screen.record                       <C-S-V>
-android.device.screenshot                          <C-S-S>
-android.device.sleep                               <C-S-M>
-android.device.volume.down.button                  <C-S-D>
-android.device.volume.up.button                    <C-S-U>
-android.device.wear1.button                        <C-S-1>
-android.device.wear2.button                        <C-S-2>
-Android.DeviceExplorer.ActionsToolbar
-Android.DeviceExplorer.GotoDatabaseFolder
-Android.DeviceExplorer.GotoSdcardFolder
-Android.DeviceExplorer.GotoSharedPrefsFolder
-Android.DeviceExplorer.Help
-Android.DeviceManager
-Android.DeviceManager2
-Android.Diagnostics
-android.emulator.display.mode
-android.emulator.display.mode.foldable             <A-S-1>
-android.emulator.display.mode.phone                <A-S-0>
-android.emulator.display.mode.tablet               <A-S-2>
-android.emulator.extended.controls
-android.emulator.folding.controls                  <C-S-\>
-android.emulator.snapshots
-android.emulator.tilt                              <C-S-T>
-Android.ExportProjectZip
-Android.GenerateSignedApk
-Android.InstantRunActions
-Android.MainToolBarActionGroup
-Android.OpenStringResourceEditor
-Android.ProfileWithCompleteData
-Android.ProfileWithLowOverhead
-Android.RunLayoutInspector
-android.testRetention.load
-Android.WearDevicePairing
-AndroidAddRTLSupport
-AndroidConnectDebuggerAction
-AndroidEnableInstantAppsSupport
-AndroidExtractAsIncludeAction
-AndroidExtractStyleAction
-AndroidFindStyleApplicationsAction
-AndroidInlineIncludeAction
-AndroidInlineStyleReferenceAction
-AndroidMigrateToAndroidxAction
-AndroidMigrateToAppCompatAction
-AndroidMigrateToNonTransitiveRClassesAction
-AndroidMigrateToResourceNamespacesAction
-AndroidModularizeAction
-AndroidToolsGroup
-AndroidToolsGroupExtension
-AndroidUnusedResourceAction
 Angular2ExtractComponentAction
 angularCliAdd
 angularCliGenerate
@@ -250,7 +160,6 @@ AttachProfilerToLocalProcess
 AttachProject
 AutoIndentLines                                    <A-C-I>
 AutoShowProcessWindow
-AvailableDevices
 Back                                               <A-C-Left> button=4 clickCount=1 modifiers=0
 BackgroundTasks
 BasicEditorPopupMenu
@@ -259,6 +168,7 @@ BeansActions.FilterToolbar
 BeansActions.OptionsMenu
 BeansActions.Title
 BlankDiffViewerEditorPopupMenu
+bmd-mybatis-generate-action
 BookmarkOpenTabs
 BookmarkOpenTabsGroup
 Bookmarks
@@ -283,7 +193,7 @@ BookmarksView.Rename                               <F2>
 BookmarksView.RewriteBookmarkType
 BookmarksView.ShowPreview
 BookmarksView.SortGroupBookmarks
-BraceOrQuoteOut                                    <Tab>
+BraceOrQuoteOut
 BreakpointActionsGroup
 BuildArtifact
 BuildMenu
@@ -341,7 +251,7 @@ ChangesView.Shelve
 ChangesView.ShelveSilently                         <C-S-H>
 ChangesView.ShowCommitOptions
 ChangesView.SingleClickPreview
-ChangesView.ToggleCommitUi                         <C-K>
+ChangesView.ToggleCommitUi
 ChangesView.UnshelveSilently                       <A-C-U>
 ChangesView.ViewOptions
 ChangesViewPopupMenu
@@ -358,14 +268,13 @@ Charts.ShowSeriesSettings
 CheckForUpdate
 CheckIgnoredAndNotExcludedDirectories
 CheckinFiles
-CheckinProject                                     <C-K>
+CheckinProject
 CheckStatusForFiles
 CheckSuggestedPlugins
 ChooseDebugConfiguration                           <A-S-F9>
 ChooseRunConfiguration                             <A-S-F10>
 ChooseRuntime
 ClassNameCompletion                                <A-C- >
-CleanGradleProject
 ClearAllNotifications
 ClickLink                                          <C-B> button=1 clickCount=1 modifiers=128 button=2 clickCount=1 modifiers=0
 CloseActiveTab                                     <C-S-F4>
@@ -427,10 +336,6 @@ CollapseTreeNode                                   <m>
 CollapsiblePanel-toggle                            < >
 CollectZippedLogs
 ColoredHeaderAction
-com.android.build.attribution.ui.OpenBuildAnalyzerAction
-com.android.build.attribution.ui.OpenBuildAnalyzerResultsAction
-com.android.tools.idea.actions.HideAndroidBannerAction
-com.android.tools.idea.layoutinspector.toggle.layout.inspector.action
 com.intellij.analysis.pwa.actions.PwaRestartAction
 com.intellij.analysis.pwa.actions.PwaToggleAction
 com.intellij.database.actions.ToDatabaseScriptTranslationCopyAction
@@ -492,9 +397,6 @@ CompileDirty                                       <C-F9>
 CompileFile                                        <C-S-F9>
 CompileProject
 CompilerErrorViewPopupMenu
-Compose.Live.Edit.ManualLiveEdit
-Compose.Live.Edit.ShowLogcat
-Compose.Live.Literals.ToggleHighlight
 ComputeDiffWithPreviousRevisionAction
 ComputeSwaggerDiffBetweenPhysicalFiles
 ConfigureEditorTabs
@@ -695,7 +597,6 @@ ContextDebug
 ContextHelp                                        <F1>
 ContextRun
 ConvertContentsToAttributeAction
-ConvertFromWebp
 ConvertGroovyToJava
 ConvertIndentsGroup
 ConvertIndentsToSpaces
@@ -708,7 +609,6 @@ ConvertToCompileStatic
 ConvertToInstanceMethod
 ConvertToMacLineSeparators
 ConvertToUnixLineSeparators
-ConvertToWebp
 ConvertToWindowsLineSeparators
 Copy.Paste.Special
 CopyAbsolutePath                                   <C-S-C>
@@ -868,7 +768,7 @@ DatabaseView.Tools.RecompileAction
 DatabaseView.Tools.RefreshMatViewAction
 DatabaseView.Tools.RevertChanges                   <A-C-Z>
 DatabaseView.Tools.ShowChanges
-DatabaseView.Tools.SubmitChanges                   <C-K>
+DatabaseView.Tools.SubmitChanges
 DatabaseView.Tools.TruncateTableAction
 DatabaseView.VcsWrapperGroup
 DatabaseViewPopupMenu
@@ -968,7 +868,6 @@ DeploymentGroup.Basic
 DeploymentVcsActions
 Dev.Container.ShowRecent
 Dev.PsiViewerActions
-DeviceAndSnapshotComboBox                          <A-S-F11>
 DevKit.ApplyTheme
 DevKit.EditThemeEditorColorScheme
 DevKit.NewMessageBundle
@@ -1150,6 +1049,7 @@ Documentation.Forward                              <A-C-Right> button=5 clickCou
 Documentation.KeepTab
 Documentation.Navigation
 Documentation.PrimaryGroup
+Documentation.PrimaryTranslationGroup
 Documentation.ToggleAutoShow
 Documentation.ToggleAutoUpdate
 Documentation.ToggleShowInPopup
@@ -1177,7 +1077,6 @@ DSM.ZoomOut                                        <C-m> <C-->
 DumpFocusableComponentHierarchyAction
 DumpLookupElementWeights                           <A-C-S-W>
 DumpMLCompletionFeatures                           <A-C-S-9>
-DumpResourceTraceAction
 DumpThreads
 DuplicatesForm.SendToLeft                          <C-1>
 DuplicatesForm.SendToRight                         <C-2>
@@ -1188,14 +1087,11 @@ Dvcs.Log.Toolbar
 EditBookmark
 EditBookmarksGroup
 EditBreakpoint                                     <C-S-F8>
-EditBuildTypes
 EditCommitMessage
 EditCreateDeleteGroup
 EditCustomProperties
 EditCustomVmOptions
-EditFlavors
 EditInspectionSettings
-EditLibraryAndDependencies
 EditMacros
 EditMenu
 Editor.JSLibrariesMenu
@@ -1214,7 +1110,7 @@ EditorBreadcrumbsShowBelow
 EditorChooseLookupItem                             <CR>
 EditorChooseLookupItemCompleteStatement            <C-S-CR>
 EditorChooseLookupItemDot                          <C-.>
-EditorChooseLookupItemReplace                      <Tab>
+EditorChooseLookupItemReplace
 EditorCloneCaretAbove
 EditorCloneCaretBelow
 EditorCodeBlockEnd                                 <C-]>
@@ -1240,7 +1136,7 @@ EditorDeleteToWordEnd                              <C-Del>
 EditorDeleteToWordEndInDifferentHumpsMode
 EditorDeleteToWordStart                            <C-BS>
 EditorDeleteToWordStartInDifferentHumpsMode
-EditorDown                                         <Down>
+EditorDown                                         <Down> <C-J> <Tab>
 EditorDownWithSelection                            <S-Down>
 EditorDuplicate                                    <C-D>
 EditorDuplicateLines
@@ -1258,7 +1154,7 @@ EditorHungryBackSpace
 EditorIncreaseFontSize
 EditorIncreaseFontSizeGlobal                       <A-S-.>
 EditorIndentLineOrSelection
-EditorIndentSelection                              <Tab>
+EditorIndentSelection
 EditorJoinLines                                    <C-S-J>
 EditorKillRegion
 EditorKillRingSave
@@ -1336,10 +1232,10 @@ EditorSetRtlBidiTextDirection
 EditorShowGutterIconTooltip                        <A-S-6>
 EditorSortLines
 EditorSplitLine                                    <C-CR>
-EditorStartNewLine
+EditorStartNewLine                                 <S-CR>
 EditorStartNewLineBefore                           <A-C-CR>
 EditorSwapSelectionBoundaries
-EditorTab                                          <Tab>
+EditorTab
 EditorTabActionGroup
 EditorTabCompileGroup
 EditorTabPopupMenu
@@ -1363,9 +1259,9 @@ EditorToggleStickySelection
 EditorToggleUseSoftWraps
 EditorToggleUseSoftWrapsInPreview
 EditorTranspose
-EditorUnindentSelection                            <S-Tab>
+EditorUnindentSelection
 EditorUnSelectWord                                 <C-S-W>
-EditorUp                                           <Up>
+EditorUp                                           <Up> <C-K>
 EditorUpWithSelection                              <S-Up>
 EditPropertyValue                                  <A-F6>
 editRunConfigurations
@@ -1424,7 +1320,7 @@ ExpandAllToLevel5                                  <C-S-j> <C-S-j>
 ExpandCollapseToggleAction
 ExpandDocComments
 ExpandExpandableComponent                          <S-CR> <C-k> <C-=>
-ExpandLiveTemplateByTab                            <Tab>
+ExpandLiveTemplateByTab
 ExpandLiveTemplateCustom
 ExpandRegion                                       <C-k> <C-=>
 ExpandRegionRecursively                            <A-C-k> <A-C-=>
@@ -1637,7 +1533,7 @@ Git.CheckoutRevision
 Git.CherryPick.Abort
 Git.Clone
 Git.Commit.And.Push.Executor                       <A-C-K>
-Git.Commit.Stage                                   <C-K>
+Git.Commit.Stage
 Git.CompareWithBranch
 Git.CompareWithTag
 Git.Configure.Remotes
@@ -1900,7 +1796,6 @@ Gradle.View.DependencyMenu
 Gradle.View.ModuleMenu
 Gradle.View.ProjectMenu
 Gradle.ViewDependencyAnalyzer
-GradleProjectStructureActions
 Graph.ActualSize                                   <C-o> <C-/>
 Graph.AlignNodes.Bottom                            <S-B>
 Graph.AlignNodes.Center                            <S-C>
@@ -1995,7 +1890,7 @@ GuiDesigner.ChooseLocale
 GuiDesigner.ComponentTreePopupMenu
 GuiDesigner.CreateComponent                        <A-Ins>
 GuiDesigner.CreateListener                         <C-O>
-GuiDesigner.DecreaseIndent                         <S-Tab>
+GuiDesigner.DecreaseIndent
 GuiDesigner.DeleteComponent                        <Del>
 GuiDesigner.DeleteGroup                            <Del>
 GuiDesigner.Duplicate                              <C-D>
@@ -2008,7 +1903,7 @@ GuiDesigner.FormSource
 GuiDesigner.GenerateMain
 GuiDesigner.GoToListener                           <A-C-B> button=1 clickCount=1 modifiers=640
 GuiDesigner.GroupButtons
-GuiDesigner.IncreaseIndent                         <Tab>
+GuiDesigner.IncreaseIndent
 GuiDesigner.MainToolbarActions
 GuiDesigner.Morph
 GuiDesigner.NewActions
@@ -2143,13 +2038,12 @@ IncrementalSearch
 IncrementWindowHeight                              <A-C-S-Down>
 IncrementWindowWidth                               <A-C-S-Right>
 IndexingDiagnosticGroup
-InferAnnotations
 InferNullity
 InheritanceToDelegation
 InlayMenu
 Inline                                             <A-C-N>
-InsertInlineCompletionAction                       <Tab>
-InsertLiveTemplate                                 <C-J>
+InsertInlineCompletionAction
+InsertLiveTemplate
 InspectCode
 InspectCodeActionInPopupMenus
 InspectCodeGroup
@@ -2232,6 +2126,11 @@ JumpToNextChange
 junit.add.to.pattern.group
 junit.exclude.group
 KeepTabOpen
+KJumpAction
+KJumpAction.Char2
+KJumpAction.Line
+KJumpAction.Word0
+KJumpAction.Word1
 Kotlin.ClearScratch
 Kotlin.Gradle.ShowDslLogs
 Kotlin.NewFile
@@ -2265,14 +2164,10 @@ krasa.MavenHelper.RunTestFileAction
 KtorGenerateOpenApiAction
 LangCodeInsightActions
 LanguageSpecificFoldingGroup
-LayoutEditor.AddSampleData
 LayoutsGroup
 LearnGroup
 LearnMore
 LeftToolbarSideGroup
-LegacyNewAndroidComponent
-Library.Properties
-LibraryProperties
 LightEditModePopup
 LightEditOpenFileInProject
 lineprofiler.CloseAnnotations
@@ -2310,12 +2205,6 @@ LocalHistory.Vcs.Operations.Popup.Group
 Log.FileHistory.KeymapGroup
 Log.KeymapGroup
 Log.Unsorted.KeymapGroup
-Logcat.ClearLogcat
-Logcat.LogcatActions
-Logcat.PauseResumeLogcat
-Logcat.RestartLogcat
-Logcat.ToggleSoftWrap
-Logcat.ToggleViewFormat
 LogDebugConfigure
 LogFocusRequests
 LombokActionGroup
@@ -2563,17 +2452,12 @@ NavbarPopupMenu
 NavBarToolBar
 NavBarToolBarOthers
 NavBarVcsGroup
-NavEditor.HelpAssistant
 NavigateInBrowser
 NavigateInFileGroup
 NewAction
-NewAndroidImageAsset
-NewAndroidVectorAsset
 NewClass
 newConfigurationDebugClass
 newConfigurationDefaultProfilerExecutorGroupContextActionId
-newConfigurationProfileGroupRunClass
-newConfigurationProfileRunClass
 newConfigurationRunClass
 newConfigurationRunCoverage
 NewDialog
@@ -2615,7 +2499,6 @@ NewToolbarActions
 NewTypeScriptConfigFile
 NewTypeScriptFile
 NewUiRunWidget
-NewVersionCatalogFile
 NewWebDevelopment
 NewXml
 NewXmlDescriptor
@@ -2623,12 +2506,12 @@ NextDiff                                           <F7>
 NextEditorTab                                      <A-S-Right>
 NextLessonAction
 NextOccurence                                      <A-C-Down>
-NextParameter                                      <Tab>
+NextParameter
 NextProjectWindow                                  <A-C-]>
 NextSplitter
 NextTab                                            <A-Right>
 NextTemplateParameter
-NextTemplateVariable                               <Tab> <CR>
+NextTemplateVariable                               <CR>
 NextWindow
 NotebookOutputCollapseActions
 NotebookOutputCollapseAllAction
@@ -2726,6 +2609,7 @@ performancePlugin.StartAsyncProfilerAction
 PinActiveEditorTab
 PinActiveTab
 PinActiveTabToggle
+PinBalloonAction                                   <C-S-Y>
 PinToolwindowTab
 PlanViewGroup
 PlaybackLastMacro
@@ -2752,9 +2636,9 @@ PreviousLessonAction
 PreviousOccurence                                  <A-C-Up>
 PreviousProjectWindow                              <A-C-[>
 PreviousTab                                        <A-Left>
-PreviousTemplateVariable                           <S-Tab>
+PreviousTemplateVariable
 PreviousWindow
-PrevParameter                                      <S-Tab>
+PrevParameter
 PrevSplitter
 PrevTemplateParameter
 Print
@@ -2775,7 +2659,6 @@ ProblemsView.ToolWindow.Toolbar
 ProblemsView.ToolWindow.TreePopup
 ProductivityFeatures
 ProductivityGuide
-ProfileGroupRunClass
 Profiler
 Profiler.ExcludeCallAction
 Profiler.ExcludeSubTreeAction
@@ -2787,7 +2670,6 @@ Profiler.OpenTreesInNewTabGroup
 Profiler.RevealSnapshotAction
 Profiler.TransformMainTreeGroup
 ProfilerActions
-ProfileRunClass
 ProjectFromVersionControl
 ProjectView.AbbreviatePackageNames
 ProjectView.AutoscrollFromSource
@@ -2825,7 +2707,6 @@ ProjectViewTabToolbar
 ProjectViewToolbar
 ProjectWidget.Actions
 prototext.InsertSchemaDirective
-PsdProjectStructureActions
 PsiViewer
 PsiViewerForContext
 PublishGroup
@@ -2897,7 +2778,6 @@ Refactorings.QuickListPopupAction                  <A-C-S-T>
 ReformatCode                                       <A-C-L>
 ReformatWithPrettierAction                         <A-C-S-P>
 Refresh                                            <C-F5>
-RefreshLinkedCppProjects
 Register
 RegistrationActions
 RemoteExternalToolsGroup
@@ -2950,11 +2830,6 @@ ResizeToolWindowRight                              <A-C-S-Right>
 ResizeToolWindowUp                                 <A-C-S-Up>
 Resolve
 ResolveAll
-ResourceExplorer
-ResourceExplorer.CopyValue
-ResourceExplorer.open
-ResourceExplorer.show                              <C-S-T>
-ResourceExplorer.webp
 RestartIde
 RestartLessonAction
 RESTClient.ConvertToNew
@@ -3021,7 +2896,6 @@ Runner.View.Toolbar
 RunnerActions
 RunnerActionsTouchbar
 RunnerLayoutActions
-RunningDevices
 RunProfileGroup
 runShellFileAction                                 <C-S-F10>
 RunTab.ProfileActions
@@ -3089,11 +2963,11 @@ ScrollPane-unitScrollUp
 ScrollPaneActions
 ScrollTreeToCenter                                 <C-M>
 SearchEverywhere
-SearchEverywhere.CompleteCommand                   <Tab>
+SearchEverywhere.CompleteCommand
 SearchEverywhere.NavigateToNextGroup               <Pagedown> <C-Down>
 SearchEverywhere.NavigateToPrevGroup               <Pageup> <C-Up>
-SearchEverywhere.NextTab                           <Tab>
-SearchEverywhere.PrevTab                           <S-Tab>
+SearchEverywhere.NextTab
+SearchEverywhere.PrevTab
 SearchEverywhere.SelectItem                        <CR>
 SearchEverywhereActions
 SearchEverywhereNewToolbarAction
@@ -3102,11 +2976,9 @@ SegmentedButton-right                              <Right>
 SegmentedVcsActionsBarGroup
 SegmentedVcsControlAction
 SelectAllOccurrences                               <A-C-S-J>
-SelectBuildVariant
 SelectIn                                           <A-F1>
 SelectInProjectView
 SelectInRemoteHost
-SelectMultipleDevices
 SelectNextOccurrence                               <A-J>
 SelectVirtualTemplateElement                       <A-S-O>
 SendEOF                                            <C-D>
@@ -3250,11 +3122,6 @@ SpaceVcsHistoryContextMenu
 SpaceVcsHistoryToolbar
 SpaceVcsLogContextMenu
 SplitHorizontally
-SplittingTabsToolWindow.MoveTabLeft
-SplittingTabsToolWindow.MoveTabRight
-SplittingTabsToolWindow.RenameTab
-SplittingTabsToolWindow.SplitHorizontal
-SplittingTabsToolWindow.SplitVertical
 SplitVertically
 Spring.Beans.Generate.Action
 Spring.Beans.Generate.Autowiring.Constructor.Dependency.Action
@@ -3294,10 +3161,6 @@ StopBackgroundProcesses                            <C-S-F2>
 StopForwardingAction
 StoreDefaultLayout
 StoreNewLayout
-Streaming
-StreamingToolbarPhysicalDevice
-StreamingToolbarSecondary
-StreamingToolbarVirtualDevice
 StreamTracerAction
 StretchSplitToBottom
 StretchSplitToLeft
@@ -3509,7 +3372,6 @@ TogglePresentationMode
 ToggleReadOnlyAttribute
 ToggleRenderedDocPresentation                      <A-C-Q>
 ToggleRenderedDocPresentationForAll
-ToggleResourceTraceAction
 ToggleSideMode
 ToggleTemporaryLineBreakpoint                      <A-C-S-F8>
 ToggleThreeSideInBlankDiffWindow
@@ -3542,6 +3404,12 @@ TouchBarDefault_shift
 TouchBarDefaultOptionalGroup
 TouchBarEditorSearch
 TouchBarEditorSearch_ctrl
+TranslationGroup
+TranslationGroup.Expanded
+TranslationNavBarToolBar
+TranslationPopupMenu
+TranslationTitleBar
+TranslationToolBar
 Tree-scrollDownChangeSelection                     <Pagedown>
 Tree-scrollDownExtendSelection                     <S-Pagedown>
 Tree-scrollUpChangeSelection                       <Pageup>
@@ -3770,7 +3638,7 @@ Vcs.ToolbarWidget.CreateRepository
 Vcs.ToolbarWidget.ShareProject
 Vcs.ToolWindow.CreateRepository
 Vcs.UmlDiff
-Vcs.UpdateProject                                  <C-T>
+Vcs.UpdateProject
 Vcs.VcsClone
 VcsActions.KeymapGroup
 VcsFileGroupPopup
@@ -3923,3 +3791,4 @@ XPathView.XSLT.Associations
 XSD2Document
 ZoomCurrentWindow
 ZoomInIdeAction                                    <A-S-=>
+ZoomOutIdeAction                                   <A-S-->

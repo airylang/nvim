@@ -1,9 +1,13 @@
 map <F5> :w<CR> :source ~/.ideavimrc<CR><Esc>
 
 " map <leader>rr <Action>(IdeaVim.ReloadVimRc.reload)
-
+" 如果 action 弹窗不显示，是否禁用了 ideavim 通知
+" File | Settings | Appearance & Behavior | Notifications
 " noremap <SPACE> <Nop>
 " 使用 nore 方式不能映射 <action>(xxx), 替换为  :action xxx<CR>
+
+" 清除
+map s <nop>
 
 " 快速移动
 map <Esc> <Esc>:nohls<CR>
@@ -31,12 +35,13 @@ map <leader>0 <action>(GoToLastTab)
 " 保存 自动保存
 map <C-s> :w<CR>
 
-" 选中当前代码块
-nnoremap qv <S-v>$%
+" 选中当前代码块 (select )
+" nmap sv j<action>(CollapseBlock)zo<S-v>%zz
+nmap sv $<S-v>%
 " 删除当前代码块
-nnoremap qd <S-v>$%\"_d
+nmap sd svd
 " 复制当前代码块
-nnoremap qy <S-v>$%y
+nmap sy svy
 
 " 删除字符
 nnoremap <c-h> s
@@ -118,6 +123,7 @@ map <leader>fl <Action>(RecentFiles) " 查找最近打开的文件
 map <leader>fg viw<leader>fg<Esc> " 在项目范围内查找当前单词
 vmap <leader>fg <action>(FindSelectionInPath) " 同上
 map <leader>fh /<C-r>+<Cr> " 在当前文件查找剪切板内容
+map <leader>fa <Action>(GotoAction)
 
 " 替换
 nnoremap <leader>re :action Replace<CR>
@@ -142,7 +148,7 @@ map [[ <Action>(MethodUp)" 跳转上一个方法
 map ]] <Action>(MethodDown)" 跳转下一个方法
 
 " information
-map gy <action>(ShowErrorDescription)
+map se <action>(ShowErrorDescription)
 noremap <leader>p :action ParameterInfo<CR>" 列出当前方法有哪些重载方法
 noremap <leader>ti :action ExpressionTypeInfo<CR>" 当前表达式的返回结果类型
 " K  java doc
@@ -152,7 +158,7 @@ noremap <leader>ti :action ExpressionTypeInfo<CR>" 当前表达式的返回结�
 map <leader>rr <action>(RunClass)
 map <leader>ro <action>(OverrideMethods)
 map <leader>o <action>(OptimizeImports)
-map <leader>ca <action>(ShowIntentionAction)
+map <leader>ca <action>(ShowIntentionActions)
 
 " 重构
 map <leader>a <Action>(Refactorings.QuickListPopupAction)
@@ -200,14 +206,12 @@ vmap p p<leader>gvy<Esc>
 vmap * \"py/<C-r>p<CR>
 
 " 选中单词
-map <Enter> <Action>(EditorSelectWord)
+" nnoremap <Enter> <Action>(EditorSelectWord)
 
 " 执行该行对应的action
 nnoremap <leader>r ^yE:action <C-r>0<CR>
 
 " 切换全屏
-map <M-m> <action>(ToggleFullScreen)
-" View mode
 map <leader>vv <Action>(ToggleFullScreen)
 map <leader>vf <Action>(ToggleDistractionFreeMode)
 map <leader>vp <Action>(TogglePresentationMode)
@@ -218,11 +222,14 @@ map <leader>vp <Action>(TogglePresentationMode)
 " map <Leader>bk <Action>(Bookmarks.Toggle)"- Create a bookmark
 " map <Leader>ba <Action>(ShowBookmarks)"- Show all bookmarks
 
-" Translate 没生效？？？"
-map <Leader>tt <Action>(TranslationGroup)
+" 翻译 需要安装翻译插件以及配置 key
+map <Leader>tt <Action>($EditorTranslateAction)
 
 " maven
 map <leader>mm <action>(Maven.Reimport)
 
 " 删除 json 中一级
 nmap <leader>jd mp%dd`pdd<S-v>%=
+
+" window
+nmap <leader>wh <Action>(HideActiveWindow)
