@@ -38,17 +38,13 @@ map <C-s> :w<CR>
 " 选中当前代码块 (select )
 " nmap sv j<action>(CollapseBlock)zo<S-v>%zz
 nmap sv $<S-v>%
-" 删除当前代码块
-nmap sd svd
-" 复制当前代码块
-nmap sy svy
 
 " 删除字符
 nnoremap <c-h> s
 nnoremap <c-l> i<Del>
 inoremap <c-h> <BS>
 inoremap <c-l> <DEL>
-map <BS> s
+noremap <BS> s
 " map <C-BS> DEL>i
 " imap <C-BS> <DEL>
 
@@ -74,14 +70,12 @@ nmap <leader>qo <action>(CloseAllEditorsButActive)
 nmap <leader>ql <action>(CloseAllToTheRight)
 
 " 窗口大小调整
-" map = :vertical res +5<CR>
 " map - :vertical res -5<CR>
 
 " 复制粘贴
-map Y ^y$
-vmap <C-c> y
 nmap <C-v> pa
 imap <C-v> <Esc>pa
+vmap <C-v> <action>($Paste)
 imap <C-p> <Esc>pa
 nmap <C-p> o<Esc>pa
 cmap <C-v> <S-Insert>
@@ -106,63 +100,90 @@ imap <C-CR> <Esc><action>(CommentByLineComment)k
 vmap <C-S-CR> <action>(CommentByBlockComment)<Esc>
 
 " 格式化
-map <C-f> <action>(ReformatCode) " 文件代码格式化
-map Q <S-v><action>(ReformatCode)  " 格式化当前行
-map qb <S-v>$%:action ReformatCode<CR> " 格式化当前代码块
+" 文件代码格式化
+map <C-f> <action>(ReformatCode)
+" 格式化当前行
+map Q <S-v><action>(ReformatCode)
+" 格式化当前代码块
+map qb <S-v>$%:action ReformatCode<CR>
 
 " 复制当前文件信息
 map <leader>cp <action>(CopyAbsolutePath)
 map <leader>cn <action>(CopyFileName)
 
-" 查找
-map <leader>fs <action>(FindInPath) " 查找字符串
-map <leader>ff <Action>(GotoFile) " find file
-map <leader>fc <Action>(GotoClass) " find class
-map <leader>fb <Action>(Switcher) " tab 文件查找
-map <leader>fl <Action>(RecentFiles) " 查找最近打开的文件
-map <leader>fg viw<leader>fg<Esc> " 在项目范围内查找当前单词
-vmap <leader>fg <action>(FindSelectionInPath) " 同上
-map <leader>fh /<C-r>+<Cr> " 在当前文件查找剪切板内容
+"======================查找====================="
+" 查找字符串
+map <leader>fs <action>(FindInPath)
+" find file
+map <leader>ff <Action>(GotoFile)
+" find class
+map <leader>fc <Action>(GotoClass)
+" tab 文件查找
+map <leader>fb <Action>(Switcher)
+" 查找最近打开的文件
+map <leader>fl <Action>(RecentFiles)
+" 在项目范围内查找当前单词
+map <leader>fg viw<leader>fg<Esc>
+" 同上
+vmap <leader>fg <action>(FindSelectionInPath)
+" 在当前文件查找剪切板内容
+map <leader>fh /<C-r>+<Cr>
+" 查找action
 map <leader>fa <Action>(GotoAction)
+"==========================================="
 
 " 替换
-nnoremap <leader>re :action Replace<CR>
+nnoremap <leader>rp :action Replace<CR>
 nnoremap <leader>rg :action ReplaceInPath<CR>
 
-" java 跳转
-nmap gi <action>(GotoImplementation)" 跳转实现
-nmap gd <action>(GotoDeclaration)" 跳转变量定义
-nmap gD <action>(GotoTypeDeclaration)" 跳转变量类型定义
-nnoremap gb :action Back<CR>" 跳转-回退
-nnoremap gf :action Forward<CR>" 跳转-前进
-nnoremap gt :action GotoTest<CR>" 跳转测试
-map ge <Action>(GotoNextError)" 跳转至下一错误
-map gE <Action>(GotoPreviousError)" 跳转前一个错误
+"======================java 跳转====================="
+" 跳转实现
+nmap gi <action>(GotoImplementation)
+" 跳转变量定义
+nmap gd <action>(GotoDeclaration)
+" 跳转变量类型定义
+nmap gD <action>(GotoTypeDeclaration)
+" 跳转-回退
+nnoremap gb :action Back<CR>
+" 跳转-前进
+nnoremap gf :action Forward<CR>
+" 跳转测试
+nnoremap gt :action GotoTest<CR>
+" 跳转错误
+map ge <Action>(GotoNextError)
+map gE <Action>(GotoPreviousError)
+" 跳转父级
 map gs <Action>(GotoSuperMethod)
-map <C-o> :action JumpToLastChange<CR>" 跳转上一个修改处
-map <C-i> :action JumpToNextChange<CR>" 前进修改处
-map <leader>hh <Action>(HierarchyGroup)" 查看调用栈
+" 跳转上一个修改处
+map <C-o> :action JumpToLastChange<CR>
+" 前进修改处
+map <C-i> :action JumpToNextChange<CR>
+" 查看调用栈
+map <leader>hh <Action>(HierarchyGroup)
+"==========================================="
 
 " java-文件内跳转
-map [[ <Action>(MethodUp)" 跳转上一个方法
-map ]] <Action>(MethodDown)" 跳转下一个方法
+" 跳转上一个方法
+map [[ <Action>(MethodUp)
+" 跳转下一个方法
+map ]] <Action>(MethodDown)
 
 " information
 map se <action>(ShowErrorDescription)
-noremap <leader>p :action ParameterInfo<CR>" 列出当前方法有哪些重载方法
-noremap <leader>ti :action ExpressionTypeInfo<CR>" 当前表达式的返回结果类型
-" K  java doc
+" 列出当前方法有哪些重载方法
+noremap <leader>p :action ParameterInfo<CR>
+" 当前表达式的返回结果类型
+noremap <leader>ti :action ExpressionTypeInfo<CR>
 
 
-" java 运行
+" java 提示
 map <leader>rr <action>(RunClass)
 map <leader>ro <action>(OverrideMethods)
 map <leader>o <action>(OptimizeImports)
-map <leader>ca <action>(ShowIntentionActions)
+map sa <action>(ShowIntentionActions)
 
 " 重构
 map <leader>a <Action>(Refactorings.QuickListPopupAction)
-" OverrideMethods
 
 
 " 重启 ide
@@ -178,19 +199,20 @@ nmap <leader><leader> <action>(KJumpAction.Word1)
 " nmap <leader><leader>w :action KJumpAction.Word0<cr>
 " nmap <leader><leader>l :action KJumpAction.Line<cr>
 
-" 文件
-nmap <leader>nf <action>(NewFile)
-nmap <leader>nc <action>(NewClass)
-nmap <leader>cp <action>(CopyAbsolutePath)
-map <leader>rn <action>(RenameElement)
-map <leader>fn <action>(RenameFile)
+" 文件操作
+nmap <leader>af <action>(NewFile)
+nmap <leader>ac <action>(NewClass)
+nmap scp <action>(CopyAbsolutePath)
+map <leader>re <action>(RenameElement)
+map <leader>rf <action>(RenameFile)
 
 " git
 map ]d <Action>(VcsShowNextChangeMarker)
 map [d <Action>(VcsShowPrevChangeMarker)
 map <leader>G <action>(Git.Menu)
 map <leader>d <Action>(GitShowDiffWithBranchAction)
-nmap <leader>b <Action>(Annotate)" git 每行的提交信息
+" git 每行的提交信息
+nmap <leader>b <Action>(Annotate)
 " Git.CompareWithBranch
 " Git.ContextMenu
 " Git.Fetch
