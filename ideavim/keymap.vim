@@ -179,7 +179,7 @@ noremap <leader>ti :action ExpressionTypeInfo<CR>
 " java 提示
 map <leader>rr <action>(RunClass)
 map <leader>ro <action>(OverrideMethods)
-map <leader>o <action>(OptimizeImports)
+" map <leader>o <action>(OptimizeImports)
 map sa <action>(ShowIntentionActions)
 
 " 重构
@@ -205,6 +205,7 @@ nmap <leader>ac <action>(NewClass)
 nmap scp <action>(CopyAbsolutePath)
 map <leader>re <action>(RenameElement)
 map <leader>rf <action>(RenameFile)
+map <leader>of <action>(OpenFile)
 
 " git
 map ]d <Action>(VcsShowNextChangeMarker)
