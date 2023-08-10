@@ -256,3 +256,6 @@ nmap <leader>jd mp%dd`pdd<S-v>%=
 
 " window
 nmap <leader>wh <Action>(HideActiveWindow)
+
+" 快速打开kmap
+nmap <F1>  :vsp D:/airylang/nvim/ideavim/keymap.vim
