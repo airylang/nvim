@@ -9,6 +9,9 @@ map <F5> :w<CR> :source ~/.ideavimrc<CR><Esc>
 " 清除
 map s <nop>
 
+" 解决 v 模式下粘贴时光标始终会移动到行首
+vnoremap y mpy`p
+
 " 快速移动
 map <Esc> <Esc>:nohls<CR>
 map <C-j> 5j
@@ -37,7 +40,9 @@ map <C-s> :w<CR>
 
 " 选中当前代码块 (select )
 " nmap sv j<action>(CollapseBlock)zo<S-v>%zz
-nmap sv $<S-v>%
+" nmap sv $<S-v>%
+nmap sv mpjvaI<S-v>o`p
+nmap ss <Action>(EditorCodeBlockStart)
 
 " 删除字符
 nnoremap <c-h> s
