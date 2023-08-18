@@ -183,6 +183,7 @@ noremap <leader>ti :action ExpressionTypeInfo<CR>
 
 " java 提示
 map <leader>rr <action>(RunClass)
+map <leader>rd <action>(DebugClass)
 map <leader>ro <action>(OverrideMethods)
 " map <leader>o <action>(OptimizeImports)
 map sa <action>(ShowIntentionActions)
@@ -261,6 +262,15 @@ nmap <leader>jd mp%dd`pdd<S-v>%=
 
 " window
 nmap <leader>wh <Action>(HideActiveWindow)
+nmap <leader>wo <Action>(HideAllWindows)
 
 " 快速打开kmap
 nmap <F1>  :vsp D:/airylang/nvim/ideavim/keymap.vim
+
+" mark down
+nmap <leader>mo <Action>(Markdown.Layout.EditorOnly)
+nmap <leader>mp <Action>(Markdown.Layout.PreviewOnly)
+nmap <leader>ma <Action>(Markdown.Layout.EditorAndPreview)
+
+" 打开termail
+nmap <leader>tm <Action>(ActivateTerminalToolWindow)
