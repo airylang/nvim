@@ -1,4 +1,4 @@
-map <F5> :w<CR> :source ~/.ideavimrc<CR><Esc>
+nmap so :w<CR> :source ~/.ideavimrc<CR><Esc>
 
 " map <leader>rr <Action>(IdeaVim.ReloadVimRc.reload)
 " 如果 action 弹窗不显示，是否禁用了 ideavim 通知
@@ -43,6 +43,7 @@ map <C-s> :w<CR>
 " nmap sv $<S-v>%
 nmap sv mpjvaI<S-v>o`p
 nmap ss <Action>(EditorCodeBlockStart)
+nmap se <Action>(EditorCodeBlockEnd)
 
 " 删除字符
 nnoremap <c-h> s
@@ -107,9 +108,12 @@ vmap <C-S-CR> <action>(CommentByBlockComment)<Esc>
 " 文件代码格式化
 map <C-f> <action>(ReformatCode)
 " 格式化当前行
-map Q <S-v><action>(ReformatCode)
+map Q <S-v>:action ReformatCode<CR>
+
 " 格式化当前代码块
-map qb <S-v>$%:action ReformatCode<CR>
+" map qb <S-v>$%:action ReformatCode<CR>
+
+vmap <leader>f :action ReformatCode<CR>
 
 " 复制当前文件信息
 map <leader>cp <action>(CopyAbsolutePath)
@@ -173,7 +177,7 @@ map [[ <Action>(MethodUp)
 map ]] <Action>(MethodDown)
 
 " information
-map se <action>(ShowErrorDescription)
+map sd <action>(ShowErrorDescription)
 " 列出当前方法有哪些重载方法
 noremap <leader>p :action ParameterInfo<CR>
 " 当前表达式的返回结果类型
