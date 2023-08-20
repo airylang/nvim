@@ -1,7 +1,8 @@
 set surround
 set matchit
 set highlightedyank
-" set easymotion
+
+set easymotion
 set NERDTree
 set argtextobj
 set exchange
@@ -17,6 +18,7 @@ let g:argtextobj_pairs="(:),{:},<:>"
 let g:NERDTreeMapActivateNode="l"
 let g:NERDTreeMapCloseDir="h"
 
+" 参数文本对象
 " caa, daa, via
 " 设置顶级为强制级别 g:argumentobject_force_toplevel = 1
 

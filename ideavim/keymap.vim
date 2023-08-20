@@ -20,8 +20,12 @@ map L $
 map H ^
 map <c-u> %
 
+" 快速选中当前代码块
+nmap sv mpjvaI<S-v>o`p
+nmap ss <Action>(EditorCodeBlockStart)
+
 " 按单词跳转
-map w ]w
+" map w ]w
 " map b ]b
 
 " tab 切换
@@ -38,11 +42,6 @@ map <leader>0 <action>(GoToLastTab)
 " 保存 自动保存
 map <C-s> :w<CR>
 
-" 选中当前代码块 (select )
-" nmap sv j<action>(CollapseBlock)zo<S-v>%zz
-" nmap sv $<S-v>%
-nmap sv mpjvaI<S-v>o`p
-nmap ss <Action>(EditorCodeBlockStart)
 
 " 删除字符
 nnoremap <c-h> s
@@ -78,22 +77,21 @@ nmap <leader>ql <action>(CloseAllToTheRight)
 " map - :vertical res -5<CR>
 
 " 复制粘贴
+vmap <C-c> y
 nmap <C-v> pa
 imap <C-v> <Esc>pa
 vmap <C-v> <action>($Paste)
 imap <C-p> <Esc>pa
 nmap <C-p> o<Esc>pa
 cmap <C-v> <S-Insert>
-map <leader>d v%d
-map <leader>y v%y
 
 " 新行
 imap <S-CR> <Esc>o
 imap <C-S-CR> <Esc>O
 map <S-CR> j\"_cc
 
-" 撤销
-imap <C-u> <Esc>uui
+" 输入模式下撤销
+imap <C-u> <Action>($Undo)
 
 " 进入块模式
 noremap <M-v> <C-v>
@@ -199,7 +197,7 @@ map <C-t> :NERDTreeToggle<CR>
 map <leader>e :NERDTreeFind<CR>
 
 " hop word
-nmap <leader><leader> <action>(KJumpAction.Word1)
+" nmap <leader><leader> <action>(KJumpAction.Word1)
 " nmap <leader><leader>s :action KJumpAction<cr>
 " nmap <leader><leader>w :action KJumpAction.Word0<cr>
 " nmap <leader><leader>l :action KJumpAction.Line<cr>
@@ -263,4 +261,4 @@ nmap <leader>jd mp%dd`pdd<S-v>%=
 nmap <leader>wh <Action>(HideActiveWindow)
 
 " 快速打开kmap
-nmap <F1>  :vsp D:/airylang/nvim/ideavim/keymap.vim
+nmap <F1>  :vsp D:/airylang/nvim/ideavim/keymap.vim<CR>
