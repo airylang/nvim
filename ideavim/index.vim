@@ -30,3 +30,33 @@ source D:\airylang\nvim\ideavim\set.vim
 " lmap  :lnoremap :lunmap    Insert, Command-line, Lang-Arg
 " cmap  :cnoremap :cunmap    Command-line
 
+" ":map   :noremap  :unmap     Normal, Visual, Select, Operator-pending
+" ":nmap  :nnoremap :nunmap    Normal
+" ":vmap  :vnoremap :vunmap    Visual and Select
+" ":smap  :snoremap :sunmap    Select
+" ":xmap  :xnoremap :xunmap    Visual
+" ":omap  :onoremap :ounmap    Operator-pending
+" ":map!  :noremap! :unmap!    Insert and Command-line
+" ":imap  :inoremap :iunmap    Insert
+" ":lmap  :lnoremap :lunmap    Insert, Command-line, Lang-Arg
+" ":cmap  :cnoremap :cunmap    Command-line
+" ":tmap  :tnoremap :tunmap    Terminal-Job
+" "
+" "Same information in a table:
+" "
+" "
+" "                                                        map-table
+" "         Mode  | Norm | Ins | Cmd | Vis | Sel | Opr | Term | Lang |
+" "Command        +------+-----+-----+-----+-----+-----+------+------+
+" "[nore]map      | yes  |  -  |  -  | yes | yes | yes |  -   |  -   |
+" "n[nore]map     | yes  |  -  |  -  |  -  |  -  |  -  |  -   |  -   |
+" "[nore]map!     |  -   | yes | yes |  -  |  -  |  -  |  -   |  -   |
+" "i[nore]map     |  -   | yes |  -  |  -  |  -  |  -  |  -   |  -   |
+" "c[nore]map     |  -   |  -  | yes |  -  |  -  |  -  |  -   |  -   |
+" "v[nore]map     |  -   |  -  |  -  | yes | yes |  -  |  -   |  -   |
+" "x[nore]map     |  -   |  -  |  -  | yes |  -  |  -  |  -   |  -   |
+" "s[nore]map     |  -   |  -  |  -  |  -  | yes |  -  |  -   |  -   |
+" "o[nore]map     |  -   |  -  |  -  |  -  |  -  | yes |  -   |  -   |
+" "t[nore]map     |  -   |  -  |  -  |  -  |  -  |  -  | yes  |  -   |
+" "l[nore]map     |  -   | yes | yes |  -  |  -  |  -  |  -   | yes  |
+

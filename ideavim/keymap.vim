@@ -1,4 +1,5 @@
 nmap so :w<CR> :source ~/.ideavimrc<CR><Esc>
+nmap sp  :vsp D:/airylang/nvim/ideavim/keymap.vim<CR>
 
 " map <leader>rr <Action>(IdeaVim.ReloadVimRc.reload)
 " 如果 action 弹窗不显示，是否禁用了 ideavim 通知
@@ -19,6 +20,8 @@ map <C-k> 5k
 map L $
 map H ^
 map <c-u> %
+noremap z `
+noremap zz ``
 
 " 按单词跳转
 map w ]w
@@ -42,8 +45,8 @@ map <C-s> :w<CR>
 " nmap sv j<action>(CollapseBlock)zo<S-v>%zz
 " nmap sv $<S-v>%
 nmap sv mpjvaI<S-v>o`p
-nmap ss <Action>(EditorCodeBlockStart)
-nmap se <Action>(EditorCodeBlockEnd)
+nmap ss mm<Action>(EditorCodeBlockStart)`m``
+nmap se mm<Action>(EditorCodeBlockEnd)`m``
 
 " 删除字符
 nnoremap <c-h> s
@@ -266,9 +269,6 @@ nmap <leader>jd mp%dd`pdd<S-v>%=
 " window
 nmap <leader>wh <Action>(HideActiveWindow)
 nmap <leader>wo <Action>(HideAllWindows)
-
-" 快速打开kmap
-nmap <F1>  :vsp D:/airylang/nvim/ideavim/keymap.vim<CR>
 
 " mark down
 nmap <leader>mo <Action>(Markdown.Layout.EditorOnly)
