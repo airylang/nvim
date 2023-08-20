@@ -20,12 +20,8 @@ map L $
 map H ^
 map <c-u> %
 
-" 快速选中当前代码块
-nmap sv mpjvaI<S-v>o`p
-nmap ss <Action>(EditorCodeBlockStart)
-
 " 按单词跳转
-" map w ]w
+map w ]w
 " map b ]b
 
 " tab 切换
@@ -42,6 +38,11 @@ map <leader>0 <action>(GoToLastTab)
 " 保存 自动保存
 map <C-s> :w<CR>
 
+" 选中当前代码块 (select )
+" nmap sv j<action>(CollapseBlock)zo<S-v>%zz
+" nmap sv $<S-v>%
+nmap sv mpjvaI<S-v>o`p
+nmap ss <Action>(EditorCodeBlockStart)
 
 " 删除字符
 nnoremap <c-h> s
@@ -181,6 +182,7 @@ noremap <leader>ti :action ExpressionTypeInfo<CR>
 
 " java 提示
 map <leader>rr <action>(RunClass)
+map <leader>rd <action>(DebugClass)
 map <leader>ro <action>(OverrideMethods)
 " map <leader>o <action>(OptimizeImports)
 map sa <action>(ShowIntentionActions)
@@ -259,6 +261,15 @@ nmap <leader>jd mp%dd`pdd<S-v>%=
 
 " window
 nmap <leader>wh <Action>(HideActiveWindow)
+nmap <leader>wo <Action>(HideAllWindows)
 
 " 快速打开kmap
 nmap <F1>  :vsp D:/airylang/nvim/ideavim/keymap.vim<CR>
+
+" mark down
+nmap <leader>mo <Action>(Markdown.Layout.EditorOnly)
+nmap <leader>mp <Action>(Markdown.Layout.PreviewOnly)
+nmap <leader>ma <Action>(Markdown.Layout.EditorAndPreview)
+
+" 打开termail
+nmap <leader>tm <Action>(ActivateTerminalToolWindow)
