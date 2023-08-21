@@ -1,5 +1,5 @@
-nmap so :w<CR> :source ~/.ideavimrc<CR><Esc>
-nmap sp  :vsp D:/airylang/nvim/ideavim/keymap.vim<CR>
+nmap <leader>so :w<CR> :source ~/.ideavimrc<CR><Esc>
+nmap <leader><leader><leader>  :vsp D:/airylang/nvim/ideavim/keymap.vim<CR>
 
 " map <leader>rr <Action>(IdeaVim.ReloadVimRc.reload)
 " 如果 action 弹窗不显示，是否禁用了 ideavim 通知
@@ -7,11 +7,12 @@ nmap sp  :vsp D:/airylang/nvim/ideavim/keymap.vim<CR>
 " noremap <SPACE> <Nop>
 " 使用 nore 方式不能映射 <action>(xxx), 替换为  :action xxx<CR>
 
-" 清除
+" 清除 s, x 本身的作用，用于自定义
 map s <nop>
+map x <nop>
 
 " 解决 v 模式下粘贴时光标始终会移动到行首
-vnoremap y mpy`p
+vnoremap y mmy`m
 
 " 快速移动
 map <Esc> <Esc>:nohls<CR>
@@ -22,14 +23,15 @@ map H ^
 map <c-u> %
 noremap z `
 noremap zz ``
+map Y y$
 
-" 按单词跳转
-map w ]w
-" map b ]b
+
+" 覆盖
+noremap <BS> x
 
 " tab 切换
-map <Tab> <action>(NextTab)
-map <S-Tab> <action>(PreviousTab)
+nmap <Tab> <action>(NextTab)
+nmap <S-Tab> <action>(PreviousTab)
 map <leader>1 <action>(GoToTab1)
 map <leader>2 <action>(GoToTab2)
 map <leader>3 <action>(GoToTab3)
@@ -41,21 +43,17 @@ map <leader>0 <action>(GoToLastTab)
 " 保存 自动保存
 map <C-s> :w<CR>
 
-" 选中当前代码块 (select )
-" nmap sv j<action>(CollapseBlock)zo<S-v>%zz
-" nmap sv $<S-v>%
+" 选中
 nmap sv mpjvaI<S-v>o`p
-nmap ss mm<Action>(EditorCodeBlockStart)`m``
-nmap se mm<Action>(EditorCodeBlockEnd)`m``
+map ss mm<Action>(EditorCodeBlockStart)`m``
+map se mm<Action>(EditorCodeBlockEnd)`m``
+map <leader>v v$
 
 " 删除字符
 nnoremap <c-h> s
 nnoremap <c-l> i<Del>
 inoremap <c-h> <BS>
 inoremap <c-l> <DEL>
-noremap <BS> s
-" map <C-BS> DEL>i
-" imap <C-BS> <DEL>
 
 " 输入模式下移动光标
 imap <M-h> <left>
@@ -238,7 +236,7 @@ nnoremap <leader>gv `[v`]
 vmap p p<leader>gvy<Esc>
 
 " v 模式下按 * 搜索(使用p作为寄存器)
-vmap * \"py/<C-r>p<CR>
+vnoremap * \"py/<C-r>p<CR>
 
 " 选中单词
 " nnoremap <Enter> <Action>(EditorSelectWord)
@@ -277,3 +275,4 @@ nmap <leader>ma <Action>(Markdown.Layout.EditorAndPreview)
 
 " 打开termail
 nmap <leader>tm <Action>(ActivateTerminalToolWindow)
+
