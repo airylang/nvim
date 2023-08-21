@@ -19,17 +19,6 @@ source D:\airylang\nvim\ideavim\set.vim
 "map \r <Action>(ReformatCode)
 
 "      COMMANDS                    MODES ~
-" map   :noremap  :unmap     Normal, Visual, Select, Operator-pending
-" nmap  :nnoremap :nunmap    Normal
-" vmap  :vnoremap :vunmap    Visual and Select
-" smap  :snoremap :sunmap    Select
-" xmap  :xnoremap :xunmap    Visual
-" omap  :onoremap :ounmap    Operator-pending
-" map!  :noremap! :unmap!    Insert and Command-line
-" imap  :inoremap :iunmap    Insert
-" lmap  :lnoremap :lunmap    Insert, Command-line, Lang-Arg
-" cmap  :cnoremap :cunmap    Command-line
-
 " ":map   :noremap  :unmap     Normal, Visual, Select, Operator-pending
 " ":nmap  :nnoremap :nunmap    Normal
 " ":vmap  :vnoremap :vunmap    Visual and Select
@@ -41,10 +30,7 @@ source D:\airylang\nvim\ideavim\set.vim
 " ":lmap  :lnoremap :lunmap    Insert, Command-line, Lang-Arg
 " ":cmap  :cnoremap :cunmap    Command-line
 " ":tmap  :tnoremap :tunmap    Terminal-Job
-" "
-" "Same information in a table:
-" "
-" "
+
 " "                                                        map-table
 " "         Mode  | Norm | Ins | Cmd | Vis | Sel | Opr | Term | Lang |
 " "Command        +------+-----+-----+-----+-----+-----+------+------+

@@ -45,8 +45,8 @@ map <C-s> :w<CR>
 
 " 选中
 nmap sv mpjvaI<S-v>o`p
-map ss mm<Action>(EditorCodeBlockStart)`m``
-map se mm<Action>(EditorCodeBlockEnd)`m``
+map sj mm<Action>(EditorCodeBlockEnd)`m``
+map sk mm<Action>(EditorCodeBlockStart)`m``
 map <leader>v v$
 
 " 删除字符
@@ -273,6 +273,6 @@ nmap <leader>mo <Action>(Markdown.Layout.EditorOnly)
 nmap <leader>mp <Action>(Markdown.Layout.PreviewOnly)
 nmap <leader>ma <Action>(Markdown.Layout.EditorAndPreview)
 
-" 打开termail
+" 打开 terminal
 nmap <leader>tm <Action>(ActivateTerminalToolWindow)
 
