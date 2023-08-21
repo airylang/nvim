@@ -1,4 +1,5 @@
-map <F5> :w<CR> :source ~/.ideavimrc<CR><Esc>
+nmap so :w<CR> :source ~/.ideavimrc<CR><Esc>
+nmap sp  :vsp D:/airylang/nvim/ideavim/keymap.vim<CR>
 
 " map <leader>rr <Action>(IdeaVim.ReloadVimRc.reload)
 " 如果 action 弹窗不显示，是否禁用了 ideavim 通知
@@ -19,6 +20,8 @@ map <C-k> 5k
 map L $
 map H ^
 map <c-u> %
+noremap z `
+noremap zz ``
 
 " 按单词跳转
 map w ]w
@@ -42,8 +45,8 @@ map <C-s> :w<CR>
 " nmap sv j<action>(CollapseBlock)zo<S-v>%zz
 " nmap sv $<S-v>%
 nmap sv mpjvaI<S-v>o`p
-nmap ss <Action>(EditorCodeBlockStart)
-nmap sV sssv
+nmap ss mm<Action>(EditorCodeBlockStart)`m``
+nmap se mm<Action>(EditorCodeBlockEnd)`m``
 
 " 删除字符
 nnoremap <c-h> s
@@ -79,22 +82,21 @@ nmap <leader>ql <action>(CloseAllToTheRight)
 " map - :vertical res -5<CR>
 
 " 复制粘贴
+vmap <C-c> y
 nmap <C-v> pa
 imap <C-v> <Esc>pa
 vmap <C-v> <action>($Paste)
 imap <C-p> <Esc>pa
 nmap <C-p> o<Esc>pa
 cmap <C-v> <S-Insert>
-map <leader>d v%d
-map <leader>y v%y
 
 " 新行
 imap <S-CR> <Esc>o
 imap <C-S-CR> <Esc>O
 map <S-CR> j\"_cc
 
-" 撤销
-imap <C-u> <Esc>uui
+" 输入模式下撤销
+imap <C-u> <Action>($Undo)
 
 " 进入块模式
 noremap <M-v> <C-v>
@@ -109,9 +111,12 @@ vmap <C-S-CR> <action>(CommentByBlockComment)<Esc>
 " 文件代码格式化
 map <C-f> <action>(ReformatCode)
 " 格式化当前行
-map Q <S-v><action>(ReformatCode)
+map Q <S-v>:action ReformatCode<CR>
+
 " 格式化当前代码块
-map qb <S-v>$%:action ReformatCode<CR>
+" map qb <S-v>$%:action ReformatCode<CR>
+
+vmap <leader>f :action ReformatCode<CR>
 
 " 复制当前文件信息
 map <leader>cp <action>(CopyAbsolutePath)
@@ -175,7 +180,7 @@ map [[ <Action>(MethodUp)
 map ]] <Action>(MethodDown)
 
 " information
-map se <action>(ShowErrorDescription)
+map sd <action>(ShowErrorDescription)
 " 列出当前方法有哪些重载方法
 noremap <leader>p :action ParameterInfo<CR>
 " 当前表达式的返回结果类型
@@ -201,7 +206,7 @@ map <C-t> :NERDTreeToggle<CR>
 map <leader>e :NERDTreeFind<CR>
 
 " hop word
-nmap <leader><leader> <action>(KJumpAction.Word1)
+" nmap <leader><leader> <action>(KJumpAction.Word1)
 " nmap <leader><leader>s :action KJumpAction<cr>
 " nmap <leader><leader>w :action KJumpAction.Word0<cr>
 " nmap <leader><leader>l :action KJumpAction.Line<cr>
@@ -264,9 +269,6 @@ nmap <leader>jd mp%dd`pdd<S-v>%=
 " window
 nmap <leader>wh <Action>(HideActiveWindow)
 nmap <leader>wo <Action>(HideAllWindows)
-
-" 快速打开kmap
-nmap <F1>  :vsp D:/airylang/nvim/ideavim/keymap.vim
 
 " mark down
 nmap <leader>mo <Action>(Markdown.Layout.EditorOnly)
