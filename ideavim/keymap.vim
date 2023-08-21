@@ -43,6 +43,7 @@ map <C-s> :w<CR>
 " nmap sv $<S-v>%
 nmap sv mpjvaI<S-v>o`p
 nmap ss <Action>(EditorCodeBlockStart)
+nmap sV sssv
 
 " 删除字符
 nnoremap <c-h> s
