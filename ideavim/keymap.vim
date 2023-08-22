@@ -1,4 +1,4 @@
-nmap <leader>so :w<CR> :source ~/.ideavimrc<CR><Esc>
+nmap so :w<CR> :source ~/.ideavimrc<CR><Esc>
 nmap <leader><leader><leader>  :vsp D:/airylang/nvim/ideavim/keymap.vim<CR>
 
 " map <leader>rr <Action>(IdeaVim.ReloadVimRc.reload)
@@ -7,9 +7,10 @@ nmap <leader><leader><leader>  :vsp D:/airylang/nvim/ideavim/keymap.vim<CR>
 " noremap <SPACE> <Nop>
 " 使用 nore 方式不能映射 <action>(xxx), 替换为  :action xxx<CR>
 
-" 清除 s, x 本身的作用，用于自定义
+" 清除 s, x, o 本身的作用，用于自定义
 map s <nop>
 map x <nop>
+nmap o <nop>
 
 " 解决 v 模式下粘贴时光标始终会移动到行首
 vnoremap y mmy`m
@@ -24,10 +25,9 @@ map <c-u> %
 noremap z `
 noremap zz ``
 map Y y$
+noremap oo o
 
 
-" 覆盖
-noremap <BS> x
 
 " tab 切换
 nmap <Tab> <action>(NextTab)
@@ -44,16 +44,18 @@ map <leader>0 <action>(GoToLastTab)
 map <C-s> :w<CR>
 
 " 选中
-nmap sv mpjvaI<S-v>o`p
+nmap sv mpjvaI<S-v>
+nmap sV vaI<S-v>
 map sj mm<Action>(EditorCodeBlockEnd)`m``
 map sk mm<Action>(EditorCodeBlockStart)`m``
 map <leader>v v$
+map oa ggvG
 
 " 删除字符
-nnoremap <c-h> s
-nnoremap <c-l> i<Del>
+nnoremap <c-h> xh
 inoremap <c-h> <BS>
-inoremap <c-l> <DEL>
+map <c-l> <DEL>
+noremap <BS> s
 
 " 输入模式下移动光标
 imap <M-h> <left>
@@ -89,9 +91,10 @@ nmap <C-p> o<Esc>pa
 cmap <C-v> <S-Insert>
 
 " 新行
-imap <S-CR> <Esc>o
-imap <C-S-CR> <Esc>O
-map <S-CR> j\"_cc
+nnoremap <S-CR> o
+inoremap <S-CR> <Esc>o
+inoremap <C-S-CR> <Esc>O
+" map <S-CR> j\"_cc
 
 " 输入模式下撤销
 imap <C-u> <Action>($Undo)
@@ -100,10 +103,14 @@ imap <C-u> <Action>($Undo)
 noremap <M-v> <C-v>
 
 " 注释
-nmap  <C-CR> <action>(CommentByLineComment)k
-vmap  <C-CR> <action>(CommentByLineComment)<Esc>
-imap <C-CR> <Esc><action>(CommentByLineComment)k
-vmap <C-S-CR> <action>(CommentByBlockComment)<Esc>
+" nmap  <C-CR> <action>(CommentByLineComment)k
+" vmap  <C-CR> <action>(CommentByLineComment)<Esc>
+" imap <C-CR> <Esc><action>(CommentByLineComment)k
+" vmap <C-S-CR> <action>(CommentByBlockComment)<Esc>
+nmap xx mm<action>(CommentByLineComment)`m
+vmap x <action>(CommentByLineComment)<Esc>
+vmap X <action>(CommentByBlockComment)<Esc>
+nmap <leader>x <S-v><action>(FixDocComment)<Esc>a
 
 " 格式化
 " 文件代码格式化
@@ -114,7 +121,7 @@ map Q <S-v>:action ReformatCode<CR>
 " 格式化当前代码块
 " map qb <S-v>$%:action ReformatCode<CR>
 
-vmap <leader>f :action ReformatCode<CR>
+vmap q :action ReformatCode<CR>
 
 " 复制当前文件信息
 map <leader>cp <action>(CopyAbsolutePath)
@@ -276,3 +283,13 @@ nmap <leader>ma <Action>(Markdown.Layout.EditorAndPreview)
 " 打开 terminal
 nmap <leader>tm <Action>(ActivateTerminalToolWindow)
 
+" 折叠
+noremap oc zc
+noremap oz zo
+
+" 行内删除
+nmap <C-d> ^d$\"_dd
+
+" 加 减
+nnoremap xa <C-a>
+nnoremap xc <C-x>
