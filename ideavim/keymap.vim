@@ -281,7 +281,7 @@ nmap <leader>mp <Action>(Markdown.Layout.PreviewOnly)
 nmap <leader>ma <Action>(Markdown.Layout.EditorAndPreview)
 
 " 打开 terminal
-nmap <leader>tm <Action>(ActivateTerminalToolWindow)
+nmap ot <Action>(ActivateTerminalToolWindow)
 
 " 折叠
 noremap oc zc
