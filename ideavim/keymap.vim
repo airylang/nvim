@@ -50,6 +50,8 @@ map sj mm<Action>(EditorCodeBlockEnd)`m``
 map sk mm<Action>(EditorCodeBlockStart)`m``
 map <leader>v v$
 map oa ggvG
+map st f>v%oh%h%
+" oh%h%
 
 " 删除字符
 nnoremap <c-h> xh
@@ -292,4 +294,7 @@ nmap <C-d> ^d$\"_dd
 
 " 加 减
 nnoremap xa <C-a>
-nnoremap xc <C-x>
+nnoremap xs <C-x>
+
+" change case
+map xcc <Action>(StringManipulation.ToCamelCase)<Esc>
