@@ -298,3 +298,6 @@ nnoremap xs <C-x>
 
 " change case
 map xcc <Action>(StringManipulation.ToCamelCase)<Esc>
+
+" 跳转上一次输入地方
+nnoremap zi gi
