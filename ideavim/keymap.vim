@@ -288,6 +288,7 @@ nmap ot <Action>(ActivateTerminalToolWindow)
 " 折叠
 noremap oc zc
 noremap oz zo
+noremap oa zO
 
 " 行内删除
 nmap <C-d> ^d$\"_dd
@@ -301,3 +302,10 @@ map xcc <Action>(StringManipulation.ToCamelCase)<Esc>
 
 " 跳转上一次输入地方
 nnoremap zi gi
+
+" 待输入标记
+inoremap <C-M> <+_+>
+nnoremap gm /<+_+><CR>c5l
+
+" 使 cc 有缩进效果
+nnoremap cc \"_ddko
