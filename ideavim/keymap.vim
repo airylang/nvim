@@ -310,3 +310,6 @@ nnoremap gm /<+_+><CR>c5l
 
 " 使 cc 有缩进效果
 nnoremap cc \"_ddko
+
+" 插入空格
+nmap <C-i> a <Esc>
