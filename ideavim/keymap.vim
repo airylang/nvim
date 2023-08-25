@@ -89,8 +89,9 @@ nmap <C-v> pa
 imap <C-v> <Esc>pa
 vmap <C-v> <action>($Paste)
 imap <C-p> <Esc>pa
-nmap <C-p> o<Esc>pa
+nmap <C-p> cc<Esc>p
 cmap <C-v> <S-Insert>
+nmap <leader>yy ^y$
 
 " 新行
 nnoremap <S-CR> o
