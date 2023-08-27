@@ -57,6 +57,7 @@ map st f>v%oh%h%
 nnoremap <c-h> xh
 inoremap <c-h> <BS>
 map <c-l> <DEL>
+imap <c-l> <DEL>
 noremap <BS> s
 
 " 输入模式下移动光标
@@ -106,13 +107,13 @@ imap <C-u> <Action>($Undo)
 noremap <M-v> <C-v>
 
 " 注释
-" nmap  <C-CR> <action>(CommentByLineComment)k
+map  <C-CR> <nop>
 " vmap  <C-CR> <action>(CommentByLineComment)<Esc>
 " imap <C-CR> <Esc><action>(CommentByLineComment)k
 " vmap <C-S-CR> <action>(CommentByBlockComment)<Esc>
-nmap xx mm<action>(CommentByLineComment)`m
-vmap x <action>(CommentByLineComment)<Esc>
-vmap X <action>(CommentByBlockComment)<Esc>
+map <leader><CR> mm<action>(CommentByLineComment)`m
+vmap <leader><CR> <action>(CommentByLineComment)<Esc>
+vmap <leader>/ <action>(CommentByBlockComment)<Esc>
 nmap <leader>x <S-v><action>(FixDocComment)<Esc>a
 
 " 格式化
@@ -203,7 +204,7 @@ map <leader>ro <action>(OverrideMethods)
 map sa <action>(ShowIntentionActions)
 
 " 重构
-map <leader>a <Action>(Refactorings.QuickListPopupAction)
+" map <leader>a <Action>(Refactorings.QuickListPopupAction)
 
 
 " 重启 ide
@@ -220,8 +221,8 @@ map <leader>e :NERDTreeFind<CR>
 " nmap <leader><leader>l :action KJumpAction.Line<cr>
 
 " 文件操作
-nmap <leader>af <action>(NewFile)
-nmap <leader>ac <action>(NewClass)
+nmap onf <action>(NewFile)
+nmap onc <action>(NewClass)
 nmap scp <action>(CopyAbsolutePath)
 map <leader>re <action>(RenameElement)
 map <leader>rf <action>(RenameFile)
@@ -275,8 +276,8 @@ map <leader>mm <action>(Maven.Reimport)
 nmap <leader>jd mp%dd`pdd<S-v>%=
 
 " window
-nmap <leader>wh <Action>(HideActiveWindow)
-nmap <leader>wo <Action>(HideAllWindows)
+nmap xh <Action>(HideActiveWindow)
+nmap xo <Action>(HideAllWindows)
 
 " mark down
 nmap <leader>mo <Action>(Markdown.Layout.EditorOnly)
@@ -313,3 +314,18 @@ nnoremap cc \"_ddko
 
 " 插入空格
 nmap <C-i> a <Esc>
+
+" 折断html属性
+nmap <leader>i f i<CR><Esc>
+
+" 跳转驼峰单词
+map <leader>w ]wl
+
+" 切换当前字母大小写
+nmap cu ~h
+
+" 单词连接转换
+nmap crc <Action>(StringManipulation.ToCamelCase)
+
+" 全选
+nmap <leader>a ggVG
