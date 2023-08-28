@@ -326,6 +326,7 @@ nmap cu ~h
 
 " 单词连接转换
 nmap crc <Action>(StringManipulation.ToCamelCase)
+nmap cr- <Action>(StringManipulation.ToKebabCase)
 
 " 全选
 nmap <leader>a ggVG
