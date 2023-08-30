@@ -307,7 +307,7 @@ nnoremap zi gi
 
 " 待输入标记
 inoremap <C-M> <+_+>
-nnoremap gm /<+_+><CR>c5l
+nnoremap gm /<+_+><CR>\"_c5l
 
 " 使 cc 有缩进效果
 nnoremap cc \"_ddko
@@ -330,3 +330,6 @@ nmap cr- <Action>(StringManipulation.ToKebabCase)
 
 " 全选
 nmap <leader>a ggVG
+
+" 跳转至标签内部开头
+nmap zt vito<Esc>
