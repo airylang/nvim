@@ -147,7 +147,7 @@ map <leader>fg viw<leader>fg<Esc>
 " 同上
 vmap <leader>fg <action>(FindSelectionInPath)
 " 在当前文件查找剪切板内容
-map <leader>fh /<C-r>+<Cr>
+nmap <C-n> /<C-r>+<Cr>
 " 查找action
 map <leader>fa <Action>(GotoAction)
 "==========================================="
