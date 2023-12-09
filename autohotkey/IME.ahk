@@ -1,10 +1,7 @@
-﻿/*
-@Example
-; 获取当前输入法输入模式
+﻿; 获取当前输入法输入模式
 f1::ToolTip IME.GetInputMode()
 ; 切换当前输入法输入模式
-f2::IME.SetInputMode(!IME.GetInputMode())
-*/
+~Esc::IME.SetInputMode(!IME.GetInputMode())
 
 class IME {
     static GetInputMode(hwnd := this.GetFocusedWindow()) {
@@ -18,10 +15,10 @@ class IME {
         if mode {
             this.SetOpenStatus(true, hwnd)
             switch this.GetKeyboardLayout(hwnd) {
-                case 0x08040804:
-                    this.SetConversionMode(1025, hwnd)
-                case 0x04110411:
-                    this.SetConversionMode(9, hwnd)
+            case 0x08040804:
+                this.SetConversionMode(1025, hwnd)
+            case 0x04110411:
+                this.SetConversionMode(9, hwnd)
             }
         }
         else {
@@ -80,10 +77,10 @@ class IME {
             NumPut("uint", guiThreadInfo.Size, guiThreadInfo)
             DllCall("GetGUIThreadInfo", "uint", DllCall("GetWindowThreadProcessId", "ptr", foreHwnd, "ptr", 0, "uint"), "ptr", guiThreadInfo)
             if focusedHwnd := NumGet(guiThreadInfo, A_PtrSize == 8 ? 16 : 12, "ptr") {
-                return focusedHwnd
-            }
-            return foreHwnd
+            return focusedHwnd
         }
-        return 0
+        return foreHwnd
     }
+    return 0
+}
 }

@@ -21,10 +21,10 @@ SwitchIME(dwLayout){
 
 ; 按下shift键强制切换输入法为中文
 $Shift::
-SwitchIME(00000804)
+  SwitchIME(00000804)
 return
 
 ; 按下该按键强制切换输入法为英文
 ~Esc::
-SwitchIME(0x04090409)
+  SwitchIME(0x04090409)
 return
