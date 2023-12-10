@@ -56,6 +56,7 @@ nnoremap <C-d> ^y$\"_dd
 nnoremap <C-|> :vsp<CR>
 nnoremap <C--> :sp<CR>
 noremap qq :tabclose<CR>
+noremap qo :tabonly<CR>
 " ------------------------------
 
 
