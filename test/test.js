@@ -1,5 +1,5 @@
 
-import { fun } from './util.js' 
+import { fun } from './util.js'
 const a = 5
 
 function test() {
