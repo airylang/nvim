@@ -2,10 +2,10 @@ source  D:\airylang\nvim\vscode-vim\commands.vim
 nnoremap ov :e /d:/airylang/nvim/vscode-vim/base.vim<CR>
 
 " ------------清除--------------
-map q <nop>
-nmap s <nop>
-nmap x <nop>
-nmap o <nop>
+nnoremap q <nop>
+nnoremap s <nop>
+nnoremap x <nop>
+nnoremap o <nop>
 " ------------------------------
 
 
@@ -25,7 +25,7 @@ map <C-u> %
 
 
 " ------------删除字符--------------
-nnoremap <C-h> xi
+nnoremap <C-h> xa
 nnoremap <C-l> i<DEL>
 nnoremap <BS> xi
 inoremap <C-h> <BS>
@@ -48,14 +48,15 @@ nnoremap <leader>gv `[v`]
 " ------------复制--------------
 nnoremap Y y$
 " vnoremap y mmy`m   ;无法生效
-" ------------------------------
+" 剪切一行
+nnoremap <C-d> ^y$\"_dd
 
 
 " ------------分割窗口--------------
 nnoremap <C-|> :vsp<CR>
 nnoremap <C--> :sp<CR>
-map qq :close<CR>
-map qt :tabclose<CR>
+nnoremap qq :close<CR>
+noremap qt :tabclose<CR>
 " ------------------------------
 
 

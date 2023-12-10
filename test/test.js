@@ -1,8 +1,13 @@
-
+import img from 'd://airylang/项目演示/项目图片/2-试驾系统/a.png'
 import { fun } from './util.js'
 const a = 5
 
-function test() {
+/**
+ * 一个测试的函数
+ * @param {*} a
+ * @param {*} b
+ */
+function test(a, b) {
 
   const abc = 5
     if (abc > 10) {
@@ -57,7 +62,14 @@ function test() {
 class f {
   // public name = 5;
   abc
+  while (condition) {
+    return AuthenticatorAssertionResponse;
+  }
   save() {
+    if ((fab(def))) {
+      return ab+(lkajsdfl)
+      a+b;
+    }
     return 45
   }
 
