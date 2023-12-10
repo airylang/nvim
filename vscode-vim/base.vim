@@ -55,8 +55,7 @@ nnoremap <C-d> ^y$\"_dd
 " ------------分割窗口--------------
 nnoremap <C-|> :vsp<CR>
 nnoremap <C--> :sp<CR>
-nnoremap qq :close<CR>
-noremap qt :tabclose<CR>
+noremap qq :tabclose<CR>
 " ------------------------------
 
 
@@ -78,3 +77,5 @@ nnoremap zi gi
 nnoremap zt vito<Esc>
 " ------------------------------
 
+" zz
+nnoremap <leader>z zz
