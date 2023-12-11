@@ -27,7 +27,7 @@ map <C-u> %
 
 
 " ------------删除字符--------------
-nnoremap <C-h> x
+nnoremap <C-h> xh
 nnoremap <C-l> <DEL>
 nnoremap <BS> xi
 inoremap <C-h> <BS>
@@ -47,11 +47,13 @@ nnoremap <leader>gv `[v`]
 " ------------------------------
 
 
-" ------------复制--------------
+" ------------复制粘贴--------------
 nnoremap Y y$
 " vnoremap y mmy`m   ;无法生效
 " 剪切一行
 nnoremap <C-d> ^y$\"_dd
+" v模式粘贴时保持粘贴板内容
+vnoremap p pgvy
 
 
 " ------------分割窗口--------------
