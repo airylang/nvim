@@ -1,5 +1,7 @@
 source  D:\airylang\nvim\vscode-vim\commands.vim
 nnoremap ov :e /d:/airylang/nvim/vscode-vim/base.vim<CR>
+nnoremap oo :e /D:\files\前置付款表单\devstep.md<CR>
+
 
 " ------------清除--------------
 nnoremap q <nop>
@@ -25,8 +27,8 @@ map <C-u> %
 
 
 " ------------删除字符--------------
-nnoremap <C-h> xa
-nnoremap <C-l> i<DEL>
+nnoremap <C-h> x
+nnoremap <C-l> <DEL>
 nnoremap <BS> xi
 inoremap <C-h> <BS>
 inoremap <C-L> <DEL>
