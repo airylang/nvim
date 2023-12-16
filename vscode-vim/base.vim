@@ -101,6 +101,3 @@ nnoremap <leader>z zz
 
 " html 独立一行
 nnoremap <leader>i ^f<space>i<DEL><CR>
-
-" 选中 html 标签
-map st ^lmm%V`m
