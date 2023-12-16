@@ -6,10 +6,13 @@ nnoremap or :e /D:\files\person-remark.md<CR>
 
 
 " ------------清除--------------
-nnoremap q <nop>
-nnoremap s <nop>
-nnoremap x <nop>
-nnoremap o <nop>
+noremap q <nop>
+noremap s <nop>
+noremap x <nop>
+noremap o <nop>
+
+nnoremap c \"9c
+nnoremap d \"9d
 
 " ------------------------------
 
@@ -70,8 +73,8 @@ nnoremap <C-y> ^y$
 " ------------分割窗口--------------
 nnoremap <C-|> :vsp<CR>
 nnoremap <C--> :sp<CR>
-noremap qq :tabclose<CR>
-noremap qo :tabonly<CR>
+nnoremap qq :tabclose<CR>
+nnoremap qo :tabonly<CR>
 " ------------------------------
 
 
@@ -98,3 +101,6 @@ nnoremap <leader>z zz
 
 " html 独立一行
 nnoremap <leader>i ^f<space>i<DEL><CR>
+
+" 选中 html 标签
+map st ^lmm%V`m
