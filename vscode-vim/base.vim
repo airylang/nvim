@@ -9,7 +9,7 @@ nnoremap or :e /D:\files\person-remark.md<CR>
 noremap q <nop>
 noremap s <nop>
 noremap x <nop>
-noremap o <nop>
+nnoremap o <nop>
 
 nnoremap c \"9c
 nnoremap d \"9d
