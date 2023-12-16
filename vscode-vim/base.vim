@@ -1,6 +1,8 @@
 source  D:\airylang\nvim\vscode-vim\commands.vim
 nnoremap ov :e /d:/airylang/nvim/vscode-vim/base.vim<CR>
 nnoremap oo :e /D:\files\前置付款表单\devstep.md<CR>
+nnoremap os :e /D:\files\结算中心\结算中心开发记录.md<CR>
+nnoremap or :e /D:\files\person-remark.md<CR>
 
 
 " ------------清除--------------
@@ -8,7 +10,15 @@ nnoremap q <nop>
 nnoremap s <nop>
 nnoremap x <nop>
 nnoremap o <nop>
+
 " ------------------------------
+
+" ------------恢复--------------
+noremap oq q
+
+
+" ------------------------------
+
 
 
 " ------------必要--------------
@@ -22,7 +32,7 @@ map <C-j> 5j
 map <C-k> 5k
 map H ^
 map L $
-map <C-u> %
+noremap <C-u> %
 " ------------------------------
 
 
@@ -54,6 +64,7 @@ nnoremap Y y$
 nnoremap <C-d> ^y$\"_dd
 " v模式粘贴时保持粘贴板内容
 vnoremap p pgvy
+nnoremap <C-y> ^y$
 
 
 " ------------分割窗口--------------
@@ -84,3 +95,6 @@ nnoremap zt vito<Esc>
 
 " zz
 nnoremap <leader>z zz
+
+" html 独立一行
+nnoremap <leader>i ^f<space>i<DEL><CR>
