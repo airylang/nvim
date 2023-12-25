@@ -8,11 +8,13 @@ nnoremap or :e /D:\files\person-remark.md<CR>
 " ------------清除--------------
 noremap q <nop>
 noremap s <nop>
-noremap x <nop>
+nnoremap x <nop>
 nnoremap o <nop>
 
 nnoremap c \"9c
+vnoremap c \"9c
 nnoremap d \"9d
+vnoremap d \"9d
 
 " ------------------------------
 
@@ -57,17 +59,23 @@ nnoremap cu ~h
 nnoremap sv vaI
 " 选中上一次粘贴的文本
 nnoremap <leader>gv `[v`]
+nnoremap <leader>a ggVG
 " ------------------------------
 
 
-" ------------复制粘贴--------------
+" ------------复制 剪切 粘贴--------------
 nnoremap Y y$
 " vnoremap y mmy`m   ;无法生效
-" 剪切一行
-nnoremap <C-d> ^y$\"_dd
 " v模式粘贴时保持粘贴板内容
 vnoremap p pgvy
 nnoremap <C-y> ^y$
+
+" 剪切
+nnoremap <C-d> ^y$\"_dd
+nnoremap X dd
+vnoremap x d
+
+" ------------------------------
 
 
 " ------------分割窗口--------------
@@ -81,6 +89,12 @@ nnoremap qo :tabonly<CR>
 " ------------标签页--------------
 nnoremap <TAB> :bnext<CR>
 nnoremap <S-Tab> :bprev<CR>
+" ------------------------------
+
+
+" ------------缩进--------------
+vnoremap <TAB> >>gv
+vnoremap <S-Tab> <<gv
 " ------------------------------
 
 
