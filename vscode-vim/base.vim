@@ -1,8 +1,10 @@
 source  D:\airylang\nvim\vscode-vim\commands.vim
 nnoremap ov :e /d:/airylang/nvim/vscode-vim/base.vim<CR>
-nnoremap oo :e /D:\files\前置付款表单\devstep.md<CR>
-nnoremap os :e /D:\files\结算中心\结算中心开发记录.md<CR>
-nnoremap or :e /D:\files\person-remark.md<CR>
+nnoremap oq :e /D:\project-file\前置付款表单\devstep.md<CR>
+nnoremap os :e /D:\project-file\结算中心\结算中心开发记录.md<CR>
+nnoremap or :e /D:\project-file\person-remark.md<CR>
+nnoremap ou :e /D:\project-file\user.md<CR>
+nnoremap oo :e /D:\project-file\dev.md<CR>
 
 
 " ------------清除--------------
