@@ -76,6 +76,14 @@ nnoremap <C-y> ^y$
 nnoremap <C-d> ^y$\"_dd
 nnoremap X dd
 vnoremap x d
+nnoremap xl mmy$`m\"9d$
+nnoremap xh mmy^`m\"9d^
+nnoremap xw diw
+
+" 复制
+nnoremap yl y$
+nnoremap yh y^
+
 
 " ------------------------------
 
