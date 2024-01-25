@@ -1,10 +1,10 @@
 source  D:\airylang\nvim\vscode-vim\commands.vim
 nnoremap ov :e /d:/airylang/nvim/vscode-vim/base.vim<CR>
-nnoremap oq :e /D:\project-file\前置付款表单\devstep.md<CR>
+nnoremap oq :e /D:\project-file\前置付款\devstep.md<CR>
 nnoremap os :e /D:\project-file\结算中心\结算中心开发记录.md<CR>
-nnoremap or :e /D:\project-file\person-remark.md<CR>
-nnoremap ou :e /D:\project-file\user.md<CR>
-nnoremap oo :e /D:\project-file\dev.md<CR>
+nnoremap op :e /D:\project-file\other\product.md<CR>
+nnoremap ou :e /D:\project-file\other\user.md<CR>
+nnoremap oo :e /D:\project-file\other\dev.md<CR>
 
 
 " ------------清除--------------
@@ -44,11 +44,11 @@ noremap <C-u> %
 
 
 " ------------删除字符--------------
-nnoremap <C-h> xh
-nnoremap <C-l> <DEL>
-nnoremap <BS> xi
-inoremap <C-h> <BS>
-inoremap <C-L> <DEL>
+nnoremap <C-h> \"9xh
+nnoremap <C-l> \"9<DEL>
+nnoremap <BS> \"9xi
+inoremap <C-h> <ESC>\"9<DEL>i
+inoremap <C-l> <ESC>l\"9<DEL>i
 " ------------------------------
 
 
@@ -61,7 +61,8 @@ nnoremap cu ~h
 nnoremap sv vaI
 " 选中上一次粘贴的文本
 nnoremap <leader>gv `[v`]
-nnoremap <leader>a ggVG
+" nnoremap <leader>a ggVG
+nnoremap <C-a> ggVG
 " ------------------------------
 
 
