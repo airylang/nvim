@@ -114,7 +114,7 @@ return require('packer').startup(function()
     requires = {
       'nvim-tree/nvim-web-devicons', -- optional, for file icons
     },
-    tag = 'nightly' -- optional, updated every week. (see issue #1193)
+    -- tag = 'nightly' -- optional, updated every week. (see issue #1193)
   }
 
   -- 显示代码中色颜色
@@ -203,19 +203,19 @@ return require('packer').startup(function()
 
   --chat gpt
   -- Packer
-  use({
-    "jackMort/ChatGPT.nvim",
-    config = function()
-      require("chatgpt").setup({
-        -- optional configuration
-      })
-    end,
-    requires = {
-      "MunifTanjim/nui.nvim",
-      "nvim-lua/plenary.nvim",
-      "nvim-telescope/telescope.nvim"
-    }
-  })
+  -- use({
+  --   "jackMort/ChatGPT.nvim",
+  --   config = function()
+  --     require("chatgpt").setup({
+  --       -- optional configuration
+  --     })
+  --   end,
+  --   requires = {
+  --     "MunifTanjim/nui.nvim",
+  --     "nvim-lua/plenary.nvim",
+  --     "nvim-telescope/telescope.nvim"
+  --   }
+  -- })
 
   -- 多个主题
   use 'lunarvim/colorschemes'
