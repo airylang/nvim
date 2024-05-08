@@ -197,9 +197,9 @@ return require('packer').startup(function()
   -- use({ "iamcco/markdown-preview.nvim", run = "cd app && yarn install", setup = function() vim.g.mkdp_filetypes = { "markdown" } end, ft = { "markdown" }, })
 
   -- 调试
-  use 'mfussenegger/nvim-dap'
-  use  'rcarriga/nvim-dap-ui'
-  use 'theHamsta/nvim-dap-virtual-text'
+  -- use 'mfussenegger/nvim-dap'
+  -- use  'rcarriga/nvim-dap-ui'
+  -- use 'theHamsta/nvim-dap-virtual-text'
 
   --chat gpt
   -- Packer
