@@ -1,0 +1,1 @@
+source linux-vim/index.vim
