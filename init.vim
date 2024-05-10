@@ -1,1 +1,1 @@
-source linux-vim/init.vim
+source /nvim/linux-vim/init.vim
