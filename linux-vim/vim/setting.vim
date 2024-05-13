@@ -22,3 +22,23 @@ set listchars=tab:▸▸,trail:•
 
 " 单行限制高亮字符数
 set synmaxcol=500
+
+" 缩进
+set autoindent
+
+" 底部空间
+set scrolloff=4
+
+syntax on
+set termguicolors
+
+" swap 文件存储位置
+set directory=/soft/swap
+
+"  进入输入模式时，高亮当前行背景色
+autocmd InsertEnter * set cul
+autocmd InsertLeave * set nocul
+
+" 图标列
+set signcolumn=number
+

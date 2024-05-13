@@ -3,6 +3,10 @@ let mapleader = ' '
 " 配置生效
 noremap <leader>o :source ~/.config/nvim/init.vim<CR><Esc>
 
+" 打开 nvim 配置
+nnoremap <C-n> :vsp /nvim/linux-vim/<CR>
+
+
 " 取消搜索高亮
 map <Esc> <Esc>:nohls<CR>
 
@@ -48,9 +52,22 @@ nnoremap cu ~h
 " 清除按键
 noremap q <nop>
 noremap s <nop>
-" nnoremap x <nop>
+nnoremap x <nop>
 
 " tab
 nnoremap <TAB> :bnext<CR>
-nnoremap <S-Tab> :bprev<CR>
+nnoremap <S-tab> :bprev<CR>
+
+" 分屏
+nnoremap <C-\> :vsp<CR>
+nnoremap qq :close<CR>
+
+" 跳转配对
+noremap <C-u> %
+
+" ===============命令行相关
+" 上下选择命令
+" cnoremap <C-j> <up>
+" cnoremap <C-k> <down>
+
 

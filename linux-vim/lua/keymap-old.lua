@@ -132,19 +132,6 @@ keyset('n', '<leader>to', ':NvimTreeClose | NvimTreeOpen ')
 --  ctrl + c, (开了有道词典以及设置取词为两次ctrl 后 等价于 按两次ctrl)
 keyset('n', '<C-c>', ':NvimTreeFindFile!<CR>')
 
--- 文件/代码/项目搜索 telescope
-local builtin = require('telescope.builtin')
-keyset('n', '<leader>ff', builtin.find_files, {})  -- ff: find files
-keyset('n', '<leader>fg', builtin.live_grep, {})  -- fg: find grep
-keyset('n', '<leader>fb', builtin.buffers, {}) -- fb: find buffer
-keyset('n', '<leader>fh', builtin.oldfiles, {}) -- fh: find history
-keyset('n', '<leader>fs', builtin.grep_string, {}) -- fs: find str
-keyset('n', '<leader>fc', builtin.current_buffer_fuzzy_find, {}) -- fc: find current_buffer
-keyset('n', '<leader>fl', builtin.resume, {}) -- fl: find last
-keyset('n', '<leader>fr', builtin.registers, {}) -- fr: find registers
-keyset('n', '<leader>fm', builtin.marks, {}) -- fm: find marks
--- telescope 打开 项目列表
-vim.api.nvim_set_keymap('n', '<leader>fp', ":lua require'telescope'.extensions.project.project{}<CR>", {})
 
 -- telescope 打开剪切板历史
 vim.api.nvim_set_keymap('n', '<leader>fy', ":Telescope yank_history<CR>", {})
@@ -180,29 +167,3 @@ keyset('n', '<leader>sc', ':SessionManager load_current_dir_session<CR>')
 
 -- makrdown 
 keyset('n', '<leader>md', '<Plug>MarkdownPreview')
-
-keyset('n', '<C-p>', function() 
-  -- local s = vim.fn.getchar()
-  -- local line = vim.fn.getline('.')
-  -- local newLine = vim.fn.substitute(line, 'L', "*", "g")
-  -- print(newLine)
-  -- vim.fn.setline(".", newLine)
-  local user_name = 'zhou'
-
-  -- 在当前位置 插入 "new text"
-  -- vim.fn.execute('normal inew text')
-  -- execute "normal inew text\<Esc>b"
-
-  vim.fn.execute('normal B')
-
-  -- userNameAge  user_name_age  UserNameAge  Usr_Name_Age user-name-age User-Name-Age User/Name/Age
-  -- theTestName
-  local line = vim.fn.getline('.')
-  local col = vim.fn.col('.')
-  -- print(col)
-
-  local list = { 'aaa', 'bbb', 'ccc' }
-
-  -- vim.fn.execute('insert')
-  vim.fn.complete('.', list)
- end )
