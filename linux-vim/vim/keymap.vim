@@ -1,7 +1,7 @@
 let mapleader = ' '
 
 " 配置生效
-noremap <leader>o :source ~/.config/nvim/init.vim<CR><Esc>
+noremap R :source ~/.config/nvim/init.vim<CR><Esc>
 
 " 打开 nvim 配置
 nnoremap <C-n> :vsp /nvim/linux-vim/<CR>
@@ -27,6 +27,7 @@ inoremap <C-v> <Esc>pa
 vnoremap <C-v> p
 
 " 删除字符
+nnoremap <BS> a<BS>
 nnoremap <C-h> xh
 nnoremap <C-l> <Del>
 inoremap <C-h> <BS>
@@ -62,8 +63,38 @@ nnoremap <S-tab> :bprev<CR>
 nnoremap <C-\> :vsp<CR>
 nnoremap qq :close<CR>
 
+" 跳转分屏
+nnoremap <M-h> <C-w>h
+nnoremap <M-j> <C-w>j
+nnoremap <M-k> <C-w>k
+nnoremap <M-l> <C-w>l
+
+" 窗口大小跳转
+nnoremap + :vertical resize +5<CR>
+nnoremap _ :vertical resize -5<CR>
+" nnoremap <C-=> :resize +5<CR>
+" nnoremap <C--> :resize -5<CR>
+
 " 跳转配对
 noremap <C-u> %
+
+nnoremap = <C-a>
+nnoremap - <C-x>
+
+" 缩进
+nnoremap < <<
+nnoremap > >>
+
+" v模式下缩进后继续选中文本
+vnoremap < <gv
+vnoremap > >gv
+
+" nnoremap <S-CR> o
+" noremap <s-Char-13> yy
+" nnoremap <Char-16><Char-13> yy
+nnoremap <S><CR> yy
+
+" nnoremap <Char-13> yy
 
 " ===============命令行相关
 " 上下选择命令

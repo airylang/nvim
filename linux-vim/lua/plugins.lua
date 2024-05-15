@@ -13,6 +13,16 @@ return require('packer').startup(function()
     }
   }
 
+
+  -- 符号配对
+--  use {
+--    "windwp/nvim-autopairs",
+--    event = "InsertEnter",
+--    config = function()
+--      require("nvim-autopairs").setup {}
+--    end
+--  }
+
   -- coc
   use {'neoclide/coc.nvim', branch = 'release'}
 

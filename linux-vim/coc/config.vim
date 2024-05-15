@@ -1,6 +1,12 @@
-let g:coc_global_extensions = ['coc-json', 'coc-git', 'coc-vetur']
-
-" https://raw.githubusercontent.com/neoclide/coc.nvim/master/doc/coc-example-config.vim
+let g:coc_global_extensions=[
+   \ 'coc-json',
+   \ 'coc-git',
+   \ 'coc-vetur',
+   \ 'coc-vimlsp',
+   \ 'coc-tsserver',
+   \ 'coc-pairs',
+   \ 'coc-java',
+   \ 'coc-yank']
 
 set encoding=utf-8
 set nobackup
@@ -19,16 +25,27 @@ set updatetime=300
 " no select by `"suggest.noselect": true` in your configuration file
 " NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
 " other plugin before putting this into your config
-inoremap <silent><expr> <TAB>
+
+" -- 上下前切换 补全面板
+" inoremap <silent><expr> <TAB>
+"       \ coc#pum#visible() ? coc#pum#next(1) :
+"       \ CheckBackspace() ? "\<Tab>" :
+"        \ coc#refresh()
+" inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
+
+inoremap <silent><expr> <c-j>
         \ coc#pum#visible() ? coc#pum#next(1) :
         \ CheckBackspace() ? "\<Tab>" :
         \ coc#refresh()
-inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
+inoremap <expr><c-k> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
+
 
 " Make <CR> to accept selected completion item or notify coc.nvim to format
 " <C-g>u breaks current undo, please make your own choice
 inoremap <silent><expr> <CR> coc#pum#visible() ? coc#pum#confirm()
                               \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
+
+
 
 function! CheckBackspace() abort
   let col = col('.') - 1
@@ -159,3 +176,9 @@ nnoremap <silent><nowait> <space>j  :<C-u>CocNext<CR>
 nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
   " Resume latest coc list
 nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
+
+" coc-yank list
+nnoremap <c-y> :CocList -A --normal yank <CR>
+
+
+

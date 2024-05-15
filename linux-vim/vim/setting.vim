@@ -13,8 +13,10 @@ set ignorecase
 " 高亮当前搜索
 set hlsearch
 
-" 按下shift填充2个空格
+" 按下tab填充2个空格
 set shiftwidth=2
+set expandtab
+set tabstop=2
 
 " 转换tab和空格显示
 set list
@@ -24,7 +26,10 @@ set listchars=tab:▸▸,trail:•
 set synmaxcol=500
 
 " 缩进
-set autoindent
+" set autoindent
+
+" 设置不自动缩进
+set noautoindent
 
 " 底部空间
 set scrolloff=4
@@ -41,4 +46,17 @@ autocmd InsertLeave * set nocul
 
 " 图标列
 set signcolumn=number
+
+" 设置不换行
+set nowrap
+
+" 显示 cmd
+set showcmd
+
+"ssh 远程粘贴板
+
+
+" 使得下一行不会自动产生注释
+autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
+
 
