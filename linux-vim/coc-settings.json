@@ -5,5 +5,10 @@
   "floatFactory.floatConfig": { "border": true, "rounded": true },
   "diagnostic.virtualText": true,
   "java.jdt.ls.vmargs": "-javaagent:/airylang/static/lombok-1.18.32.jar",
-  "yank.highlight.duration": 200
+  "yank.highlight.duration": 200,
+
+  "translator.engines": [
+    "youdao",
+    "haici"
+  ]
 }

@@ -6,6 +6,8 @@ let g:coc_global_extensions=[
    \ 'coc-tsserver',
    \ 'coc-pairs',
    \ 'coc-java',
+   \ 'coc-marketplace',
+   \ 'coc-translator',
    \ 'coc-yank']
 
 set encoding=utf-8

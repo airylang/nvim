@@ -1,5 +1,14 @@
 let mapleader = ' '
 
+" 清除按键
+noremap q <nop>
+noremap s <nop>
+nnoremap x <nop>
+
+" 修改、删除不加入寄存器
+" map c "9c
+" map d "9d
+
 " 配置生效
 noremap R :source ~/.config/nvim/init.vim<CR><Esc>
 
@@ -22,7 +31,7 @@ imap <C-s> <Esc>:w<CR>
 nmap <leader>q :q<CR>
 
 " 粘贴 单用 c-v 块模式
-nnoremap <C-v>pa
+nnoremap <C-v> pa
 inoremap <C-v> <Esc>pa
 vnoremap <C-v> p
 
@@ -32,6 +41,9 @@ nnoremap <C-h> xh
 nnoremap <C-l> <Del>
 inoremap <C-h> <BS>
 inoremap <C-l> <Del>
+
+" 剪切
+nnoremap X yy"9dd
 
 " 基础移动
 map <C-j> 5j
@@ -50,10 +62,6 @@ nnoremap cu ~h
 
 "========================
 
-" 清除按键
-noremap q <nop>
-noremap s <nop>
-nnoremap x <nop>
 
 " tab
 nnoremap <TAB> :bnext<CR>
@@ -89,16 +97,8 @@ nnoremap > >>
 vnoremap < <gv
 vnoremap > >gv
 
-" nnoremap <S-CR> o
-" noremap <s-Char-13> yy
-" nnoremap <Char-16><Char-13> yy
-nnoremap <S><CR> yy
+" n 模式下换行
+nnoremap <CR> o
 
-" nnoremap <Char-13> yy
-
-" ===============命令行相关
-" 上下选择命令
-" cnoremap <C-j> <up>
-" cnoremap <C-k> <down>
-
+nnoremap <M-v> <C-v>
 

@@ -5,6 +5,9 @@ return require('packer').startup(function()
 
   use 'tpope/vim-surround'
 
+  -- 在 vim 分割窗口与 tmux 窗口直接流畅跳转
+  use 'christoomey/vim-tmux-navigator'
+
   -- 文件树
   use {
     'nvim-tree/nvim-tree.lua',
@@ -25,6 +28,12 @@ return require('packer').startup(function()
 
   -- coc
   use {'neoclide/coc.nvim', branch = 'release'}
+
+  -- Treesittetr
+  use {
+    "nvim-treesitter/nvim-treesitter",
+    run = ":TSUpdate"
+  }
 
   -- 主题
   use 'folke/tokyonight.nvim'
