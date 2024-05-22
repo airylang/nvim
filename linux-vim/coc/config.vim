@@ -31,7 +31,7 @@ set updatetime=300
 " NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
 " other plugin before putting this into your config
 
-" -- 上下前切换 补全面板
+" -- 上下前切换 补全面板 , 1  0  用于切换时是否预填充
 " inoremap <silent><expr> <TAB>
 "       \ coc#pum#visible() ? coc#pum#next(1) :
 "       \ CheckBackspace() ? "\<Tab>" :
@@ -39,10 +39,10 @@ set updatetime=300
 " inoremap <expr><S-TAB> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
 
 inoremap <silent><expr> <c-j>
-        \ coc#pum#visible() ? coc#pum#next(1) :
+        \ coc#pum#visible() ? coc#pum#next(0) :
         \ CheckBackspace() ? "\<Tab>" :
         \ coc#refresh()
-inoremap <expr><c-k> coc#pum#visible() ? coc#pum#prev(1) : "\<C-h>"
+inoremap <expr><c-k> coc#pum#visible() ? coc#pum#prev(0) : "\<C-h>"
 
 
 " Make <CR> to accept selected completion item or notify coc.nvim to format
