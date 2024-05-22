@@ -74,15 +74,45 @@ end
 time([[try_loadstring definition]], false)
 time([[Defining packer_plugins]], true)
 _G.packer_plugins = {
+  ["bufferline.nvim"] = {
+    loaded = true,
+    path = "/root/.local/share/nvim/site/pack/packer/start/bufferline.nvim",
+    url = "https://github.com/akinsho/bufferline.nvim"
+  },
+  ["change-colorscheme"] = {
+    loaded = true,
+    path = "/root/.local/share/nvim/site/pack/packer/start/change-colorscheme",
+    url = "https://github.com/chxuan/change-colorscheme"
+  },
   ["coc.nvim"] = {
     loaded = true,
     path = "/root/.local/share/nvim/site/pack/packer/start/coc.nvim",
     url = "https://github.com/neoclide/coc.nvim"
   },
+  colorschemes = {
+    loaded = true,
+    path = "/root/.local/share/nvim/site/pack/packer/start/colorschemes",
+    url = "https://github.com/lunarvim/colorschemes"
+  },
   ["darkplus.nvim"] = {
     loaded = true,
     path = "/root/.local/share/nvim/site/pack/packer/start/darkplus.nvim",
     url = "https://github.com/lunarvim/darkplus.nvim"
+  },
+  edge = {
+    loaded = true,
+    path = "/root/.local/share/nvim/site/pack/packer/start/edge",
+    url = "https://github.com/sainnhe/edge"
+  },
+  ["indent-blankline.nvim"] = {
+    loaded = true,
+    path = "/root/.local/share/nvim/site/pack/packer/start/indent-blankline.nvim",
+    url = "https://github.com/lukas-reineke/indent-blankline.nvim"
+  },
+  nvim = {
+    loaded = true,
+    path = "/root/.local/share/nvim/site/pack/packer/start/nvim",
+    url = "https://github.com/catppuccin/nvim"
   },
   ["nvim-tree.lua"] = {
     loaded = true,
@@ -99,20 +129,60 @@ _G.packer_plugins = {
     path = "/root/.local/share/nvim/site/pack/packer/start/nvim-web-devicons",
     url = "https://github.com/nvim-tree/nvim-web-devicons"
   },
+  ["oceanic-next"] = {
+    loaded = true,
+    path = "/root/.local/share/nvim/site/pack/packer/start/oceanic-next",
+    url = "https://github.com/mhartington/oceanic-next"
+  },
+  ["onedark.nvim"] = {
+    loaded = true,
+    path = "/root/.local/share/nvim/site/pack/packer/start/onedark.nvim",
+    url = "https://github.com/navarasu/onedark.nvim"
+  },
+  ["onedarker.nvim"] = {
+    loaded = true,
+    path = "/root/.local/share/nvim/site/pack/packer/start/onedarker.nvim",
+    url = "https://github.com/AlphaTechnolog/onedarker.nvim"
+  },
+  onehalf = {
+    loaded = true,
+    path = "/root/.local/share/nvim/site/pack/packer/start/onehalf/vim",
+    url = "https://github.com/sonph/onehalf"
+  },
   ["packer.nvim"] = {
     loaded = true,
     path = "/root/.local/share/nvim/site/pack/packer/start/packer.nvim",
     url = "https://github.com/wbthomason/packer.nvim"
+  },
+  ["plenary.nvim"] = {
+    loaded = true,
+    path = "/root/.local/share/nvim/site/pack/packer/start/plenary.nvim",
+    url = "https://github.com/nvim-lua/plenary.nvim"
+  },
+  ["telescope.nvim"] = {
+    loaded = true,
+    path = "/root/.local/share/nvim/site/pack/packer/start/telescope.nvim",
+    url = "https://github.com/nvim-telescope/telescope.nvim"
   },
   ["tokyonight.nvim"] = {
     loaded = true,
     path = "/root/.local/share/nvim/site/pack/packer/start/tokyonight.nvim",
     url = "https://github.com/folke/tokyonight.nvim"
   },
+  ["vim-gruvbox8"] = {
+    loaded = true,
+    path = "/root/.local/share/nvim/site/pack/packer/start/vim-gruvbox8",
+    url = "https://github.com/lifepillar/vim-gruvbox8"
+  },
   ["vim-monokai"] = {
     loaded = true,
     path = "/root/.local/share/nvim/site/pack/packer/start/vim-monokai",
     url = "https://github.com/sickill/vim-monokai"
+  },
+  ["vim-one"] = {
+    loaded = true,
+    path = "/root/.local/share/nvim/site/pack/packer/start/vim-one",
+    url = "https://github.com/rakr/vim-one"
   },
   ["vim-surround"] = {
     loaded = true,
@@ -127,6 +197,10 @@ _G.packer_plugins = {
 }
 
 time([[Defining packer_plugins]], false)
+-- Runtimepath customization
+time([[Runtimepath customization]], true)
+vim.o.runtimepath = vim.o.runtimepath .. ",/root/.local/share/nvim/site/pack/packer/start/onehalf/vim"
+time([[Runtimepath customization]], false)
 
 _G._packer.inside_compile = false
 if _G._packer.needs_bufread == true then

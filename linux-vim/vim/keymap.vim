@@ -97,8 +97,9 @@ nnoremap > >>
 vnoremap < <gv
 vnoremap > >gv
 
-" n 模式下换行
-nnoremap <CR> o
-
 nnoremap <M-v> <C-v>
+
+
+" n 模式下 <S-CR> 换行，需要 autohotkey 支持
+nnoremap <home> o
 

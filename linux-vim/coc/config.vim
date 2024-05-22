@@ -10,6 +10,9 @@ let g:coc_global_extensions=[
    \ 'coc-translator',
    \ 'coc-yank']
 
+"   \ 'coc-markdownlint',
+"   \ 'coc-markdown-preview-enhanced',
+
 set encoding=utf-8
 set nobackup
 set nowritebackup

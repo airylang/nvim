@@ -1,5 +1,6 @@
 ### 下载
 https://github.com/tmux/tmux
+test **parse** for nvim
 
 ### 安装
 https://www.jianshu.com/p/01a18efe2552
@@ -88,3 +89,5 @@ ctrl+b w           以菜单方式显示及选择窗口
 ctrl+b s           以菜单方式显示和选择会话。这个常用到，可以选择进入哪个tmux
 ctrl+b t           显示时钟。然后按enter键后就会恢复到shell终端状态
 ctrl+b d           脱离当前会话；这样可以暂时返回Shell界面，输入tmux attach能够重新进入之前的会话
+ctrl+b z 全屏
+
