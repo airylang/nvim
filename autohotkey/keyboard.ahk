@@ -1,9 +1,9 @@
-" v2.0
+; v2.0
 
 Capslock::Ctrl
 #Capslock::Capslock
 
-" shfit + enter 映射为 home 按键
+; shfit + enter 映射为 home 按键
 +Enter::Home
 
 $Shift::{
