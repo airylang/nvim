@@ -2,7 +2,9 @@
 set number
 
 " 主题
-colorscheme monokai
+" colorscheme monokai
+" colorscheme catppuccin-mocha
+colorscheme tokyonight
 
 " 禁用鼠标
 set mouse=
@@ -55,7 +57,6 @@ set showcmd
 
 "ssh 远程粘贴板
 
-
 " 使得下一行不会自动产生注释
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
@@ -64,7 +65,4 @@ autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 " set noautoindent
 " set nosmartindent
 
-" set termguicolors
-
-
-set syntax
+set clipboard=unnamed

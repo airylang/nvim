@@ -14,16 +14,6 @@ inoremap <C-Tab> <C-O>:echo "C-Tab pressed in insert mode"<CR>
 set paste // 没用
 
 
-### tmux
-yum install tmux
-$ tmux 进入tmu
-ctrl+b 前置命令
-% 开启左右布局窗口
-方向键 在tmux窗口间跳转
-
-配置文件 ~/.tmux.conf
-set -g default-terminal "screen-256color"
-
 ### 验证终端是否支持彩色
 ``` cmd
 curl https://raw.githubusercontent.com/JohnMorales/dotfiles/master/colors/24-bit-color.sh | bash
@@ -41,4 +31,15 @@ curl https://raw.githubusercontent.com/JohnMorales/dotfiles/master/colors/24-bit
 
 
 ### markdown语法高亮
+
+### coc 上线选中补全时，自动预填充
+选中时函数传参数0
+
+### telescope
+1. 安装 rg
+2. 设置 ff 时排除 node_modules
+
+### 如果复制vim内容至linux命令行
+
+### nvim复制内容与外部终端剪切板互通
 

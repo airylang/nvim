@@ -91,3 +91,14 @@ ctrl+b t           显示时钟。然后按enter键后就会恢复到shell终端
 ctrl+b d           脱离当前会话；这样可以暂时返回Shell界面，输入tmux attach能够重新进入之前的会话
 ctrl+b z 全屏
 
+
+### tmux
+yum install tmux
+$ tmux 进入tmu
+ctrl+b 前置命令
+% 开启左右布局窗口
+方向键 在tmux窗口间跳转
+配置文件 ~/.tmux.conf
+set -g default-terminal "screen-256color"
+tmux 打开nivm没有高亮，检测版本是否大于 1.8
+

@@ -10,17 +10,10 @@ return require('packer').startup(function()
   use { 'nvim-tree/nvim-tree.lua', requires = { 'nvim-tree/nvim-web-devicons' } }
 
   -- 符号配对
---  use {
---    "windwp/nvim-autopairs",
---    event = "InsertEnter",
---    config = function()
---      require("nvim-autopairs").setup {}
---    end
---  }
+  --  use { "windwp/nvim-autopairs", event = "InsertEnter", config = function() require("nvim-autopairs").setup {} end }
 
   -- coc
   use {'neoclide/coc.nvim', branch = 'release'}
-
 
   -- Treesittetr
   use { "nvim-treesitter/nvim-treesitter", run = ":TSUpdate" }
@@ -33,6 +26,15 @@ return require('packer').startup(function()
 
   -- tab 栏
   use { 'akinsho/bufferline.nvim', tag = "v3.*", requires = 'nvim-tree/nvim-web-devicons' }
+
+  use {
+    'phaazon/hop.nvim',
+    branch = 'v2', -- optional but strongly recommended
+    config = function()
+      -- you can configure Hop the way you like here; see :h hop-config
+      require'hop'.setup { keys = 'etovxqpdygfblzhckisuran' }
+    end
+  }
 
   -- 在 vim 分割窗口与 tmux 窗口直接流畅跳转
   use 'christoomey/vim-tmux-navigator'
@@ -75,4 +77,11 @@ return require('packer').startup(function()
 
   -- 主题
   use 'AlphaTechnolog/onedarker.nvim'
+
+  -- 吸血鬼主题
+  use 'Mofiqul/dracula.nvim'
+
+  -- github 主题
+  use 'projekt0n/github-nvim-theme'
+
 end)
