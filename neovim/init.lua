@@ -38,6 +38,7 @@ vim.schedule(function()
   require "mappings"
 end)
 
-vim.cmd('runtime test.vim ');
--- runtime ./test.vim
+-- 个人自定义vim文件
+vim.cmd('runtime ./vim/setting.vim');
+vim.cmd('runtime ./vim/keymap.vim');
 
