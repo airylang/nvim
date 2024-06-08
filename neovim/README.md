@@ -1,0 +1,1 @@
+### window 安装 mingw
