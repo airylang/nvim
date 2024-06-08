@@ -63,6 +63,9 @@ autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 " 解决粘贴时换行问题
 " set paste
 " set noautoindent
-" set nosmartindent
+" set nosmartaaindent
 
 " set clipboard=unnamed
+
+
+set guifont FiraMono Nerd Font

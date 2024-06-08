@@ -41,4 +41,5 @@ end)
 -- 个人自定义vim文件
 vim.cmd('runtime ./vim/setting.vim');
 vim.cmd('runtime ./vim/keymap.vim');
+vim.cmd('runtime ./vim/plugin-keymap.vim');
 
